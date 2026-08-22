@@ -164,6 +164,14 @@ Nella norma: urine, glicemia 74, HbA1c 5,7% (39 mmol/mol), elettroliti, calcio 9
 
 ---
 
+## Report generati (output — esclusi dall'indicizzazione)
+
+| File su Drive | ID Drive | Data generazione |
+|---|---|---|
+| 22.08.2026_Report Salute Massimo Sunzini.pdf (cartella radice) | `1Ta9aCn4V46gkzqQghfD1cwRB5TyX2JOm` | 22/08/2026 |
+
+---
+
 ## Registro scansioni
 
 | Data/ora (UTC) | Esito | Note |

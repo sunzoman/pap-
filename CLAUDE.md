@@ -44,3 +44,10 @@ Su richiesta dell'utente si genera un report PDF di consultazione (es. `Report_S
 5. Chiusura con disclaimer: report generato automaticamente, non è un documento medico e non sostituisce il parere dei curanti.
 
 Generazione: script reportlab (A4); non usare caratteri fuori WinAnsi (niente frecce/simboli unicode speciali); per i bullet usare il carattere `•` in `bulletText`, non entità XML.
+
+### Consegna del report (regola dell'utente, 22/08/2026)
+
+- Oltre all'invio in chat, **caricare sempre il PDF anche nella cartella Drive radice** `Salute Massimo Sunzini` (ID `1MYOQz6jvyd59SkyRhJsugH65FJieO6PU`), NON nella sottocartella "Documenti e referti".
+- Nome file obbligatorio con la data di generazione nel formato `dd.mm.yyyy`: **`dd.mm.yyyy_Report Salute Massimo Sunzini.pdf`** (es. `22.08.2026_Report Salute Massimo Sunzini.pdf`).
+- Ogni rigenerazione carica un nuovo file con la data corrente; le versioni precedenti restano in cartella come storico salvo diversa indicazione dell'utente.
+- **Esclusione dall'indicizzazione:** i report generati (file il cui nome inizia con una data `dd.mm.yyyy_`) sono OUTPUT della knowledge base, non fonti. La scansione (notturna o su richiesta) NON deve indicizzarli come schede in MEMORIA.md; vanno solo elencati nella sezione "Report generati" della memoria.
