@@ -32,6 +32,7 @@ Note operative:
 - I file `.numbers` (Apple Numbers) non sono leggibili dal connettore: censirli nell'inventario e segnalarli come non indicizzabili finché non vengono convertiti (es. in Google Sheets/xlsx).
 - I duplicati (stesso titolo e stessa dimensione) vanno censiti una sola volta come scheda, annotando gli ID di tutte le copie.
 - Il contenuto dei referti è **dato sanitario sensibile**: non copiarlo fuori da questo repository e non inviarlo a servizi esterni.
+- **Dati marcati NON VALIDI:** se l'utente segnala che un dato o un referto non è attendibile (es. errore di misurazione), marcarlo chiaramente in MEMORIA.md, rinominare il file su Drive aggiungendo l'indicazione `[... NON VALIDO ...]` nel nome e non usare più quel dato per sintesi cliniche o report.
 
 ## Report PDF
 
@@ -45,9 +46,11 @@ Su richiesta dell'utente si genera un report PDF di consultazione (es. `Report_S
 
 Generazione: script reportlab (A4); non usare caratteri fuori WinAnsi (niente frecce/simboli unicode speciali); per i bullet usare il carattere `•` in `bulletText`, non entità XML.
 
+**Linguaggio (regola dell'utente, 22/08/2026):** il report va scritto in italiano semplice, comprensibile a non medici. Evitare sigle e tecnicismi non spiegati: preferire perifrasi ("i bronchi lasciano passare circa il 40% dell'aria che dovrebbero" invece di "FEV1 40% del predetto"); quando un termine tecnico è necessario, spiegarlo tra parentesi. I dati marcati NON VALIDI in MEMORIA.md non vanno mai usati come base per commenti o suggerimenti: citarli solo per dire che l'esame va ripetuto.
+
 ### Consegna del report (regola dell'utente, 22/08/2026)
 
 - Oltre all'invio in chat, **caricare sempre il PDF anche nella cartella Drive radice** `Salute Massimo Sunzini` (ID `1MYOQz6jvyd59SkyRhJsugH65FJieO6PU`), NON nella sottocartella "Documenti e referti".
 - Nome file obbligatorio con la data di generazione nel formato `dd.mm.yyyy`: **`dd.mm.yyyy_Report Salute Massimo Sunzini.pdf`** (es. `22.08.2026_Report Salute Massimo Sunzini.pdf`).
-- Ogni rigenerazione carica un nuovo file con la data corrente; le versioni precedenti restano in cartella come storico salvo diversa indicazione dell'utente.
+- Ogni rigenerazione carica un nuovo file con la data corrente; le versioni precedenti restano in cartella come storico salvo diversa indicazione dell'utente. Se si rigenera lo stesso giorno, cestinare la versione precedente con la stessa data e caricare quella nuova.
 - **Esclusione dall'indicizzazione:** i report generati (file il cui nome inizia con una data `dd.mm.yyyy_`) sono OUTPUT della knowledge base, non fonti. La scansione (notturna o su richiesta) NON deve indicizzarli come schede in MEMORIA.md; vanno solo elencati nella sezione "Report generati" della memoria.

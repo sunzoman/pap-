@@ -26,7 +26,7 @@
 
 - **Pneumologico (problema principale):** BPCO con deficit ventilatorio ostruttivo di grado **severo** (FEV1 40% del predetto), air-trapping e iperinflazione polmonare, possibile componente enfisematosa; DLCO conservata. Desaturazione significativa da sforzo (SpO2 fino a 87%) con adattamento cronico all'ipossia. Proposta valutazione poligrafica notturna con capnografia.
 - **Storia toracica:** pregressa chirurgia toracica per asportazione di lesione nodulare all'apice polmonare sinistro (compatibile con ascesso polmonare). In follow-up presso Chirurgia Toracica Ospedale S. Andrea per **nodulo spiculato nel LSD**; alla TC torace nuovo **nodulo di ~9 mm nel LIS** in follow-up radiologico a 6 mesi (riferito a gen 2026).
-- **Cardiovascolare:** Holter ECG (ott 2025): ritmo sinusale, ectopia ventricolare e sopraventricolare non complessa (2 brevi run di TV non sostenuta di 4 battiti @118 bpm), QTc normale. Holter pressorio (ott 2025): **elevato carico pressorio sistolico diurno e notturno, profilo "dipper inverso"** (media 24h ~146/81, max 188/112) — non in terapia al momento dell'esame.
+- **Cardiovascolare:** Holter ECG (ott 2025): ritmo sinusale, ectopia ventricolare e sopraventricolare non complessa (2 brevi run di TV non sostenuta di 4 battiti @118 bpm), QTc normale. Holter pressorio (ott 2025): **DATO NON VALIDO** — misurazione errata segnalata dall'utente il 22/08/2026; le conclusioni del referto ABPM (carico pressorio elevato, profilo "dipper inverso") NON vanno utilizzate. Esame da ripetere per avere un quadro pressorio attendibile.
 - **Metabolico/laboratorio:** glicemia e HbA1c sempre normali; colesterolo totale/LDL ai limiti o lievemente elevati (LDL 161 nel 2022 → 108-123 dal 2024); **omocisteina 25,1 µmol/L (elevata) a lug 2026** (era 14,0 a set 2025); **IgE totali 391 UI/mL (elevate) ad apr 2026**; alfa-1 antitripsina normale (rilevante per enfisema). Episodio di iperenzimemia pancreatica (amilasi 192, lipasi 167) ad apr 2022, rientrato nei controlli successivi. PSA 3,74 nel 2022, poi rientrato (~2,0-2,3, rapporto fPSA/PSA >0,20). Lieve tendenza a eritrociti sotto il limite (4,38-4,49 mln) con Hb normale-bassa.
 - **Osteoarticolare:** RX mani (lug 2026): demineralizzazione ossea, artrosi metacarpo-falangea e interfalangea moderata, rizoartrosi bilaterale ai polsi.
 
@@ -41,7 +41,7 @@ Struttura: `Salute Massimo Sunzini/` → sottocartella `Documenti e referti/` (I
 | 1 | 2022.PDF | `19EOWIXk8VnwuE9ES7qTUJGEE4oiUBRZP` | PDF | 731.509 B | 2026-08-22 | 23/04/2022 | Indicizzato |
 | 2 | 2024.pdf | `1XezB1Fmj6XNGO09GKJamB0GCxpCPHh2R` | PDF | 792.303 B | 2026-08-22 | 02/08/2024 | Indicizzato |
 | 3 | 2025.pdf | `1TgqP3TdA1eHfgL4cVotPLdmRD900DUdV` | PDF | 980.011 B | 2026-08-22 | 30/09/2025 | Indicizzato |
-| 4 | Holter cardiaco e pressorio.pdf | `1I7lYUn3RC2Sze3TNzIr7yIpPN8HI4BwP` | PDF | 3.280.866 B | 2026-08-22 | 14-15/10/2025 | Indicizzato |
+| 4 | Holter cardiaco e pressorio [pressorio NON VALIDO - errore di misurazione].pdf | `1I7lYUn3RC2Sze3TNzIr7yIpPN8HI4BwP` | PDF | 3.280.866 B | 2026-08-22 (rinominato) | 14-15/10/2025 | Indicizzato — sezione pressoria NON VALIDA |
 | 5 | sunzini Massimo CPET definitivo.pdf | `1UrYJ1ZB9jkrH-P1G7bdaEgxUk_b9CrjB` | PDF | 2.655.369 B | 2026-08-22 | 21/01/2026 | Indicizzato |
 | 5b | sunzini Massimo CPET definitivo.pdf (copia identica) | `1NuYyhoicxjKTRi6vNoMgPum44WdIDIEM` | PDF | 2.655.369 B | 2026-08-22 | 21/01/2026 | Duplicato del #5 |
 | 6 | Aprile 2026.pdf | `1eMI99BANSXkQ2_tUVgeZtTzLcTaCkZEb` | PDF | 95.599 B | 2026-08-22 | 18/04/2026 | Indicizzato |
@@ -91,8 +91,10 @@ Valori fuori norma / rilevanti:
 
 Nella norma: urine, glicemia 86, HbA1c 5,5%, elettroliti, AST 25/ALT 10, GGT 31, lipasi 21, amilasi 98, magnesio 1,80, trigliceridi 57, uricemia 5,4, VES 4, CK 170, calcio 9,0, fosforo 3,30, PLT 305.000, TSH 0,829.
 
-### 4. Holter cardiaco e pressorio.pdf — Holter ECG 24h + Monitoraggio pressorio 24h (Istituto Diagnostico Varelli)
+### 4. Holter cardiaco e pressorio [pressorio NON VALIDO - errore di misurazione].pdf — Holter ECG 24h + Monitoraggio pressorio 24h (Istituto Diagnostico Varelli)
 **Data registrazione:** 14-15/10/2025 · **Refertato da:** dott.ssa C. Marciano · **Nota:** NON effettua terapia farmacologica
+
+> **[DATO NON VALIDO — 22/08/2026]** L'utente ha segnalato che la sezione **Holter pressorio (ABPM)** di questo referto è inattendibile per una cattiva misurazione. Il file su Drive è stato rinominato di conseguenza (prima: `Holter cardiaco e pressorio.pdf`). I valori pressori sotto riportati restano censiti solo per completezza documentale e **non vanno usati** per sintesi cliniche o report; l'esame è da ripetere. La sezione **Holter ECG resta valida**.
 
 **Holter ECG (23h circa, 98.214 battiti):**
 - Ritmo sinusale. FC media 24h 70 bpm, min 45 (01:52), max 125 (08:14)
@@ -101,7 +103,7 @@ Nella norma: urine, glicemia 86, HbA1c 5,5%, elettroliti, AST 25/ALT 10, GGT 31,
 - Nessuna pausa >2,5 s (R-R max 1,671 s); QT max 406 ms, **QTc max 440 ms** (100% dei QTc ≤450 ms); nessun BBB, nessuna FA
 - HRV: SDNN 24h 144 ms (rischio basso); ST: nessun episodio significativo (depressione max -0,8 mm)
 
-**Holter pressorio (ABPM, 79 misure valide/81):**
+**Holter pressorio (ABPM, 79 misure valide/81) — [NON VALIDO, vedi nota sopra]:**
 - Media 24h **146/81 mmHg** (PP 64); giorno 146/83; notte **147/79**
 - Max 188/112 (08:34); carico sistolico ≥ riferimento: 87,3% totale, **100% notturno**
 - **Profilo circadiano: sistolica "dipper inverso" (-0,6%), diastolica non-dipper (4,9%)**
@@ -166,9 +168,9 @@ Nella norma: urine, glicemia 74, HbA1c 5,7% (39 mmol/mol), elettroliti, calcio 9
 
 ## Report generati (output — esclusi dall'indicizzazione)
 
-| File su Drive | ID Drive | Data generazione |
-|---|---|---|
-| 22.08.2026_Report Salute Massimo Sunzini.pdf (cartella radice) | `1Ta9aCn4V46gkzqQghfD1cwRB5TyX2JOm` | 22/08/2026 |
+| File su Drive | ID Drive | Data generazione | Note |
+|---|---|---|---|
+| 22.08.2026_Report Salute Massimo Sunzini.pdf (cartella radice) | `148vXAc8FANqPZTVDXcLFeJ3P5fd3QpCk` | 22/08/2026 | Versione in linguaggio divulgativo, senza dati Holter pressorio (non validi). Sostituisce due versioni precedenti dello stesso giorno (cestinate) |
 
 ---
 
@@ -177,3 +179,4 @@ Nella norma: urine, glicemia 74, HbA1c 5,7% (39 mmol/mol), elettroliti, calcio 9
 | Data/ora (UTC) | Esito | Note |
 |---|---|---|
 | 2026-08-22 16:30 | Scansione iniziale completa | 10 file censiti; 8 documenti unici indicizzati integralmente; 1 duplicato (CPET); 1 file .numbers non indicizzabile |
+| 2026-08-22 17:00 | Aggiornamento su segnalazione utente | Holter pressorio marcato NON VALIDO (cattiva misurazione); file rinominato su Drive in `Holter cardiaco e pressorio [pressorio NON VALIDO - errore di misurazione].pdf`; report del 22/08/2026 rigenerato senza i dati pressori |
