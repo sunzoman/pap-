@@ -34,7 +34,7 @@
 
 ## Inventario della cartella
 
-Struttura: `Salute Massimo Sunzini/` → sottocartella `Documenti e referti/` (ID `1QryWokIZM1vmTu7hlJmfyV3PJCAX8Cb9`) contenente tutti i file.
+Struttura: `Salute Massimo Sunzini/` → sottocartella `Documenti e referti/` (ID `1QryWokIZM1vmTu7hlJmfyV3PJCAX8Cb9`) con i referti, e sottocartella `Dati Garmin/` (ID `1xUZ2RmuYnvjgzxBfih5rLT93dH6PgKm3`) con i dati sportivi (vedi CLAUDE.md, sezione "Dati sportivi Garmin").
 
 | # | File | ID Drive | Tipo | Dimensione | Modificato (Drive) | Data documento | Stato |
 |---|---|---|---|---|---|---|---|
@@ -48,6 +48,8 @@ Struttura: `Salute Massimo Sunzini/` → sottocartella `Documenti e referti/` (I
 | 7 | 2026.pdf | `1xOGO-mdzsnQqmNWOfB56YZ7xkdcE-Kjj` | PDF | 1.077.460 B | 2026-08-22 | 22/07/2026 | Indicizzato |
 | 8 | fileReferto 2.pdf | `1A9UZARLfo8YSyNwO756YIx1BctXhO2N-` | PDF | 180.880 B | 2026-08-22 | 29/07/2026 | Indicizzato |
 | 9 | Spirometria.numbers | `1NvRZzHuAC25_8kD0EbB9iLJ93jJhQzaj` | Apple Numbers | 179.856 B | 2026-08-22 | — | **Non indicizzabile** (formato proprietario; convertire in Sheets/xlsx) |
+| 10 | Dati Garmin/Attività sportive | `1mK0w3-HCaJUR6dvnw9R-3lsvFBPTqcui-ek0zc58ht0` | Google Sheet | — | 2026-08-22 | — | Fonte dati sportivi — in attesa dei primi dati (setup Strava/Make in corso) |
+| 11 | Dati Garmin/Benessere | `1lLLLOwxaPMKxerPNi-hQu0-kURr-SAGsQByaiO1SmZk` | Google Sheet | — | 2026-08-22 | — | Fonte dati benessere — in attesa dei primi dati (setup intervals.icu in corso) |
 
 ---
 
@@ -181,3 +183,4 @@ Nella norma: urine, glicemia 74, HbA1c 5,7% (39 mmol/mol), elettroliti, calcio 9
 | 2026-08-22 16:30 | Scansione iniziale completa | 10 file censiti; 8 documenti unici indicizzati integralmente; 1 duplicato (CPET); 1 file .numbers non indicizzabile |
 | 2026-08-22 17:00 | Aggiornamento su segnalazione utente | Holter pressorio marcato NON VALIDO (cattiva misurazione); file rinominato su Drive in `Holter cardiaco e pressorio [pressorio NON VALIDO - errore di misurazione].pdf`; report del 22/08/2026 rigenerato senza i dati pressori |
 | 2026-08-22 18:30 | Correzione formato report | Report PDF rigenerato senza codifica ASCII85 (illeggibile sul viewer mobile di Drive) e ricaricato su Drive; integrità verificata |
+| 2026-08-22 18:45 | Setup pipeline dati Garmin | Creata sottocartella `Dati Garmin` con gli Sheet `Attività sportive` e `Benessere` (vuoti, solo intestazioni); pipeline B+C approvata dall'utente, in attesa dei collegamenti Strava e intervals.icu |

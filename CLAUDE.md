@@ -34,6 +34,20 @@ Note operative:
 - Il contenuto dei referti è **dato sanitario sensibile**: non copiarlo fuori da questo repository e non inviarlo a servizi esterni.
 - **Dati marcati NON VALIDI:** se l'utente segnala che un dato o un referto non è attendibile (es. errore di misurazione), marcarlo chiaramente in MEMORIA.md, rinominare il file su Drive aggiungendo l'indicazione `[... NON VALIDO ...]` nel nome e non usare più quel dato per sintesi cliniche o report.
 
+## Dati sportivi Garmin (pipeline approvata dall'utente il 22/08/2026)
+
+I dati di allenamento e benessere misurati dai dispositivi Garmin di Massimo entrano nella KB attraverso la sottocartella Drive **`Dati Garmin`** (ID `1xUZ2RmuYnvjgzxBfih5rLT93dH6PgKm3`), che contiene due Google Sheet **fonte** (da indicizzare nella scansione come gli altri documenti):
+
+- **`Attività sportive`** (ID `1mK0w3-HCaJUR6dvnw9R-3lsvFBPTqcui-ek0zc58ht0`): una riga per allenamento (data, sport, durata, distanza, FC media/max, passo, dislivello, calorie, sensazione 1-10).
+- **`Benessere`** (ID `1lLLLOwxaPMKxerPNi-hQu0-kURr-SAGsQByaiO1SmZk`): una riga per giorno (FC a riposo, HRV, sonno, SpO2 notturna, peso, stress, body battery).
+
+Architettura del flusso (soluzione B+C approvata): Garmin Connect → sincronizzazione nativa verso **Strava** (attività) e **intervals.icu** (benessere) → scenario **Make** (team 2720879, connessione Google `Wider View - Fede` id 13027459; connessione Strava da creare) e/o chiamate API intervals.icu → righe nei due Sheet. Backfill storico: export CSV una tantum da Garmin Connect caricato in `Dati Garmin`.
+
+Regole di indicizzazione:
+- Gli Sheet si aggiornano di continuo: la scheda in MEMORIA.md non deve elencare le righe, ma riportare **periodo coperto, numero di attività, medie/trend recenti** (ultime 4-8 settimane) e segnali rilevanti (es. calo di performance, FC a riposo in salita).
+- La sezione 2 del report ("come sta e come rende") usa questi dati come base oggettiva delle performance sportive.
+- Stato setup: finché i collegamenti Strava/intervals.icu non sono attivi, gli Sheet possono essere vuoti — indicarlo in MEMORIA.md senza considerarlo un errore.
+
 ## Report PDF
 
 Su richiesta dell'utente si genera un report PDF di consultazione (es. `Report_Salute_Massimo_Sunzini_<data>.pdf`). Fonte esclusiva: `memoria/MEMORIA.md` e i file della cartella Drive sopra indicata. Struttura definita dall'utente (22/08/2026):
