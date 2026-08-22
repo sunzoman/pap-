@@ -170,7 +170,7 @@ Nella norma: urine, glicemia 74, HbA1c 5,7% (39 mmol/mol), elettroliti, calcio 9
 
 | File su Drive | ID Drive | Data generazione | Note |
 |---|---|---|---|
-| 22.08.2026_Report Salute Massimo Sunzini.pdf (cartella radice) | `148vXAc8FANqPZTVDXcLFeJ3P5fd3QpCk` | 22/08/2026 | Versione in linguaggio divulgativo, senza dati Holter pressorio (non validi). Sostituisce due versioni precedenti dello stesso giorno (cestinate) |
+| 22.08.2026_Report Salute Massimo Sunzini.pdf (cartella radice) | `1527bVew21gPDMF2jXkktmXVrty-BATTi` | 22/08/2026 | Versione in linguaggio divulgativo, senza dati Holter pressorio (non validi); PDF rigenerato in formato compatibile col viewer mobile di Drive. Sostituisce le versioni precedenti dello stesso giorno (cestinate) |
 
 ---
 
@@ -180,3 +180,4 @@ Nella norma: urine, glicemia 74, HbA1c 5,7% (39 mmol/mol), elettroliti, calcio 9
 |---|---|---|
 | 2026-08-22 16:30 | Scansione iniziale completa | 10 file censiti; 8 documenti unici indicizzati integralmente; 1 duplicato (CPET); 1 file .numbers non indicizzabile |
 | 2026-08-22 17:00 | Aggiornamento su segnalazione utente | Holter pressorio marcato NON VALIDO (cattiva misurazione); file rinominato su Drive in `Holter cardiaco e pressorio [pressorio NON VALIDO - errore di misurazione].pdf`; report del 22/08/2026 rigenerato senza i dati pressori |
+| 2026-08-22 18:30 | Correzione formato report | Report PDF rigenerato senza codifica ASCII85 (illeggibile sul viewer mobile di Drive) e ricaricato su Drive; integrità verificata |

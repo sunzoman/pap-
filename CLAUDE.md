@@ -44,7 +44,7 @@ Su richiesta dell'utente si genera un report PDF di consultazione (es. `Report_S
 4. **Sezione 3 — Suggerimenti e promemoria**: commento della stessa lunghezza con suggerimenti di terapie e stile di vita (attività sportive, cosa fare/cosa evitare, dieta), seguito da elenchi puntati ("Cosa fare", "Cosa evitare", "Da discutere con i medici") e tabella "Promemoria controlli e visite" (esame/visita, quando, perché).
 5. Chiusura con disclaimer: report generato automaticamente, non è un documento medico e non sostituisce il parere dei curanti.
 
-Generazione: script reportlab (A4); non usare caratteri fuori WinAnsi (niente frecce/simboli unicode speciali); per i bullet usare il carattere `•` in `bulletText`, non entità XML.
+Generazione: script reportlab (A4); non usare caratteri fuori WinAnsi (niente frecce/simboli unicode speciali); per i bullet usare il carattere `•` in `bulletText`, non entità XML. **Impostare sempre `rl_config.useA85 = 0`** prima degli import di reportlab: la codifica ASCII85 di default non viene renderizzata dal visualizzatore PDF dell'app Google Drive mobile (pagina quasi vuota); con FlateDecode puro il PDF si vede ovunque.
 
 **Linguaggio (regola dell'utente, 22/08/2026):** il report va scritto in italiano semplice, comprensibile a non medici. Evitare sigle e tecnicismi non spiegati: preferire perifrasi ("i bronchi lasciano passare circa il 40% dell'aria che dovrebbero" invece di "FEV1 40% del predetto"); quando un termine tecnico è necessario, spiegarlo tra parentesi. I dati marcati NON VALIDI in MEMORIA.md non vanno mai usati come base per commenti o suggerimenti: citarli solo per dire che l'esame va ripetuto.
 
@@ -54,3 +54,4 @@ Generazione: script reportlab (A4); non usare caratteri fuori WinAnsi (niente fr
 - Nome file obbligatorio con la data di generazione nel formato `dd.mm.yyyy`: **`dd.mm.yyyy_Report Salute Massimo Sunzini.pdf`** (es. `22.08.2026_Report Salute Massimo Sunzini.pdf`).
 - Ogni rigenerazione carica un nuovo file con la data corrente; le versioni precedenti restano in cartella come storico salvo diversa indicazione dell'utente. Se si rigenera lo stesso giorno, cestinare la versione precedente con la stessa data e caricare quella nuova.
 - **Esclusione dall'indicizzazione:** i report generati (file il cui nome inizia con una data `dd.mm.yyyy_`) sono OUTPUT della knowledge base, non fonti. La scansione (notturna o su richiesta) NON deve indicizzarli come schede in MEMORIA.md; vanno solo elencati nella sezione "Report generati" della memoria.
+- **Verifica di integrità dell'upload:** dopo `create_file` confrontare la dimensione restituita da Drive con quella del file locale; in caso di dubbio riscaricare con `download_file_content` e confrontare i contenuti.
