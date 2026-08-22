@@ -35,4 +35,12 @@ Note operative:
 
 ## Report PDF
 
-Su richiesta dell'utente verrà generato un report PDF di consultazione con struttura specifica (da definire); la fonte del report è esclusivamente `memoria/MEMORIA.md` e i file della cartella Drive sopra indicata.
+Su richiesta dell'utente si genera un report PDF di consultazione (es. `Report_Salute_Massimo_Sunzini_<data>.pdf`). Fonte esclusiva: `memoria/MEMORIA.md` e i file della cartella Drive sopra indicata. Struttura definita dall'utente (22/08/2026):
+
+1. **Quadro dei documenti nella cartella** — tabella compatta (documento, data, tipo) per orientarsi tra i file.
+2. **Sezione 1 — Commento sui dati oggettivi**: massimo ~5 righe su ciò che emerge oggettivamente dai documenti.
+3. **Sezione 2 — Commento integrato con le sensazioni riferite**: stessa lunghezza, tiene conto anche delle sensazioni comunicate su stato di salute e performance sportive (oggi ricavate dai referti, es. Borg/anamnesi CPET; integrare eventuali note personali aggiunte in cartella).
+4. **Sezione 3 — Suggerimenti e promemoria**: commento della stessa lunghezza con suggerimenti di terapie e stile di vita (attività sportive, cosa fare/cosa evitare, dieta), seguito da elenchi puntati ("Cosa fare", "Cosa evitare", "Da discutere con i medici") e tabella "Promemoria controlli e visite" (esame/visita, quando, perché).
+5. Chiusura con disclaimer: report generato automaticamente, non è un documento medico e non sostituisce il parere dei curanti.
+
+Generazione: script reportlab (A4); non usare caratteri fuori WinAnsi (niente frecce/simboli unicode speciali); per i bullet usare il carattere `•` in `bulletText`, non entità XML.
