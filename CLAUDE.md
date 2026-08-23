@@ -45,19 +45,30 @@ Note operative:
 - Il contenuto dei referti è **dato sanitario sensibile**: non copiarlo fuori da questo repository e non inviarlo a servizi esterni.
 - **Dati marcati NON VALIDI:** se l'utente segnala che un dato o un referto non è attendibile (es. errore di misurazione), marcarlo chiaramente in MEMORIA.md, rinominare il file su Drive aggiungendo l'indicazione `[... NON VALIDO ...]` nel nome e non usare più quel dato per sintesi cliniche o report.
 
-## Dati sportivi Garmin (pipeline approvata dall'utente il 22/08/2026)
+## Dati sportivi Garmin (pipeline attiva dal 23/08/2026)
 
-I dati di allenamento e benessere misurati dai dispositivi Garmin di Massimo entrano nella KB attraverso la sottocartella Drive **`Dati Garmin`** (ID `1xUZ2RmuYnvjgzxBfih5rLT93dH6PgKm3`), che contiene due Google Sheet **fonte** (da indicizzare nella scansione come gli altri documenti):
+**Vincolo dell'utente: nessuno strumento aziendale in questa knowledge base** — niente Make (account Wider View) e niente Strava. Il flusso è: dispositivi Garmin → Garmin Connect → **intervals.icu** (account personale di Massimo, collegato a Garmin) → API letta direttamente durante le scansioni → file CSV nel repository.
 
-- **`Attività sportive`** (ID `1mK0w3-HCaJUR6dvnw9R-3lsvFBPTqcui-ek0zc58ht0`): una riga per allenamento (data, sport, durata, distanza, FC media/max, passo, dislivello, calorie, sensazione 1-10).
-- **`Benessere`** (ID `1lLLLOwxaPMKxerPNi-hQu0-kURr-SAGsQByaiO1SmZk`): una riga per giorno (FC a riposo, HRV, sonno, SpO2 notturna, peso, stress, body battery).
+**Credenziali:** custodite SOLO nel file Drive `_chiave_intervals_icu.txt` (ID `1u5pg86vG7gROVyrv3Yv2ba3OaLtHpv6F`, dentro la cartella `Dati Garmin`). **Mai** scriverle nel repository, nei commit o nelle variabili d'ambiente. Athlete ID: `i685995`.
 
-Architettura del flusso (soluzione B+C approvata): Garmin Connect → sincronizzazione nativa verso **Strava** (attività) e **intervals.icu** (benessere) → scenario **Make** (team 2720879, connessione Google `Wider View - Fede` id 13027459; connessione Strava da creare) e/o chiamate API intervals.icu → righe nei due Sheet. Backfill storico: export CSV una tantum da Garmin Connect caricato in `Dati Garmin`.
+**Prerequisito di rete:** l'ambiente cloud deve avere `intervals.icu` tra i domini consentiti (impostato il 23/08/2026 in Accesso alla rete → Personalizzato). Le chiamate vanno fatte con `curl` (urllib di Python non passa dal proxy e riceve 403).
 
-Regole di indicizzazione:
-- Gli Sheet si aggiornano di continuo: la scheda in MEMORIA.md non deve elencare le righe, ma riportare **periodo coperto, numero di attività, medie/trend recenti** (ultime 4-8 settimane) e segnali rilevanti (es. calo di performance, FC a riposo in salita).
-- La sezione 2 del report ("come sta e come rende") usa questi dati come base oggettiva delle performance sportive.
-- Stato setup: finché i collegamenti Strava/intervals.icu non sono attivi, gli Sheet possono essere vuoti — indicarlo in MEMORIA.md senza considerarlo un errore.
+**File dati nel repository** (aggiornati a ogni scansione, sono la fonte per i report):
+- `dati/garmin/attivita.csv` — una riga per allenamento: data, sport, nome, durata, distanza, FC media/max, dislivello, calorie, carico, sensazione.
+- `dati/garmin/benessere.csv` — una riga per giorno con almeno una misura: FC a riposo, HRV (rMSSD), sonno, punteggio sonno, SpO2, peso, massa grassa, VO2max, passi, forma (CTL), fatica (ATL).
+
+**Procedura di aggiornamento** (da eseguire in ogni scansione, dopo il controllo della cartella Drive):
+1. Leggere le credenziali dal file Drive indicato sopra.
+2. Scaricare con `curl` (autenticazione Basic, utente letterale `API_KEY`):
+   `https://intervals.icu/api/v1/athlete/i685995/activities?oldest=AAAA-MM-GG&newest=AAAA-MM-GG` e lo stesso per `/wellness`.
+3. Rigenerare i due CSV con l'intera finestra storica disponibile (semplice e idempotente); nel foglio benessere scartare i giorni privi di qualsiasi misura.
+4. Se i CSV cambiano, aggiornare la scheda "Dati sportivi Garmin" in MEMORIA.md con **periodo coperto, numero di attività, medie e trend recenti** (mai l'elenco delle righe) e committare insieme al resto.
+
+**Uso nei report:** la sezione 2 ("come sta e come rende") usa questi numeri come base oggettiva delle performance, affiancandoli alle sensazioni riferite.
+
+**Note operative:**
+- Il file `_chiave_intervals_icu.txt` e i due Google Sheet in `Dati Garmin` NON vanno indicizzati come schede in MEMORIA.md né rinominati. Gli Sheet restano a disposizione per note manuali dell'utente: se contengono righe, leggerle e integrarle nel report.
+- HRV e SpO2 sono misurati solo nelle notti in cui l'orologio è indossato con il monitoraggio attivo: la copertura parziale è normale, non è un errore.
 
 ## Report PDF
 

@@ -48,8 +48,9 @@ Struttura: `Salute Massimo Sunzini/` → sottocartella `Documenti e referti/` (I
 | 7 | 2026.pdf | `1xOGO-mdzsnQqmNWOfB56YZ7xkdcE-Kjj` | PDF | 1.077.460 B | 2026-08-22 | 22/07/2026 | Indicizzato |
 | 8 | fileReferto 2.pdf | `1A9UZARLfo8YSyNwO756YIx1BctXhO2N-` | PDF | 180.880 B | 2026-08-22 | 29/07/2026 | Indicizzato |
 | 9 | Spirometria.numbers | `1NvRZzHuAC25_8kD0EbB9iLJ93jJhQzaj` | Apple Numbers | 179.841 B | 2026-08-22 16:35 UTC | — | **Non indicizzabile** (formato proprietario; convertire in Sheets/xlsx). Modificato il 22/08 sera, contenuto non leggibile |
-| 10 | Dati Garmin/Attività sportive | `1mK0w3-HCaJUR6dvnw9R-3lsvFBPTqcui-ek0zc58ht0` | Google Sheet | — | 2026-08-22 | — | Fonte dati sportivi — in attesa dei primi dati (setup Strava/Make in corso) |
-| 11 | Dati Garmin/Benessere | `1lLLLOwxaPMKxerPNi-hQu0-kURr-SAGsQByaiO1SmZk` | Google Sheet | — | 2026-08-22 | — | Fonte dati benessere — in attesa dei primi dati (setup intervals.icu in corso) |
+| 10 | Dati Garmin/Attività sportive | `1mK0w3-HCaJUR6dvnw9R-3lsvFBPTqcui-ek0zc58ht0` | Google Sheet | — | 2026-08-22 | — | Vuoto: spazio per note manuali dell'utente (i dati automatici stanno in `dati/garmin/`) |
+| 11 | Dati Garmin/Benessere | `1lLLLOwxaPMKxerPNi-hQu0-kURr-SAGsQByaiO1SmZk` | Google Sheet | — | 2026-08-22 | — | Vuoto: spazio per note manuali dell'utente |
+| 12 | Dati Garmin/_chiave_intervals_icu.txt | `1u5pg86vG7gROVyrv3Yv2ba3OaLtHpv6F` | Testo | 677 B | 2026-08-23 | — | **Credenziali API — non indicizzare, non rinominare, non copiare nel repository** |
 
 ---
 
@@ -168,6 +169,34 @@ Nella norma: urine, glicemia 74, HbA1c 5,7% (39 mmol/mol), elettroliti, calcio 9
 
 ---
 
+## Dati sportivi Garmin (via intervals.icu)
+
+**Fonte:** dispositivi Garmin → Garmin Connect → intervals.icu (account `i685995`, "Max 56", collegato il 23/08/2026) → API → `dati/garmin/attivita.csv` e `dati/garmin/benessere.csv` nel repository. Procedura in `CLAUDE.md`.
+
+**Periodo coperto:** 23/08/2025 – 22/08/2026 (un anno) · **222 attività** · **359 giorni** con almeno una misura di benessere.
+
+**Attività per disciplina:** camminata 146, bici gravel 29, e-bike 16, canottaggio 15, mountain bike 11, palestra 5.
+
+**Volume recente (ultime 8 settimane):** 22 attività, ~22 ore totali, media **2,8 sedute a settimana**. FC media negli allenamenti in cui è stata rilevata: **115 bpm** (11 attività su 22 — la fascia/orologio non registra la FC in tutte le uscite, tipicamente in bici).
+
+**Trend dei parametri di benessere** (media autunno 2025 → media estate 2026):
+
+| Parametro | Set-Nov 2025 | Giu-Ago 2026 | Variazione |
+|---|---|---|---|
+| FC a riposo | 76,4 bpm | 65,1 bpm | **−11,3 bpm** (netto miglioramento) |
+| HRV (rMSSD) | 40,8 ms | 50,2 ms | **+9,5 ms** (miglior recupero) |
+| SpO2 notturna | 92,9% | 94,3% | **+1,4 punti** |
+| Peso | 82,6 kg | 78,5 kg | **−4,1 kg** |
+
+**Segnali rilevanti:**
+- **Miglioramento generale nell'ultimo anno** su tutti i parametri principali: FC a riposo, variabilità cardiaca, saturazione notturna e peso vanno tutti nella direzione giusta. Il calo di peso (da ~85 kg di agosto 2025 a ~77 kg di agosto 2026, circa 8 kg) è graduale e accompagnato da attività costante.
+- **Periodo critico ottobre-dicembre 2025:** la FC a riposo media è salita a 78,6 → 93,9 → **100,0 bpm**, con SpO2 al minimo del periodo (92,0-92,5%). Coincide temporalmente con l'Holter di metà ottobre 2025. Da segnalare ai curanti come possibile finestra di riacutizzazione; il quadro si è poi normalizzato da febbraio 2026.
+- **SpO2 notturna costantemente sotto il 95%** (media annuale ~94%, minimi mensili 92%): coerente con l'ipossia cronica descritta nel CPET. È il parametro da tenere più sotto controllo.
+- **Sonno:** rilevato solo da aprile 2026 (media 6,4-7,2 ore/notte, in leggera diminuzione negli ultimi mesi).
+- Copertura parziale di HRV e SpO2 (4-16 giorni al mese): normale, dipende dalle notti in cui l'orologio viene indossato con il monitoraggio attivo.
+
+---
+
 ## Report generati (output — esclusi dall'indicizzazione)
 
 | File su Drive | ID Drive | Data generazione | Note |
@@ -185,3 +214,4 @@ Nella norma: urine, glicemia 74, HbA1c 5,7% (39 mmol/mol), elettroliti, calcio 9
 | 2026-08-22 18:30 | Correzione formato report | Report PDF rigenerato senza codifica ASCII85 (illeggibile sul viewer mobile di Drive) e ricaricato su Drive; integrità verificata |
 | 2026-08-22 18:45 | Setup pipeline dati Garmin | Creata sottocartella `Dati Garmin` con gli Sheet `Attività sportive` e `Benessere` (vuoti, solo intestazioni); pipeline in ridefinizione (l'utente ha escluso Make e Strava), in attesa di approvazione |
 | 2026-08-23 02:05 | Scansione notturna automatica | 13 elementi censiti; 1 modifica: `Spirometria.numbers` aggiornato il 22/08 alle 16:35 UTC (resta non indicizzabile finché non viene convertito); nessun file nuovo o rimosso; report del 22/08 regolarmente escluso dall'indicizzazione |
+| 2026-08-23 07:45 | Attivazione pipeline Garmin | Collegamento Garmin → intervals.icu verificato e funzionante; scaricato lo storico completo (222 attività, 359 giorni di benessere) in `dati/garmin/`; credenziali salvate su Drive fuori dal repository; aggiunta la scheda "Dati sportivi Garmin" |
