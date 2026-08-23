@@ -99,8 +99,9 @@ story.append(Paragraph(
 # ---------------------------------------------------------------- 2
 story.append(Paragraph("2. Come sta e come rende, secondo le sensazioni e i dati dell'orologio", h))
 story.append(Paragraph(
-    "Massimo si allena con costanza e si sente bene, e ora abbiamo i numeri che lo confermano: <b>222 uscite "
-    "in un anno</b> (soprattutto camminate, bici e canottaggio) e giornate impegnative come quella del 22 agosto, "
+    "Massimo si allena con costanza e si sente bene, e ora abbiamo i numeri che lo confermano: <b>304 uscite "
+    "in un anno, quasi 400 ore e circa 4.000 km</b> (soprattutto camminate, bici e canottaggio), con giornate "
+    "impegnative come quella del 22 agosto, "
     "con quasi due ore di mountain bike al mattino e oltre un'ora di canottaggio a mezzogiorno. Durante il test "
     "in ospedale aveva riferito solo affanno e stanchezza moderati, con un consumo di ossigeno del tutto normale: "
     "l'orologio racconta la stessa storia, con un battito medio di circa 115 durante l'attivit&agrave; e punte "
@@ -108,9 +109,10 @@ story.append(Paragraph(
     "perch&eacute; il corpo si &egrave; abituato a lavorare con meno ossigeno. Il rovescio della medaglia resta lo "
     "stesso: sentendo poco i sintomi, potrebbe non accorgersi di un peggioramento. Per questo il battito a riposo "
     "misurato ogni notte &egrave; il campanello d'allarme pi&ugrave; semplice da tenere d'occhio &mdash; e per ora resta "
-    "tranquillo. L'unica cosa da chiarire &egrave; la lunga pausa di <b>giugno e luglio 2026</b> (una sola uscita a "
-    "giugno e due a luglio, dopo mesi da 25-35 sedute): vale la pena chiedere a Massimo se sia stata una scelta "
-    "o un periodo in cui non si sentiva bene.", corpo))
+    "tranquillo. L'unica cosa da chiarire &egrave; la lunga pausa di <b>giugno e luglio 2026</b>: una sola uscita a "
+    "giugno e due a luglio, dopo otto mesi filati da 26-36 sedute al mese. &Egrave; un'interruzione netta, non un calo "
+    "graduale: vale la pena chiedere a Massimo se sia stata una scelta (caldo, viaggi, impegni) o un periodo in cui "
+    "non si sentiva bene.", corpo))
 
 # ---------------------------------------------------------------- 3
 story.append(Paragraph("3. Consigli e promemoria", h))
@@ -276,8 +278,8 @@ story.append(Paragraph(
     "da 58 a circa 63-67 nel 2026. L'ossigeno notturno &egrave; il punto debole: resta quasi sempre sotto la soglia "
     "del 95%, con il minimo del 92% fra ottobre e novembre 2025 e un recupero nei mesi successivi. Il peso &egrave; "
     "sceso di circa 7 chili in modo graduale e costante: &egrave; il risultato migliore dell'anno. L'attivit&agrave; "
-    "fisica &egrave; stata intensa fino a maggio, quasi assente a giugno e luglio, ed &egrave; ripresa con decisione ad "
-    "agosto.", nota))
+    "fisica &egrave; stata molto regolare da settembre ad aprile (26-36 uscite al mese), &egrave; calata a maggio, si &egrave; "
+    "fermata quasi del tutto a giugno e luglio ed &egrave; ripresa con decisione ad agosto.", nota))
 
 # ---------------------------------------------------------------- 6. fonti
 testa6 = [Paragraph("6. Documenti usati per questo report", h),
@@ -294,7 +296,7 @@ for r in [
     ("2026.pdf (laboratorio Varelli)", "22/07/2026", "Analisi del sangue e delle urine"),
     ("fileReferto 2.pdf", "29/07/2026", "Radiografia delle mani"),
     ("Spirometria.numbers", "&mdash;", "Foglio Apple non leggibile: da convertire per essere incluso"),
-    ("Dati Garmin &mdash; fogli &ldquo;Attivit&agrave; sportive&rdquo; e &ldquo;Benessere&rdquo; (cartella Dati Garmin)", "23/08/2025 - 22/08/2026", "222 allenamenti e 366 giorni di misure di salute, letti da intervals.icu"),
+    ("Dati Garmin &mdash; fogli &ldquo;Attivit&agrave; sportive&rdquo; e &ldquo;Benessere&rdquo; (cartella Dati Garmin)", "23/08/2025 - 22/08/2026", "304 allenamenti (circa 395 ore e 4.000 km) e 366 giorni di misure di salute, letti da intervals.icu"),
 ]:
     inv.append([Paragraph(c, cella) for c in r])
 ti = Table(inv, colWidths=[78 * mm, 26 * mm, 74 * mm], repeatRows=1)

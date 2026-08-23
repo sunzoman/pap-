@@ -3,7 +3,7 @@
 > File di memoria statico. Si aggiorna su richiesta dell'utente e automaticamente tre volte al giorno (4:00, 12:00 e 18:00 ora italiana) tramite Routine pianificata; se la scansione non trova novità non viene fatto alcun commit. Procedura di aggiornamento: vedi `CLAUDE.md`.
 
 **Fonte unica:** cartella Google Drive `Salute Massimo Sunzini` — ID `1MYOQz6jvyd59SkyRhJsugH65FJieO6PU`
-**Ultima scansione:** 2026-08-23 09:15 UTC (11:15 ora italiana)
+**Ultima scansione:** 2026-08-23 10:09 UTC (12:09 ora italiana)
 **File censiti:** 10 (9 leggibili, di cui 2 copie identiche dello stesso referto; 1 non indicizzabile)
 
 ---
@@ -173,7 +173,9 @@ Nella norma: urine, glicemia 74, HbA1c 5,7% (39 mmol/mol), elettroliti, calcio 9
 
 **Fonte:** dispositivi Garmin → Garmin Connect → intervals.icu (account `i685995`, "Max 56", collegato il 23/08/2026) → API → `dati/garmin/attivita.csv` e `dati/garmin/benessere.csv` nel repository. Procedura in `CLAUDE.md`.
 
-**Periodo coperto:** 23/08/2025 – 22/08/2026 (un anno) · **222 attività** · **366 giorni** con almeno una misura di benessere.
+**Periodo coperto:** 23/08/2025 – 22/08/2026 (un anno) · **304 attività** (~395 ore, ~4.000 km) · **366 giorni** con almeno una misura di benessere.
+
+**Attenzione — sincronizzazione ancora in corso:** intervals.icu sta importando lo storico Garmin a blocchi. Nella scansione delle 10:09 UTC del 23/08 sono comparsi **82 allenamenti retroattivi** (ago 2025–gen 2026, prima mezzi vuoti). Massimo riferisce (via Federico, 23/08) di **non aver mai smesso di allenarsi a giugno-luglio 2026**: il buco visibile in quei mesi (1+2 sedute) è quasi certamente storico non ancora sincronizzato, non una pausa reale. Verificare ai prossimi aggiornamenti prima di trarre conclusioni.
 
 **Copia su Drive:** i due CSV sono replicati come Google Sheet nella sottocartella `Dati Garmin` (vedi inventario #10 e #11). Sono output, non fonti.
 
@@ -185,7 +187,7 @@ Regola operativa: nel CSV la colonna **`FC a riposo`** contiene solo i **184 val
 
 > Conseguenza sulle analisi precedenti: la scheda e il report del 23/08/2026 mattina riportavano un "periodo critico ottobre-dicembre 2025 con FC a riposo fino a 100 bpm". **Era un artefatto di questi 62 valori.** Ripulito il dato, la FC a riposo resta nella fascia normale per tutto l'anno. Il report è stato rigenerato e la versione errata cestinata.
 
-**Attività per disciplina:** camminata 146, bici gravel 29, e-bike 16, canottaggio 15, mountain bike 11, palestra 5.
+**Attività per disciplina:** camminata 207, bici gravel 41, canottaggio 20, e-bike 17, mountain bike 11, palestra 7, escursionismo 1.
 
 **Volume recente (ultime 8 settimane):** 22 attività, ~22 ore totali, media **2,8 sedute a settimana**. FC media negli allenamenti in cui è stata rilevata: **115 bpm** (11 attività su 22 — l'Edge 530 usato in bici non è abbinato alla fascia, quindi le uscite in bici non hanno dati cardiaci).
 
@@ -205,7 +207,7 @@ Regola operativa: nel CSV la colonna **`FC a riposo`** contiene solo i **184 val
 - **Composizione corporea in netto miglioramento:** da ~85 kg (agosto 2025) a ~77 kg (agosto 2026), circa **8 kg in un anno**, con massa grassa dal 28% al 24% e VO2max da 36 a 39. È il risultato migliore dell'anno, graduale e accompagnato da attività costante.
 - **SpO2 notturna costantemente sotto il 95%** (media annuale ~94%, minimo mensile 92,0% a novembre 2025): coerente con l'ipossia cronica descritta nel CPET. **È il parametro da tenere più sotto controllo** e il vero elemento da portare allo pneumologo.
 - **FC a riposo stabile e normale** (55–70 bpm come medie mensili), con una lieve risalita nel 2026 rispetto all'autunno 2025. Nessun mese supera la soglia di attenzione di 78 bpm.
-- **Buco di attività giugno-luglio 2026:** 1 sola uscita a giugno e 2 a luglio, dopo mesi da 25-35 sedute; ripresa decisa ad agosto (19 sedute). **Da chiedere a Massimo** se sia stata una pausa voluta (caldo, viaggi) o un periodo di malessere.
+- **Giugno-luglio 2026 apparentemente vuoti (1+2 sedute):** NON è una pausa — Massimo riferisce di essersi allenato regolarmente; i dati sono in coda di sincronizzazione (vedi avviso sopra). Non usare questo buco in commenti clinici.
 - **Sonno:** 6,5 ore/notte in media negli ultimi mesi, in leggera diminuzione rispetto all'autunno.
 - Copertura parziale di HRV e SpO2 (4-16 giorni al mese): normale, dipende dalle notti in cui l'orologio viene indossato con il monitoraggio attivo.
 
@@ -229,5 +231,6 @@ Regola operativa: nel CSV la colonna **`FC a riposo`** contiene solo i **184 val
 | 2026-08-22 18:30 | Correzione formato report | Report PDF rigenerato senza codifica ASCII85 (illeggibile sul viewer mobile di Drive) e ricaricato su Drive; integrità verificata |
 | 2026-08-22 18:45 | Setup pipeline dati Garmin | Creata sottocartella `Dati Garmin` con gli Sheet `Attività sportive` e `Benessere` (vuoti, solo intestazioni); pipeline in ridefinizione (l'utente ha escluso Make e Strava), in attesa di approvazione |
 | 2026-08-23 02:05 | Scansione notturna automatica | 13 elementi censiti; 1 modifica: `Spirometria.numbers` aggiornato il 22/08 alle 16:35 UTC (resta non indicizzabile finché non viene convertito); nessun file nuovo o rimosso; report del 22/08 regolarmente escluso dall'indicizzazione |
+| 2026-08-23 10:09 | Scansione delle 12:00 | Documenti Drive: nessuna novità (10 file, tutti già indicizzati). Garmin: arrivati **82 allenamenti retroattivi** (ago 2025–gen 2026) — sync intervals.icu ancora in corso; totale 304 attività. Nel benessere solo ricalcolo di CTL/ATL. Nota: il buco giu-lug 2026 è storico non sincronizzato, non una pausa (conferma di Massimo) |
 | 2026-08-23 09:15 | Correzione dati + rigenerazione report | Trovati e scartati **62 valori non validi di FC a riposo** (95-117 bpm, artefatti della fonte): invalidavano il "periodo critico ottobre-dicembre 2025" riportato in precedenza. CSV rigenerati con colonna validata + colonna grezza e replicati su Drive come Sheet. Report del 23/08 rigenerato con la nuova struttura (fonti in fondo, tabella e grafici Garmin) e ricaricato; versione errata cestinata |
 | 2026-08-23 07:45 | Attivazione pipeline Garmin | Collegamento Garmin → intervals.icu verificato e funzionante; scaricato lo storico completo (222 attività, 359 giorni di benessere) in `dati/garmin/`; credenziali salvate su Drive fuori dal repository; aggiunta la scheda "Dati sportivi Garmin" |

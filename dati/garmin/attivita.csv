@@ -1,94 +1,176 @@
 Data,Ora,Sport,Nome,Durata (h:mm),Durata (s),Distanza (km),FC media,FC max,Dislivello (m),Calorie,Carico allenamento,Sensazione (1-5),Dispositivo
 2025-08-23,07:52,Walk,Napoli Camminata,0:53,3216,5.11,97,117,204,391,19,,Garmin Venu Sq 2
+2025-08-23,08:56,Hike,Napoli Escursionismo,0:31,1864,2.72,104,137,107,227,15,,Garmin Venu Sq 2
 2025-08-24,07:48,Walk,Napoli Camminata,1:09,4146,6.31,100,124,303,502,29,,Garmin Venu Sq 2
 2025-08-25,08:17,Walk,Napoli Camminata,1:20,4859,7.59,108,134,451,614,51,,Garmin Venu Sq 2
+2025-08-26,08:07,Walk,Napoli Camminata,1:07,4022,6.33,102,141,272,535,38,,Garmin Venu Sq 2
+2025-08-27,07:52,Walk,Napoli Camminata,1:10,4209,6.53,107,138,268,563,41,,Garmin Venu Sq 2
+2025-08-27,11:55,Rowing,Napoli Canottaggio,0:51,3109,4.33,112,150,,518,52,,Garmin Venu Sq 2
 2025-08-28,07:45,Walk,Napoli Camminata,1:18,4710,7.33,107,132,296,589,44,,Garmin Venu Sq 2
+2025-08-29,08:23,Walk,Napoli Camminata,1:12,4358,6.83,105,140,490,531,38,,Garmin Venu Sq 2
+2025-08-30,08:35,Walk,Napoli Camminata,0:54,3278,5.08,107,124,327,418,28,,Garmin Venu Sq 2
 2025-08-31,07:54,Walk,Napoli Camminata,1:19,4745,7.68,113,133,490,616,61,,Garmin Venu Sq 2
 2025-09-01,07:50,Walk,Napoli Camminata,1:18,4681,7.23,108,135,395,627,45,,Garmin Venu Sq 2
 2025-09-02,08:15,EBikeRide,Napoli eBiking,2:06,7572,35.78,,,323,1198,,,Garmin Edge 530
+2025-09-03,07:57,Walk,Napoli Camminata,1:12,4339,6.76,105,131,303,508,37,,Garmin Venu Sq 2
+2025-09-04,07:59,Walk,Napoli Camminata,1:07,4028,6.36,106,139,447,504,41,,Garmin Venu Sq 2
 2025-09-05,05:57,EBikeRide,Napoli eBiking,1:49,6549,33.74,,,162,1036,,,Garmin Edge 530
 2025-09-05,15:56,GravelRide,Napoli Gravel/Ciclismo su sterrato,1:26,5160,22.06,,,302,759,,,Garmin Edge 530
+2025-09-06,08:36,Walk,Napoli Camminata,1:09,4149,6.74,100,132,466,596,32,,Garmin Venu Sq 2
+2025-09-07,08:21,Walk,Napoli Camminata,1:23,5036,7.61,110,136,508,692,62,,Garmin Venu Sq 2
+2025-09-08,07:50,Walk,Napoli Camminata,1:11,4293,6.8,116,146,470,585,61,,Garmin Venu Sq 2
 2025-09-09,08:25,EBikeRide,Napoli eBiking,2:37,9434,44.96,,,360,1448,,,Garmin Edge 530
 2025-09-10,07:58,Walk,Napoli Camminata,1:12,4324,6.93,110,134,507,535,49,,Garmin Venu Sq 2
 2025-09-11,07:50,Walk,Napoli Camminata,1:11,4290,6.76,100,139,285,506,39,,Garmin Venu Sq 2
+2025-09-12,07:38,EBikeRide,Napoli eBiking,2:38,9508,45.09,,,373,1444,,,Garmin Edge 530
 2025-09-13,08:14,Walk,Napoli Camminata,1:07,4063,6.43,106,134,220,464,40,,Garmin Venu Sq 2
+2025-09-14,08:08,Walk,Napoli Camminata,1:16,4608,7.56,94,123,487,499,27,,Garmin Venu Sq 2
+2025-09-15,08:01,Walk,Napoli Camminata,1:10,4214,6.83,97,136,503,486,29,,Garmin Venu Sq 2
 2025-09-15,12:11,Rowing,Napoli Canottaggio,0:27,1655,1.5,115,150,,393,26,,Garmin Venu Sq 2
+2025-09-15,13:09,Rowing,Napoli Canottaggio,0:13,834,1.31,125,147,,171,18,,Garmin Venu Sq 2
 2025-09-16,08:03,Walk,Napoli Camminata,1:13,4434,6.86,106,139,564,536,46,,Garmin Venu Sq 2
+2025-09-17,09:21,Walk,Napoli Camminata,0:11,669,0.95,103,117,46,86,5,,Garmin Venu Sq 2
+2025-09-17,10:35,Rowing,Napoli Canottaggio,0:11,706,1.0,121,149,,144,13,,Garmin Venu Sq 2
 2025-09-17,11:31,Rowing,Napoli Canottaggio,0:12,746,1.03,114,144,,155,8,,Garmin Venu Sq 2
+2025-09-19,07:28,Walk,Napoli Camminata,1:03,3825,6.06,103,128,257,446,32,,Garmin Venu Sq 2
+2025-09-19,13:18,Rowing,Napoli Canottaggio,0:40,2410,3.0,119,150,,397,41,,Garmin Venu Sq 2
+2025-09-20,07:52,Walk,Napoli Camminata,1:26,5184,8.44,105,139,533,646,45,,Garmin Venu Sq 2
 2025-09-20,12:05,Rowing,Napoli Canottaggio,0:19,1158,1.33,118,136,,240,15,,Garmin Venu Sq 2
 2025-09-21,08:10,Walk,Napoli Camminata,1:17,4637,7.59,108,130,436,567,49,,Garmin Venu Sq 2
+2025-09-22,07:40,Walk,Napoli Camminata,1:10,4245,6.88,112,150,277,520,53,,Garmin Venu Sq 2
+2025-09-24,07:57,Walk,Napoli Camminata,1:14,4455,7.0,100,125,303,510,33,,Garmin Venu Sq 2
+2025-09-25,07:47,Walk,Napoli Camminata,1:16,4594,7.04,78,116,292,467,15,,Garmin Venu Sq 2
 2025-09-26,08:02,Walk,Napoli Camminata,1:15,4527,7.08,106,123,426,541,46,,Garmin Venu Sq 2
+2025-09-27,07:52,Walk,Napoli Camminata,1:03,3799,5.93,109,130,296,478,41,,Garmin Venu Sq 2
+2025-09-28,07:47,Walk,Napoli Camminata,1:21,4866,7.66,103,145,458,558,40,,Garmin Venu Sq 2
 2025-09-29,08:36,EBikeRide,Napoli eBiking,0:19,1158,6.49,,,53,228,,,Garmin Edge 530
 2025-09-29,09:05,GravelRide,Napoli Gravel/Ciclismo su sterrato,2:04,7481,35.18,,,316,1121,,,Garmin Edge 530
 2025-10-01,07:37,GravelRide,Napoli Gravel/Ciclismo su sterrato,2:33,9217,44.44,,,359,1380,,,Garmin Edge 530
 2025-10-02,08:34,GravelRide,Napoli Gravel/Ciclismo su sterrato,0:38,2317,10.5,,,103,341,,,Garmin Edge 530
 2025-10-03,08:08,GravelRide,Napoli Gravel/Ciclismo su sterrato,2:36,9399,44.3,,,389,1354,,,Garmin Edge 530
+2025-10-04,08:10,Walk,Napoli Camminata,1:14,4480,7.23,107,150,278,534,45,,Garmin Venu Sq 2
+2025-10-05,08:48,Walk,Napoli Camminata,0:45,2753,4.36,115,127,235,423,37,,Garmin Venu Sq 2
 2025-10-06,08:03,GravelRide,Napoli Gravel/Ciclismo su sterrato,2:41,9664,45.05,,,379,1390,,,Garmin Edge 530
+2025-10-07,08:16,Walk,Napoli Camminata,1:16,4611,7.39,101,146,301,591,35,,Garmin Venu Sq 2
+2025-10-08,07:51,GravelRide,Napoli Gravel/Ciclismo su sterrato,2:17,8258,38.41,,,358,1268,,,Garmin Edge 530
 2025-10-09,07:40,Walk,Napoli Camminata,1:13,4401,6.81,94,131,381,487,24,,Garmin Venu Sq 2
+2025-10-10,07:54,GravelRide,Napoli Gravel/Ciclismo su sterrato,2:35,9301,44.31,,,361,1367,,,Garmin Edge 530
+2025-10-11,07:53,Walk,Napoli Camminata,1:14,4495,7.06,104,146,332,523,11,,Garmin Venu Sq 2
 2025-10-12,08:34,Walk,Napoli Camminata,1:00,3628,5.82,102,130,289,413,5,,Garmin Venu Sq 2
+2025-10-12,09:52,Rowing,Napoli Canottaggio,0:17,1058,1.68,136,150,,271,41,,Garmin Venu Sq 2
 2025-10-12,10:32,Rowing,Napoli Canottaggio,0:18,1088,1.6,134,150,,389,24,,Garmin Venu Sq 2
+2025-10-13,08:10,GravelRide,Napoli Gravel/Ciclismo su sterrato,1:56,7011,33.18,,,315,1063,,,Garmin Edge 530
+2025-10-14,08:01,Walk,Napoli Camminata,1:12,4323,6.92,105,130,286,529,9,,Garmin Venu Sq 2
+2025-10-15,08:03,Walk,Napoli Camminata,0:53,3187,5.05,99,125,331,397,,,Garmin Venu Sq 2
 2025-10-16,08:17,Walk,Napoli Camminata,1:13,4396,6.86,107,150,420,560,46,,Garmin Venu Sq 2
+2025-10-17,08:35,Walk,Napoli Camminata,1:12,4325,6.84,111,140,437,559,15,,Garmin Venu Sq 2
 2025-10-18,08:58,Walk,Napoli Camminata,0:37,2246,3.54,100,143,156,265,2,,Garmin Venu Sq 2
 2025-10-18,11:54,Rowing,Napoli Canottaggio,0:49,2963,4.01,115,150,,606,51,,Garmin Venu Sq 2
 2025-10-19,08:31,Walk,Napoli Camminata,1:11,4300,6.73,101,125,266,504,6,,Garmin Venu Sq 2
 2025-10-20,08:13,Walk,Napoli Camminata,1:03,3818,6.06,108,127,253,509,11,,Garmin Venu Sq 2
 2025-10-20,12:14,Rowing,Napoli Canottaggio,0:50,3029,4.48,115,150,,480,40,,Garmin Venu Sq 2
 2025-10-21,08:06,Walk,Napoli Camminata,1:10,4213,6.85,106,140,314,541,47,,Garmin Venu Sq 2
+2025-10-22,08:15,Walk,Napoli Camminata,1:01,3661,5.78,112,129,469,476,48,,Garmin Venu Sq 2
 2025-10-23,08:16,Walk,Napoli Camminata,1:14,4447,7.18,109,150,262,546,26,,Garmin Venu Sq 2
 2025-10-24,08:19,Walk,Napoli Camminata,1:01,3676,5.9,111,137,261,472,16,,Garmin Venu Sq 2
 2025-10-26,07:09,Walk,Napoli Camminata,1:08,4120,6.72,111,142,312,527,18,,Garmin Venu Sq 2
+2025-10-27,07:19,Walk,Napoli Camminata,1:11,4301,6.84,90,118,481,452,,,Garmin Venu Sq 2
+2025-10-28,07:20,Walk,Napoli Camminata,1:11,4302,6.97,108,134,311,549,15,,Garmin Venu Sq 2
+2025-10-29,07:17,GravelRide,Napoli Gravel,2:36,9384,44.62,,,370,1356,,,Garmin Edge 530
 2025-10-29,11:36,Walk,Napoli Camminata,0:32,1930,3.05,117,139,164,315,11,,Garmin Venu Sq 2
+2025-10-30,07:32,Walk,Napoli Camminata,1:11,4297,6.9,90,124,493,459,2,,Garmin Venu Sq 2
 2025-10-31,07:28,GravelRide,Napoli Gravel,2:31,9101,43.45,,,365,1317,,,Garmin Edge 530
+2025-11-01,07:35,Walk,Napoli Camminata,1:10,4255,6.92,105,146,361,527,12,,Garmin Venu Sq 2
 2025-11-01,12:14,Rowing,Napoli Canottaggio,0:33,2039,3.0,115,145,,333,12,,Garmin Venu Sq 2
+2025-11-02,07:58,Walk,Napoli Camminata,1:14,4450,7.11,102,144,413,527,10,,Garmin Venu Sq 2
+2025-11-03,07:52,Walk,Napoli Camminata,1:10,4219,6.87,117,150,353,599,76,,Garmin Venu Sq 2
 2025-11-04,07:19,GravelRide,Napoli Gravel,2:49,10198,47.76,,,420,1452,,,Garmin Edge 530
+2025-11-05,07:21,GravelRide,Napoli Gravel,2:32,9142,42.68,,,374,1321,,,Garmin Edge 530
 2025-11-06,07:57,Walk,Napoli Camminata,1:11,4287,6.87,94,140,427,525,11,,Garmin Venu Sq 2
 2025-11-07,07:20,GravelRide,Napoli Gravel,2:46,10018,45.18,,,375,1328,,,Garmin Edge 530
+2025-11-09,08:09,Walk,Napoli Camminata,1:14,4461,7.01,112,150,288,579,34,,Garmin Venu Sq 2
+2025-11-10,08:00,Walk,Napoli Camminata,1:13,4410,6.99,89,126,439,500,4,,Garmin Venu Sq 2
 2025-11-11,07:28,GravelRide,Napoli Gravel,2:36,9404,45.0,,,372,1386,,,Garmin Edge 530
+2025-11-12,07:42,Walk,Napoli Camminata,1:10,4214,6.94,100,129,401,526,7,,Garmin Venu Sq 2
+2025-11-13,07:15,GravelRide,Napoli Gravel,2:21,8513,40.34,,,367,1269,,,Garmin Edge 530
 2025-11-14,07:45,GravelRide,Napoli Gravel,2:41,9700,44.61,,,424,1392,,,Garmin Edge 530
 2025-11-15,07:56,Walk,Napoli Camminata,1:10,4208,6.81,98,131,271,496,9,,Garmin Venu Sq 2
+2025-11-16,08:05,Walk,Napoli Camminata,1:10,4212,6.6,93,129,266,471,5,,Garmin Venu Sq 2
+2025-11-17,07:50,Walk,Napoli Camminata,1:19,4758,7.71,84,136,322,562,9,,Garmin Venu Sq 2
 2025-11-18,07:57,Walk,Napoli Camminata,1:13,4407,6.98,77,116,422,456,11,,Garmin Venu Sq 2
 2025-11-19,07:42,GravelRide,Napoli Gravel,2:28,8898,43.38,,,371,1328,,,Garmin Edge 530
+2025-11-20,07:29,GravelRide,Napoli Gravel,2:34,9286,43.02,,,372,1318,,,Garmin Edge 530
 2025-11-21,07:58,Walk,Napoli Camminata,0:37,2242,3.39,87,116,269,277,7,,Garmin Venu Sq 2
 2025-11-22,08:18,Walk,Napoli Camminata,1:13,4393,6.88,108,127,447,559,14,,Garmin Venu Sq 2
+2025-11-23,08:00,Walk,Camminata,1:05,3900,6.9,,,,268,,,GARMIN CONNECT
+2025-11-25,08:09,Workout,Cardio,0:30,1814,,113,149,,293,25,,Garmin Venu Sq 2
 2025-11-25,08:45,Workout,Cardio,0:16,972,,110,138,,153,12,,Garmin Venu Sq 2
+2025-11-27,08:11,Walk,Napoli Camminata,1:11,4279,6.96,89,124,295,495,2,,Garmin Venu Sq 2
 2025-11-28,07:59,Walk,Napoli Camminata,1:10,4243,6.78,99,127,449,510,31,,Garmin Venu Sq 2
+2025-11-29,08:13,Walk,Napoli Camminata,1:17,4644,7.49,83,123,351,530,16,,Garmin Venu Sq 2
 2025-11-30,07:53,Walk,Napoli Camminata,1:13,4411,7.03,112,148,340,585,55,,Garmin Venu Sq 2
+2025-12-01,08:12,Walk,Napoli Camminata,1:10,4258,6.88,114,149,392,552,56,,Garmin Venu Sq 2
+2025-12-02,08:06,Walk,Napoli Camminata,1:15,4534,7.12,106,129,262,558,49,,Garmin Venu Sq 2
 2025-12-03,08:04,GravelRide,Napoli Gravel,2:38,9535,44.19,,,378,1325,,,Garmin Edge 530
 2025-12-04,08:19,Walk,Napoli Camminata,1:08,4102,6.79,85,118,356,458,1,,Garmin Venu Sq 2
 2025-12-05,08:08,Walk,Napoli Camminata,1:08,4138,6.91,109,149,457,543,35,,Garmin Venu Sq 2
 2025-12-07,08:10,Walk,Napoli Camminata,1:16,4587,7.66,118,150,281,642,45,,Garmin Venu Sq 2
 2025-12-08,08:13,Walk,Napoli Camminata,1:10,4205,6.77,102,128,447,524,10,,Garmin Venu Sq 2
 2025-12-09,07:58,GravelRide,Napoli Gravel,2:32,9133,43.39,,,370,1342,,,Garmin Edge 530
+2025-12-10,08:02,GravelRide,Napoli Gravel,2:39,9586,44.05,,,367,1317,,,Garmin Edge 530
+2025-12-11,07:55,Walk,Napoli Camminata,1:14,4473,7.41,93,124,268,498,2,,Garmin Venu Sq 2
+2025-12-12,08:03,GravelRide,Napoli Gravel,2:39,9588,44.1,,,370,1318,,,Garmin Edge 530
 2025-12-13,08:15,Walk,Napoli Camminata,1:10,4205,6.91,111,148,397,572,24,,Garmin Venu Sq 2
+2025-12-14,08:09,Walk,Napoli Camminata,1:14,4456,7.47,95,134,324,502,2,,Garmin Venu Sq 2
 2025-12-15,07:51,GravelRide,Napoli Gravel,2:34,9297,42.99,,,372,1304,,,Garmin Edge 530
+2025-12-16,08:00,GravelRide,Napoli Gravel,2:33,9185,42.42,,,385,1284,,,Garmin Edge 530
 2025-12-17,07:53,Walk,Napoli Camminata,1:07,4076,6.66,98,130,564,493,7,,Garmin Venu Sq 2
 2025-12-18,07:55,Walk,Napoli Camminata,1:15,4539,7.53,92,116,312,497,1,,Garmin Venu Sq 2
 2025-12-19,07:37,GravelRide,Napoli Gravel,2:26,8774,42.27,,,376,1300,,,Garmin Edge 530
+2025-12-20,08:08,GravelRide,Napoli Gravel,2:36,9395,44.55,,,385,1359,,,Garmin Edge 530
 2025-12-21,08:07,Walk,Napoli Camminata,1:12,4365,7.21,82,136,288,481,3,,Garmin Venu Sq 2
 2025-12-22,08:07,Walk,Napoli Camminata,1:12,4328,7.14,100,126,242,513,6,,Garmin Venu Sq 2
+2025-12-23,08:02,Walk,Napoli Camminata,1:08,4124,6.81,94,127,242,485,6,,Garmin Venu Sq 2
+2025-12-24,08:16,Walk,Napoli Camminata,0:26,1590,2.51,72,115,145,170,,,Garmin Venu Sq 2
 2025-12-26,08:44,Walk,Napoli Camminata,1:06,4015,6.81,111,150,245,523,26,,Garmin Venu Sq 2
 2025-12-27,08:14,Walk,Napoli Camminata,1:11,4314,7.33,93,140,363,505,2,,Garmin Venu Sq 2
+2025-12-28,08:22,Walk,Napoli Camminata,1:10,4229,7.17,117,142,302,589,19,,Garmin Venu Sq 2
 2025-12-30,08:09,Walk,Napoli Camminata,0:57,3464,5.63,101,126,259,415,3,,Garmin Venu Sq 2
+2025-12-31,08:30,Walk,Napoli Camminata,1:14,4495,7.34,92,139,426,506,3,,Garmin Venu Sq 2
+2026-01-01,08:43,Walk,Napoli Camminata,2:02,7335,11.54,95,145,393,874,13,,Garmin Venu Sq 2
 2026-01-02,08:20,Walk,Napoli Camminata,1:06,3989,6.57,82,102,240,429,,,Garmin Venu Sq 2
 2026-01-02,09:40,Walk,Napoli Camminata,0:08,488,0.81,99,108,25,54,,,Garmin Venu Sq 2
 2026-01-03,08:21,Walk,Napoli Camminata,1:16,4566,7.57,107,139,260,577,13,,Garmin Venu Sq 2
+2026-01-04,08:53,Walk,Napoli Camminata,1:07,4036,6.83,111,146,233,550,51,,Garmin Venu Sq 2
 2026-01-05,08:30,Workout,Cardio,0:39,2374,,100,132,,289,17,,Garmin Venu Sq 2
 2026-01-06,08:36,Walk,Napoli Camminata,1:12,4325,7.36,113,132,276,598,53,,Garmin Venu Sq 2
 2026-01-07,08:48,Walk,Napoli Camminata,1:09,4182,7.03,113,142,249,555,51,,Garmin Venu Sq 2
 2026-01-08,08:32,Walk,Napoli Camminata,1:12,4374,7.38,103,147,285,518,31,,Garmin Venu Sq 2
 2026-01-09,08:42,Walk,Napoli Camminata,0:17,1076,1.75,83,91,82,117,,,Garmin Venu Sq 2
+2026-01-09,09:05,Walk,Napoli Camminata,0:54,3279,5.5,117,145,221,462,21,,Garmin Venu Sq 2
+2026-01-10,08:16,Walk,Napoli Camminata,1:08,4107,6.88,112,146,238,533,15,,Garmin Venu Sq 2
+2026-01-11,08:26,Walk,Napoli Camminata,1:17,4629,7.68,106,150,336,573,27,,Garmin Venu Sq 2
 2026-01-12,08:26,Walk,Napoli Camminata,1:13,4396,7.43,95,131,385,509,25,,Garmin Venu Sq 2
 2026-01-13,08:26,Walk,Napoli Camminata,1:13,4423,7.45,102,147,270,534,36,,Garmin Venu Sq 2
 2026-01-14,08:36,Walk,Napoli Camminata,1:05,3900,6.64,95,139,248,446,19,,Garmin Venu Sq 2
+2026-01-14,10:19,Walk,Napoli Camminata,0:09,548,0.93,102,128,68,71,4,,Garmin Venu Sq 2
 2026-01-15,08:07,Walk,Napoli Camminata,1:14,4443,7.48,116,132,309,608,57,,Garmin Venu Sq 2
+2026-01-16,08:23,Walk,Napoli Camminata,1:14,4467,7.64,94,136,328,518,21,,Garmin Venu Sq 2
+2026-01-17,08:00,Walk,Napoli Camminata,1:14,4474,7.66,95,146,308,522,22,,Garmin Venu Sq 2
 2026-01-18,08:23,Walk,Napoli Camminata,1:14,4480,7.64,104,134,307,566,11,,Garmin Venu Sq 2
 2026-01-19,08:33,Workout,Cardio,0:37,2261,,111,149,,360,25,,Garmin Venu Sq 2
 2026-01-20,08:36,Walk,Napoli Camminata,0:55,3306,5.73,116,141,313,485,44,,Garmin Venu Sq 2
 2026-01-22,08:30,Walk,Napoli Camminata,0:52,3141,5.22,96,123,286,392,17,,Garmin Venu Sq 2
+2026-01-23,08:07,GravelRide,Napoli Gravel,1:43,6227,32.24,,,186,963,,,Garmin Edge 530
 2026-01-23,11:48,Walk,Napoli Camminata,0:24,1485,2.0,99,117,360,258,9,,Garmin Venu Sq 2
 2026-01-24,08:49,Workout,Cardio,0:37,2222,,100,135,,272,14,,Garmin Venu Sq 2
+2026-01-24,10:19,Walk,Napoli Camminata,0:33,1987,3.06,107,119,192,266,17,,Garmin Venu Sq 2
+2026-01-25,08:34,Walk,Napoli Camminata,0:01,97,0.12,82,90,26,10,,,Garmin Venu Sq 2
 2026-01-25,08:52,Walk,Napoli Camminata,1:10,4239,7.21,85,106,313,461,9,,Garmin Venu Sq 2
+2026-01-26,08:06,Workout,Cardio,0:26,1610,,124,150,,304,45,,Garmin Venu Sq 2
+2026-01-27,08:23,Walk,Napoli Camminata,1:04,3844,6.58,98,128,326,478,22,,Garmin Venu Sq 2
 2026-01-28,09:06,Workout,Cardio,0:39,2354,,103,150,,282,29,,Garmin Venu Sq 2
+2026-01-29,08:33,Walk,Napoli Camminata,1:16,4583,7.68,104,136,455,562,8,,Garmin Venu Sq 2
 2026-01-30,08:20,GravelRide,Napoli Gravel,2:20,8445,40.19,,,377,1243,,,Garmin Edge 530
 2026-01-31,08:36,Walk,Napoli Camminata,1:14,4489,7.49,110,147,424,577,14,,Garmin Venu Sq 2
 2026-02-01,08:29,Walk,Napoli Camminata,1:12,4330,7.38,105,130,362,548,8,,Garmin Venu Sq 2
