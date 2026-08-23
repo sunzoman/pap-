@@ -3,7 +3,7 @@
 > File di memoria statico. Si aggiorna su richiesta dell'utente e automaticamente tre volte al giorno (4:00, 12:00 e 18:00 ora italiana) tramite Routine pianificata; se la scansione non trova novità non viene fatto alcun commit. Procedura di aggiornamento: vedi `CLAUDE.md`.
 
 **Fonte unica:** cartella Google Drive `Salute Massimo Sunzini` — ID `1MYOQz6jvyd59SkyRhJsugH65FJieO6PU`
-**Ultima scansione:** 2026-08-23 02:05 UTC (04:05 ora italiana)
+**Ultima scansione:** 2026-08-23 09:15 UTC (11:15 ora italiana)
 **File censiti:** 10 (9 leggibili, di cui 2 copie identiche dello stesso referto; 1 non indicizzabile)
 
 ---
@@ -48,8 +48,8 @@ Struttura: `Salute Massimo Sunzini/` → sottocartella `Documenti e referti/` (I
 | 7 | 2026.pdf | `1xOGO-mdzsnQqmNWOfB56YZ7xkdcE-Kjj` | PDF | 1.077.460 B | 2026-08-22 | 22/07/2026 | Indicizzato |
 | 8 | fileReferto 2.pdf | `1A9UZARLfo8YSyNwO756YIx1BctXhO2N-` | PDF | 180.880 B | 2026-08-22 | 29/07/2026 | Indicizzato |
 | 9 | Spirometria.numbers | `1NvRZzHuAC25_8kD0EbB9iLJ93jJhQzaj` | Apple Numbers | 179.841 B | 2026-08-22 16:35 UTC | — | **Non indicizzabile** (formato proprietario; convertire in Sheets/xlsx). Modificato il 22/08 sera, contenuto non leggibile |
-| 10 | Dati Garmin/Attività sportive | `1mK0w3-HCaJUR6dvnw9R-3lsvFBPTqcui-ek0zc58ht0` | Google Sheet | — | 2026-08-22 | — | Vuoto: spazio per note manuali dell'utente (i dati automatici stanno in `dati/garmin/`) |
-| 11 | Dati Garmin/Benessere | `1lLLLOwxaPMKxerPNi-hQu0-kURr-SAGsQByaiO1SmZk` | Google Sheet | — | 2026-08-22 | — | Vuoto: spazio per note manuali dell'utente |
+| 10 | Dati Garmin/Attività sportive | `1dLSwnIL3qWT_VbY4KsqbHlWFJh404CrSCIeTOh7hJcc` | Google Sheet | 222 righe | 2026-08-23 | — | **Output**: copia su Drive di `dati/garmin/attivita.csv`. Non è una fonte: non indicizzare come scheda, non rinominare. La versione vuota del 22/08 è stata cestinata |
+| 11 | Dati Garmin/Benessere | `12w48yc0ZnQ8rVY-39iv0nQ-OPq-t_UpKoCfBQc1des0` | Google Sheet | 366 righe | 2026-08-23 | — | **Output**: copia su Drive di `dati/garmin/benessere.csv`. Non è una fonte: non indicizzare come scheda, non rinominare. La versione vuota del 22/08 è stata cestinata |
 | 12 | Dati Garmin/_chiave_intervals_icu.txt | `1u5pg86vG7gROVyrv3Yv2ba3OaLtHpv6F` | Testo | 677 B | 2026-08-23 | — | **Credenziali API — non indicizzare, non rinominare, non copiare nel repository** |
 
 ---
@@ -173,26 +173,40 @@ Nella norma: urine, glicemia 74, HbA1c 5,7% (39 mmol/mol), elettroliti, calcio 9
 
 **Fonte:** dispositivi Garmin → Garmin Connect → intervals.icu (account `i685995`, "Max 56", collegato il 23/08/2026) → API → `dati/garmin/attivita.csv` e `dati/garmin/benessere.csv` nel repository. Procedura in `CLAUDE.md`.
 
-**Periodo coperto:** 23/08/2025 – 22/08/2026 (un anno) · **222 attività** · **359 giorni** con almeno una misura di benessere.
+**Periodo coperto:** 23/08/2025 – 22/08/2026 (un anno) · **222 attività** · **366 giorni** con almeno una misura di benessere.
+
+**Copia su Drive:** i due CSV sono replicati come Google Sheet nella sottocartella `Dati Garmin` (vedi inventario #10 e #11). Sono output, non fonti.
+
+### Dato NON VALIDO: frequenza cardiaca a riposo sopra 95 bpm
+
+Verificato il 23/08/2026: dei 246 valori di `restingHR` restituiti da intervals.icu, **62 sono compresi fra 95 e 117 bpm e non sono misure reali**. Prove: (a) compaiono solo nei giorni senza HRV/SpO2, cioè nelle notti in cui l'orologio non è stato indossato; (b) si ripetono identici per giorni consecutivi (107 × 19 volte, 105 × 17, 111 × 15); (c) si alternano a valori normali su giorni adiacenti (17/11 = 105, 18/11 = 56, 19/11 = 105), fisiologicamente impossibile.
+
+Regola operativa: nel CSV la colonna **`FC a riposo`** contiene solo i **184 valori attendibili** (50–93 bpm); la colonna **`FC a riposo (dato grezzo)`** conserva quanto restituito dalla fonte. **Solo la colonna validata va usata** per sintesi, grafici e report.
+
+> Conseguenza sulle analisi precedenti: la scheda e il report del 23/08/2026 mattina riportavano un "periodo critico ottobre-dicembre 2025 con FC a riposo fino a 100 bpm". **Era un artefatto di questi 62 valori.** Ripulito il dato, la FC a riposo resta nella fascia normale per tutto l'anno. Il report è stato rigenerato e la versione errata cestinata.
 
 **Attività per disciplina:** camminata 146, bici gravel 29, e-bike 16, canottaggio 15, mountain bike 11, palestra 5.
 
-**Volume recente (ultime 8 settimane):** 22 attività, ~22 ore totali, media **2,8 sedute a settimana**. FC media negli allenamenti in cui è stata rilevata: **115 bpm** (11 attività su 22 — la fascia/orologio non registra la FC in tutte le uscite, tipicamente in bici).
+**Volume recente (ultime 8 settimane):** 22 attività, ~22 ore totali, media **2,8 sedute a settimana**. FC media negli allenamenti in cui è stata rilevata: **115 bpm** (11 attività su 22 — l'Edge 530 usato in bici non è abbinato alla fascia, quindi le uscite in bici non hanno dati cardiaci).
 
-**Trend dei parametri di benessere** (media autunno 2025 → media estate 2026):
+**Trend dei parametri di benessere** (media autunno 2025 → media estate 2026, solo dati validati):
 
 | Parametro | Set-Nov 2025 | Giu-Ago 2026 | Variazione |
 |---|---|---|---|
-| FC a riposo | 76,4 bpm | 65,1 bpm | **−11,3 bpm** (netto miglioramento) |
-| HRV (rMSSD) | 40,8 ms | 50,2 ms | **+9,5 ms** (miglior recupero) |
+| FC a riposo | 58,7 bpm | 65,1 bpm | +6,4 bpm (resta in fascia normale) |
+| HRV (rMSSD) | 40,8 ms | 50,2 ms | **+9,4 ms** (miglior recupero) |
 | SpO2 notturna | 92,9% | 94,3% | **+1,4 punti** |
 | Peso | 82,6 kg | 78,5 kg | **−4,1 kg** |
+| Massa grassa | 27,3% | 25,1% | **−2,2 punti** |
+| VO2max | 37,1 | 39,0 | **+1,9** |
+| Sonno | 7,1 h | 6,5 h | −0,6 h |
 
 **Segnali rilevanti:**
-- **Miglioramento generale nell'ultimo anno** su tutti i parametri principali: FC a riposo, variabilità cardiaca, saturazione notturna e peso vanno tutti nella direzione giusta. Il calo di peso (da ~85 kg di agosto 2025 a ~77 kg di agosto 2026, circa 8 kg) è graduale e accompagnato da attività costante.
-- **Periodo critico ottobre-dicembre 2025:** la FC a riposo media è salita a 78,6 → 93,9 → **100,0 bpm**, con SpO2 al minimo del periodo (92,0-92,5%). Coincide temporalmente con l'Holter di metà ottobre 2025. Da segnalare ai curanti come possibile finestra di riacutizzazione; il quadro si è poi normalizzato da febbraio 2026.
-- **SpO2 notturna costantemente sotto il 95%** (media annuale ~94%, minimi mensili 92%): coerente con l'ipossia cronica descritta nel CPET. È il parametro da tenere più sotto controllo.
-- **Sonno:** rilevato solo da aprile 2026 (media 6,4-7,2 ore/notte, in leggera diminuzione negli ultimi mesi).
+- **Composizione corporea in netto miglioramento:** da ~85 kg (agosto 2025) a ~77 kg (agosto 2026), circa **8 kg in un anno**, con massa grassa dal 28% al 24% e VO2max da 36 a 39. È il risultato migliore dell'anno, graduale e accompagnato da attività costante.
+- **SpO2 notturna costantemente sotto il 95%** (media annuale ~94%, minimo mensile 92,0% a novembre 2025): coerente con l'ipossia cronica descritta nel CPET. **È il parametro da tenere più sotto controllo** e il vero elemento da portare allo pneumologo.
+- **FC a riposo stabile e normale** (55–70 bpm come medie mensili), con una lieve risalita nel 2026 rispetto all'autunno 2025. Nessun mese supera la soglia di attenzione di 78 bpm.
+- **Buco di attività giugno-luglio 2026:** 1 sola uscita a giugno e 2 a luglio, dopo mesi da 25-35 sedute; ripresa decisa ad agosto (19 sedute). **Da chiedere a Massimo** se sia stata una pausa voluta (caldo, viaggi) o un periodo di malessere.
+- **Sonno:** 6,5 ore/notte in media negli ultimi mesi, in leggera diminuzione rispetto all'autunno.
 - Copertura parziale di HRV e SpO2 (4-16 giorni al mese): normale, dipende dalle notti in cui l'orologio viene indossato con il monitoraggio attivo.
 
 ---
@@ -202,6 +216,7 @@ Nella norma: urine, glicemia 74, HbA1c 5,7% (39 mmol/mol), elettroliti, calcio 9
 | File su Drive | ID Drive | Data generazione | Note |
 |---|---|---|---|
 | 22.08.2026_Report Salute Massimo Sunzini.pdf (cartella radice) | `1527bVew21gPDMF2jXkktmXVrty-BATTi` | 22/08/2026 | Versione in linguaggio divulgativo, senza dati Holter pressorio (non validi); PDF rigenerato in formato compatibile col viewer mobile di Drive. Sostituisce le versioni precedenti dello stesso giorno (cestinate) |
+| 23.08.2026_Report Salute Massimo Sunzini.pdf (cartella radice) | `1WKQRu_PtrUwlPblJWmCm0JOIJlxKfkSk` | 23/08/2026 | 4 pagine, nuova struttura richiesta dall'utente: commenti → tabella Garmin mese per mese → grafici → **fonti in fondo**. Integra gli allenamenti Garmin nel commento 2. Esclude i dati non validi (Holter pressorio e le 62 FC a riposo ≥ 95 bpm). 16.045 B, integrità verificata. Sostituisce la versione errata dello stesso giorno (cestinata) |
 
 ---
 
@@ -214,4 +229,5 @@ Nella norma: urine, glicemia 74, HbA1c 5,7% (39 mmol/mol), elettroliti, calcio 9
 | 2026-08-22 18:30 | Correzione formato report | Report PDF rigenerato senza codifica ASCII85 (illeggibile sul viewer mobile di Drive) e ricaricato su Drive; integrità verificata |
 | 2026-08-22 18:45 | Setup pipeline dati Garmin | Creata sottocartella `Dati Garmin` con gli Sheet `Attività sportive` e `Benessere` (vuoti, solo intestazioni); pipeline in ridefinizione (l'utente ha escluso Make e Strava), in attesa di approvazione |
 | 2026-08-23 02:05 | Scansione notturna automatica | 13 elementi censiti; 1 modifica: `Spirometria.numbers` aggiornato il 22/08 alle 16:35 UTC (resta non indicizzabile finché non viene convertito); nessun file nuovo o rimosso; report del 22/08 regolarmente escluso dall'indicizzazione |
+| 2026-08-23 09:15 | Correzione dati + rigenerazione report | Trovati e scartati **62 valori non validi di FC a riposo** (95-117 bpm, artefatti della fonte): invalidavano il "periodo critico ottobre-dicembre 2025" riportato in precedenza. CSV rigenerati con colonna validata + colonna grezza e replicati su Drive come Sheet. Report del 23/08 rigenerato con la nuova struttura (fonti in fondo, tabella e grafici Garmin) e ricaricato; versione errata cestinata |
 | 2026-08-23 07:45 | Attivazione pipeline Garmin | Collegamento Garmin → intervals.icu verificato e funzionante; scaricato lo storico completo (222 attività, 359 giorni di benessere) in `dati/garmin/`; credenziali salvate su Drive fuori dal repository; aggiunta la scheda "Dati sportivi Garmin" |

@@ -44,6 +44,7 @@ Note operative:
 - I duplicati (stesso titolo e stessa dimensione) vanno censiti una sola volta come scheda, annotando gli ID di tutte le copie.
 - Il contenuto dei referti è **dato sanitario sensibile**: non copiarlo fuori da questo repository e non inviarlo a servizi esterni.
 - **Dati marcati NON VALIDI:** se l'utente segnala che un dato o un referto non è attendibile (es. errore di misurazione), marcarlo chiaramente in MEMORIA.md, rinominare il file su Drive aggiungendo l'indicazione `[... NON VALIDO ...]` nel nome e non usare più quel dato per sintesi cliniche o report.
+- **Verifica di plausibilità (regola del 23/08/2026):** prima di usare qualunque serie di misure in un commento clinico, controllare che i valori siano fisiologicamente plausibili. Sono campanelli d'allarme: valori identici ripetuti per giorni consecutivi, salti impossibili fra giorni adiacenti, valori presenti solo quando mancano tutte le altre misure della stessa notte. Se una serie è contaminata, escludere i valori sospetti, conservare il dato grezzo in una colonna a parte e **documentare in MEMORIA.md l'esclusione e le conclusioni precedenti che ne risultano invalidate**. Non presentare mai come reperto clinico un dato non verificato: allarma inutilmente la famiglia.
 
 ## Dati sportivi Garmin (pipeline attiva dal 23/08/2026)
 
@@ -54,8 +55,12 @@ Note operative:
 **Prerequisito di rete:** l'ambiente cloud deve avere `intervals.icu` tra i domini consentiti (impostato il 23/08/2026 in Accesso alla rete → Personalizzato). Le chiamate vanno fatte con `curl` (urllib di Python non passa dal proxy e riceve 403).
 
 **File dati nel repository** (aggiornati a ogni scansione, sono la fonte per i report):
-- `dati/garmin/attivita.csv` — una riga per allenamento: data, sport, nome, durata, distanza, FC media/max, dislivello, calorie, carico, sensazione.
-- `dati/garmin/benessere.csv` — una riga per giorno con almeno una misura: FC a riposo, HRV (rMSSD), sonno, punteggio sonno, SpO2, peso, massa grassa, VO2max, passi, forma (CTL), fatica (ATL).
+- `dati/garmin/attivita.csv` — una riga per allenamento: data, ora, sport, nome, durata, distanza, FC media/max, dislivello, calorie, carico, sensazione, dispositivo.
+- `dati/garmin/benessere.csv` — una riga per giorno con almeno una misura: FC a riposo (validata), FC a riposo (dato grezzo), HRV (rMSSD), sonno, punteggio sonno, SpO2, peso, massa grassa, VO2max, passi, forma (CTL), fatica (ATL).
+
+**FC a riposo — filtro obbligatorio:** intervals.icu restituisce, nelle notti senza orologio, valori di `restingHR` fra 95 e 117 bpm che **non sono misure** (ripetuti identici per giorni, alternati a valori normali). Scrivere nella colonna `FC a riposo` solo i valori **< 95 bpm** e conservare tutto il resto in `FC a riposo (dato grezzo)`. Usare **solo la colonna validata** per medie, grafici e commenti.
+
+**Copia su Drive:** dopo ogni rigenerazione dei CSV, replicarli come Google Sheet `Attività sportive` e `Benessere` nella sottocartella `Dati Garmin` (upload con `contentMimeType: text/csv`, che Drive converte in Sheet), cestinando la versione precedente. Sono **output**, non fonti: non indicizzarli come schede in MEMORIA.md e non rinominarli.
 
 **Procedura di aggiornamento** (da eseguire in ogni scansione, dopo il controllo della cartella Drive):
 1. Leggere le credenziali dal file Drive indicato sopra.
@@ -67,20 +72,32 @@ Note operative:
 **Uso nei report:** la sezione 2 ("come sta e come rende") usa questi numeri come base oggettiva delle performance, affiancandoli alle sensazioni riferite.
 
 **Note operative:**
-- Il file `_chiave_intervals_icu.txt` e i due Google Sheet in `Dati Garmin` NON vanno indicizzati come schede in MEMORIA.md né rinominati. Gli Sheet restano a disposizione per note manuali dell'utente: se contengono righe, leggerle e integrarle nel report.
+- Il file `_chiave_intervals_icu.txt` e i due Google Sheet in `Dati Garmin` NON vanno indicizzati come schede in MEMORIA.md né rinominati.
 - HRV e SpO2 sono misurati solo nelle notti in cui l'orologio è indossato con il monitoraggio attivo: la copertura parziale è normale, non è un errore.
+
+## Strumenti
+
+Gli script della knowledge base stanno in [`strumenti/`](strumenti/README.md): `costruisci_csv.py` (JSON intervals.icu -> CSV, con il filtro sulla FC a riposo), `chart.py` (grafici vettoriali) e `genera_report.py` (PDF del report). Modificare quelli, non riscriverli da zero a ogni richiesta.
 
 ## Report PDF
 
-Su richiesta dell'utente si genera un report PDF di consultazione (es. `Report_Salute_Massimo_Sunzini_<data>.pdf`). Fonte esclusiva: `memoria/MEMORIA.md` e i file della cartella Drive sopra indicata. Struttura definita dall'utente (22/08/2026):
+Su richiesta dell'utente si genera un report PDF di consultazione (es. `Report_Salute_Massimo_Sunzini_<data>.pdf`). Fonte esclusiva: `memoria/MEMORIA.md`, i file della cartella Drive sopra indicata e i CSV in `dati/garmin/`. **Struttura aggiornata dall'utente il 23/08/2026** (l'elenco dei documenti va in fondo, non in testa):
 
-1. **Quadro dei documenti nella cartella** — tabella compatta (documento, data, tipo) per orientarsi tra i file.
-2. **Sezione 1 — Commento sui dati oggettivi**: massimo ~5 righe su ciò che emerge oggettivamente dai documenti.
-3. **Sezione 2 — Commento integrato con le sensazioni riferite**: stessa lunghezza, tiene conto anche delle sensazioni comunicate su stato di salute e performance sportive (oggi ricavate dai referti, es. Borg/anamnesi CPET; integrare eventuali note personali aggiunte in cartella).
-4. **Sezione 3 — Suggerimenti e promemoria**: commento della stessa lunghezza con suggerimenti di terapie e stile di vita (attività sportive, cosa fare/cosa evitare, dieta), seguito da elenchi puntati ("Cosa fare", "Cosa evitare", "Da discutere con i medici") e tabella "Promemoria controlli e visite" (esame/visita, quando, perché).
-5. Chiusura con disclaimer: report generato automaticamente, non è un documento medico e non sostituisce il parere dei curanti.
+1. **Sezione 1 — Cosa dicono i dati oggettivi**: massimo ~5 righe su ciò che emerge oggettivamente dai documenti.
+2. **Sezione 2 — Come sta e come rende**: stessa lunghezza; tiene conto delle sensazioni riferite (Borg/anamnesi CPET, note personali in cartella) **e degli allenamenti e dei dati Garmin**, che vanno citati esplicitamente come base oggettiva delle performance.
+3. **Sezione 3 — Consigli e promemoria**: commento della stessa lunghezza con suggerimenti di terapie e stile di vita (attività sportive, cosa fare/cosa evitare, dieta), seguito da elenchi puntati ("Cosa fare", "Cosa evitare", "Da discutere con i medici") e tabella "Promemoria controlli e visite" (esame/visita, quando, perché).
+4. **Sezione 4 — Tabella dei dati Garmin mese per mese**: una riga per mese con FC a riposo, HRV, SpO2, sonno, peso, massa grassa, VO2max, numero di sedute, ore di attività, FC media in attività. Mai l'elenco delle singole giornate.
+5. **Sezione 5 — Grafici**, subito sotto la tabella: 4 grafici rilevanti per la salute di Massimo (battito a riposo, ossigeno notturno con linea di riferimento al 95%, peso, attività fisica svolta), seguiti da un breve testo che spiega come leggerli.
+6. **Sezione 6 — Documenti usati per questo report**: tabella compatta (documento, data, cosa contiene). **In fondo alla pagina: sono le fonti, non l'apertura.**
+7. Chiusura con disclaimer: report generato automaticamente, non è un documento medico e non sostituisce il parere dei curanti; elencare i dati esclusi perché non validi.
 
 Generazione: script reportlab (A4); non usare caratteri fuori WinAnsi (niente frecce/simboli unicode speciali); per i bullet usare il carattere `•` in `bulletText`, non entità XML. **Impostare sempre `rl_config.useA85 = 0`** prima degli import di reportlab: la codifica ASCII85 di default non viene renderizzata dal visualizzatore PDF dell'app Google Drive mobile (pagina quasi vuota); con FlateDecode puro il PDF si vede ovunque.
+
+**Grafici:** disegnarli come vettoriali nativi con `reportlab.graphics.shapes` (Drawing/PolyLine/Circle/Rect/String). Non usare matplotlib né immagini PNG/SVG importate: il PDF passerebbe da ~16 KB a oltre 170 KB e il caricamento su Drive diventa impraticabile. Etichettare solo primo, ultimo e valore estremo di ogni serie, non tutti i punti. Palette: serie `#2a78d6`, riferimento `#e34948`, testo `#0b0b0b`/`#52514e`, griglia `#dcdcd8`.
+
+**Prima di considerarlo finito:** renderizzare il PDF in immagini (`pypdfium2`) e guardarle, per intercettare titoli orfani, tabelle spezzate e pagine quasi vuote. Usare `PageBreak` prima della tabella mensile e `KeepTogether` per tenere insieme intestazione + tabella + disclaimer.
+
+**Caricamento su Drive:** `create_file` richiede il contenuto in base64 nel parametro. Trascrivere il base64 **in un blocco unico** (`cat` del file `.b64` e riporto integrale): spezzarlo in più letture e ricucirlo introduce errori sulle giunzioni. Dopo l'upload confrontare `fileSize` restituito da Drive con la dimensione del file locale: devono coincidere esattamente.
 
 **Linguaggio (regola dell'utente, 22/08/2026):** il report va scritto in italiano semplice, comprensibile a non medici. Evitare sigle e tecnicismi non spiegati: preferire perifrasi ("i bronchi lasciano passare circa il 40% dell'aria che dovrebbero" invece di "FEV1 40% del predetto"); quando un termine tecnico è necessario, spiegarlo tra parentesi. I dati marcati NON VALIDI in MEMORIA.md non vanno mai usati come base per commenti o suggerimenti: citarli solo per dire che l'esame va ripetuto.
 
