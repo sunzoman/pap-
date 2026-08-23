@@ -3,7 +3,7 @@
 > File di memoria statico. Si aggiorna su richiesta dell'utente e ogni notte alle 4:00 (ora italiana) tramite Routine pianificata. Procedura di aggiornamento: vedi `CLAUDE.md`.
 
 **Fonte unica:** cartella Google Drive `Salute Massimo Sunzini` — ID `1MYOQz6jvyd59SkyRhJsugH65FJieO6PU`
-**Ultima scansione:** 2026-08-22 16:30 UTC (18:30 ora italiana)
+**Ultima scansione:** 2026-08-23 02:05 UTC (04:05 ora italiana)
 **File censiti:** 10 (9 leggibili, di cui 2 copie identiche dello stesso referto; 1 non indicizzabile)
 
 ---
@@ -47,7 +47,7 @@ Struttura: `Salute Massimo Sunzini/` → sottocartella `Documenti e referti/` (I
 | 6 | Aprile 2026.pdf | `1eMI99BANSXkQ2_tUVgeZtTzLcTaCkZEb` | PDF | 95.599 B | 2026-08-22 | 18/04/2026 | Indicizzato |
 | 7 | 2026.pdf | `1xOGO-mdzsnQqmNWOfB56YZ7xkdcE-Kjj` | PDF | 1.077.460 B | 2026-08-22 | 22/07/2026 | Indicizzato |
 | 8 | fileReferto 2.pdf | `1A9UZARLfo8YSyNwO756YIx1BctXhO2N-` | PDF | 180.880 B | 2026-08-22 | 29/07/2026 | Indicizzato |
-| 9 | Spirometria.numbers | `1NvRZzHuAC25_8kD0EbB9iLJ93jJhQzaj` | Apple Numbers | 179.856 B | 2026-08-22 | — | **Non indicizzabile** (formato proprietario; convertire in Sheets/xlsx) |
+| 9 | Spirometria.numbers | `1NvRZzHuAC25_8kD0EbB9iLJ93jJhQzaj` | Apple Numbers | 179.841 B | 2026-08-22 16:35 UTC | — | **Non indicizzabile** (formato proprietario; convertire in Sheets/xlsx). Modificato il 22/08 sera, contenuto non leggibile |
 | 10 | Dati Garmin/Attività sportive | `1mK0w3-HCaJUR6dvnw9R-3lsvFBPTqcui-ek0zc58ht0` | Google Sheet | — | 2026-08-22 | — | Fonte dati sportivi — in attesa dei primi dati (setup Strava/Make in corso) |
 | 11 | Dati Garmin/Benessere | `1lLLLOwxaPMKxerPNi-hQu0-kURr-SAGsQByaiO1SmZk` | Google Sheet | — | 2026-08-22 | — | Fonte dati benessere — in attesa dei primi dati (setup intervals.icu in corso) |
 
@@ -183,4 +183,5 @@ Nella norma: urine, glicemia 74, HbA1c 5,7% (39 mmol/mol), elettroliti, calcio 9
 | 2026-08-22 16:30 | Scansione iniziale completa | 10 file censiti; 8 documenti unici indicizzati integralmente; 1 duplicato (CPET); 1 file .numbers non indicizzabile |
 | 2026-08-22 17:00 | Aggiornamento su segnalazione utente | Holter pressorio marcato NON VALIDO (cattiva misurazione); file rinominato su Drive in `Holter cardiaco e pressorio [pressorio NON VALIDO - errore di misurazione].pdf`; report del 22/08/2026 rigenerato senza i dati pressori |
 | 2026-08-22 18:30 | Correzione formato report | Report PDF rigenerato senza codifica ASCII85 (illeggibile sul viewer mobile di Drive) e ricaricato su Drive; integrità verificata |
-| 2026-08-22 18:45 | Setup pipeline dati Garmin | Creata sottocartella `Dati Garmin` con gli Sheet `Attività sportive` e `Benessere` (vuoti, solo intestazioni); pipeline B+C approvata dall'utente, in attesa dei collegamenti Strava e intervals.icu |
+| 2026-08-22 18:45 | Setup pipeline dati Garmin | Creata sottocartella `Dati Garmin` con gli Sheet `Attività sportive` e `Benessere` (vuoti, solo intestazioni); pipeline in ridefinizione (l'utente ha escluso Make e Strava), in attesa di approvazione |
+| 2026-08-23 02:05 | Scansione notturna automatica | 13 elementi censiti; 1 modifica: `Spirometria.numbers` aggiornato il 22/08 alle 16:35 UTC (resta non indicizzabile finché non viene convertito); nessun file nuovo o rimosso; report del 22/08 regolarmente escluso dall'indicizzazione |
