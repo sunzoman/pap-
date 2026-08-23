@@ -1,6 +1,6 @@
 # MEMORIA — Knowledge Base Salute Massimo Sunzini
 
-> File di memoria statico. Si aggiorna su richiesta dell'utente e ogni notte alle 4:00 (ora italiana) tramite Routine pianificata. Procedura di aggiornamento: vedi `CLAUDE.md`.
+> File di memoria statico. Si aggiorna su richiesta dell'utente e automaticamente tre volte al giorno (4:00, 12:00 e 18:00 ora italiana) tramite Routine pianificata; se la scansione non trova novità non viene fatto alcun commit. Procedura di aggiornamento: vedi `CLAUDE.md`.
 
 **Fonte unica:** cartella Google Drive `Salute Massimo Sunzini` — ID `1MYOQz6jvyd59SkyRhJsugH65FJieO6PU`
 **Ultima scansione:** 2026-08-23 02:05 UTC (04:05 ora italiana)

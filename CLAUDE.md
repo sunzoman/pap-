@@ -18,15 +18,26 @@ Contiene: inventario dei file della cartella (con ID Drive, data modifica, dimen
 
 ## Procedura di aggiornamento della memoria
 
-Da eseguire **ogni volta che l'utente lo chiede** e **automaticamente ogni notte alle 4:00 (ora italiana)** tramite la Routine pianificata "Aggiornamento notturno KB Salute":
+Da eseguire **ogni volta che l'utente lo chiede** e **automaticamente tre volte al giorno alle 4:00, 12:00 e 18:00 (ora italiana)** tramite la Routine pianificata "Scansione KB Salute" (nota: con l'ora solare gli orari scivolano un'ora indietro, salvo aggiornamento del cron):
 
 1. Elencare ricorsivamente il contenuto della cartella Drive `1MYOQz6jvyd59SkyRhJsugH65FJieO6PU` (query `parentId = '<id>'` su ogni sottocartella) con il connettore Google Drive.
 2. Confrontare l'elenco con l'inventario in `memoria/MEMORIA.md` usando come chiave l'**ID Drive** e come discriminante la **data di modifica** (`modifiedTime`).
 3. Per ogni file **nuovo o modificato**: leggerne il contenuto completo (`read_file_content`) e creare/aggiornare la relativa scheda in `MEMORIA.md`.
 4. Per ogni file **rimosso** dalla cartella: non cancellare la scheda, ma marcarla `[RIMOSSO DAL DRIVE il <data>]`.
-5. Aggiornare sempre il campo **"Ultima scansione"** e aggiungere una riga al **Registro scansioni** in fondo al file.
-6. Commit e push sul branch `claude/drive-knowledge-base-setup-d7vccx`:
+5. **Se la scansione non trova alcuna novità** (nessun file nuovo, modificato o rimosso): terminare in silenzio, **senza commit, senza push e senza messaggi all'utente**.
+6. Se invece ci sono novità: aggiornare il campo **"Ultima scansione"**, aggiungere una riga al **Registro scansioni**, poi commit e push sul branch `claude/drive-knowledge-base-setup-d7vccx`:
    `git push -u origin claude/drive-knowledge-base-setup-d7vccx` (retry con backoff in caso di errori di rete).
+
+### Rinomina automatica dei file nuovi (regola dell'utente, 23/08/2026)
+
+Solo per i file **nuovi** trovati dalla scansione (mai retroattiva sui file già indicizzati): se il titolo è incoerente o poco descrittivo rispetto al contenuto, rinominare il file su Drive con `update_file` secondo la convenzione:
+
+`AAAA.MM.GG - Tipo esame (struttura).estensione` — es. `2026.07.29 - RX mani (radiologia).pdf`
+
+dove la data è quella **del documento** (visita/prelievo), non del caricamento. Regole:
+- Rinominare solo se il contenuto è chiaro; se ambiguo, lasciare il nome e segnalarlo all'utente.
+- Registrare sempre il **nome originale** nella scheda di MEMORIA.md ("Nome originale: ...").
+- **Mai rinominare**: file marcati NON VALIDI (hanno la loro convenzione), report generati (`dd.mm.yyyy_*`), gli Sheet nella cartella `Dati Garmin`.
 
 Note operative:
 - I file `.numbers` (Apple Numbers) non sono leggibili dal connettore: censirli nell'inventario e segnalarli come non indicizzabili finché non vengono convertiti (es. in Google Sheets/xlsx).
