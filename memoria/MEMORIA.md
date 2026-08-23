@@ -1,9 +1,9 @@
 # MEMORIA — Knowledge Base Salute Massimo Sunzini
 
-> File di memoria statico. Si aggiorna su richiesta dell'utente e automaticamente tre volte al giorno (4:00, 12:00 e 18:00 ora italiana) tramite Routine pianificata; se la scansione non trova novità non viene fatto alcun commit. Procedura di aggiornamento: vedi `CLAUDE.md`.
+> File di memoria statico. Si aggiorna **una volta a settimana (domenica ore 4:00 italiane)** tramite Routine pianificata, oppure quando l'utente lo chiede espressamente in chat (questa o qualunque altra sessione sulla stessa repo); se la scansione non trova novità non viene fatto alcun commit. Procedura di aggiornamento: vedi `CLAUDE.md`.
 
 **Fonte unica:** cartella Google Drive `Salute Massimo Sunzini` — ID `1MYOQz6jvyd59SkyRhJsugH65FJieO6PU`
-**Ultima scansione:** 2026-08-23 10:09 UTC (12:09 ora italiana)
+**Ultima scansione:** 2026-08-23 11:20 UTC (13:20 ora italiana)
 **File censiti:** 10 (9 leggibili, di cui 2 copie identiche dello stesso referto; 1 non indicizzabile)
 
 ---
@@ -30,6 +30,15 @@
 - **Metabolico/laboratorio:** glicemia e HbA1c sempre normali; colesterolo totale/LDL ai limiti o lievemente elevati (LDL 161 nel 2022 → 108-123 dal 2024); **omocisteina 25,1 µmol/L (elevata) a lug 2026** (era 14,0 a set 2025); **IgE totali 391 UI/mL (elevate) ad apr 2026**; alfa-1 antitripsina normale (rilevante per enfisema). Episodio di iperenzimemia pancreatica (amilasi 192, lipasi 167) ad apr 2022, rientrato nei controlli successivi. PSA 3,74 nel 2022, poi rientrato (~2,0-2,3, rapporto fPSA/PSA >0,20). Lieve tendenza a eritrociti sotto il limite (4,38-4,49 mln) con Hb normale-bassa.
 - **Osteoarticolare:** RX mani (lug 2026): demineralizzazione ossea, artrosi metacarpo-falangea e interfalangea moderata, rizoartrosi bilaterale ai polsi.
 
+## Anamnesi riferita dalla famiglia (23/08/2026, da Federico — figlio di Massimo)
+
+Contesto raccontato a voce, da tenere presente nella lettura dei referti (la documentazione scritta dell'operazione è attesa su Drive nei prossimi giorni):
+
+- **Operazione ai polmoni per tumore.** A Massimo furono trovate **due piccole macchie** ai polmoni; da lì l'operazione. Una delle due è stata **tenuta sotto controllo negli anni successivi** all'intervento; dopo qualche anno **la chirurgo che lo aveva operato disse che non serviva più controllarla**. I **nuovi pneumologi** oggi dicono invece di **riprendere i controlli**, ma Massimo non è convinto. → Punto aperto da chiarire con i medici, anche alla luce dei noduli oggi in follow-up (LSD e LIS, vedi Quadro clinico).
+- **Nota di coerenza con i referti:** il CPET di gen 2026 descrive la pregressa chirurgia come "asportazione di lesione nodulare compatibile con **ascesso polmonare**", mentre la famiglia riferisce **tumore**. Le due versioni non coincidono: attendere i documenti dell'operazione prima di trarre conclusioni; nel frattempo nei report non affermare l'una o l'altra natura della lesione.
+- **Fumo.** Forte fumatore per tutta la vita, **circa 2 pacchetti al giorno**; aveva **appena smesso di fumare prima dell'operazione**. (Il referto CPET riporta "25 sigarette/die per 25 anni": la versione della famiglia indica un carico anche maggiore.)
+- **Documenti in arrivo:** nei prossimi giorni Massimo caricherà su Drive referti di altre visite mediche e la documentazione dell'operazione ai polmoni. La scansione dovrà indicizzarli con questa anamnesi come chiave di lettura.
+
 ---
 
 ## Inventario della cartella
@@ -48,8 +57,8 @@ Struttura: `Salute Massimo Sunzini/` → sottocartella `Documenti e referti/` (I
 | 7 | 2026.pdf | `1xOGO-mdzsnQqmNWOfB56YZ7xkdcE-Kjj` | PDF | 1.077.460 B | 2026-08-22 | 22/07/2026 | Indicizzato |
 | 8 | fileReferto 2.pdf | `1A9UZARLfo8YSyNwO756YIx1BctXhO2N-` | PDF | 180.880 B | 2026-08-22 | 29/07/2026 | Indicizzato |
 | 9 | Spirometria.numbers | `1NvRZzHuAC25_8kD0EbB9iLJ93jJhQzaj` | Apple Numbers | 179.841 B | 2026-08-22 16:35 UTC | — | **Non indicizzabile** (formato proprietario; convertire in Sheets/xlsx). Modificato il 22/08 sera, contenuto non leggibile |
-| 10 | Dati Garmin/Attività sportive | `1dLSwnIL3qWT_VbY4KsqbHlWFJh404CrSCIeTOh7hJcc` | Google Sheet | 222 righe | 2026-08-23 | — | **Output**: copia su Drive di `dati/garmin/attivita.csv`. Non è una fonte: non indicizzare come scheda, non rinominare. La versione vuota del 22/08 è stata cestinata |
-| 11 | Dati Garmin/Benessere | `12w48yc0ZnQ8rVY-39iv0nQ-OPq-t_UpKoCfBQc1des0` | Google Sheet | 366 righe | 2026-08-23 | — | **Output**: copia su Drive di `dati/garmin/benessere.csv`. Non è una fonte: non indicizzare come scheda, non rinominare. La versione vuota del 22/08 è stata cestinata |
+| 10 | Dati Garmin/Attività sportive | `1M3ggsVFPkgedlrRUvpSF6oz0fvAPy36zZMAU6Rnn3ao` | Google Sheet | 304 righe | 2026-08-23 11:10 | — | **Output**: copia su Drive di `dati/garmin/attivita.csv`. Non è una fonte: non indicizzare come scheda, non rinominare. Le versioni precedenti (vuota del 22/08 e 222 righe delle 08:32) sono cestinate |
+| 11 | Dati Garmin/Benessere | `1Qw8FxMFaXSXT59iwHMm5jIP8nd8vaWYMbb1kuQLiwQU` | Google Sheet | 366 righe | 2026-08-23 11:19 | — | **Output**: copia su Drive di `dati/garmin/benessere.csv`. Non è una fonte: non indicizzare come scheda, non rinominare. Le versioni precedenti (vuota del 22/08 e quella delle 08:34) sono cestinate |
 | 12 | Dati Garmin/_chiave_intervals_icu.txt | `1u5pg86vG7gROVyrv3Yv2ba3OaLtHpv6F` | Testo | 677 B | 2026-08-23 | — | **Credenziali API — non indicizzare, non rinominare, non copiare nel repository** |
 
 ---
@@ -218,7 +227,7 @@ Regola operativa: nel CSV la colonna **`FC a riposo`** contiene solo i **184 val
 | File su Drive | ID Drive | Data generazione | Note |
 |---|---|---|---|
 | 22.08.2026_Report Salute Massimo Sunzini.pdf (cartella radice) | `1527bVew21gPDMF2jXkktmXVrty-BATTi` | 22/08/2026 | Versione in linguaggio divulgativo, senza dati Holter pressorio (non validi); PDF rigenerato in formato compatibile col viewer mobile di Drive. Sostituisce le versioni precedenti dello stesso giorno (cestinate) |
-| 23.08.2026_Report Salute Massimo Sunzini.pdf (cartella radice) | `1WKQRu_PtrUwlPblJWmCm0JOIJlxKfkSk` | 23/08/2026 | 4 pagine, nuova struttura richiesta dall'utente: commenti → tabella Garmin mese per mese → grafici → **fonti in fondo**. Integra gli allenamenti Garmin nel commento 2. Esclude i dati non validi (Holter pressorio e le 62 FC a riposo ≥ 95 bpm). 16.045 B, integrità verificata. Sostituisce la versione errata dello stesso giorno (cestinata) |
+| 23.08.2026_Report Salute Massimo Sunzini.pdf (cartella radice) | `1HrY-DxhpuxIl4YiKmRjWp2lPoat9JSVH` | 23/08/2026 | 4 pagine, nuova struttura richiesta dall'utente: commenti → tabella Garmin mese per mese → grafici → **fonti in fondo**. Basato su tutti i **304 allenamenti** (dopo il sync retroattivo). Esclude i dati non validi (Holter pressorio e le 62 FC a riposo ≥ 95 bpm). 16.219 B, integrità verificata. Sostituisce le due versioni precedenti dello stesso giorno (cestinate) |
 
 ---
 
@@ -231,6 +240,7 @@ Regola operativa: nel CSV la colonna **`FC a riposo`** contiene solo i **184 val
 | 2026-08-22 18:30 | Correzione formato report | Report PDF rigenerato senza codifica ASCII85 (illeggibile sul viewer mobile di Drive) e ricaricato su Drive; integrità verificata |
 | 2026-08-22 18:45 | Setup pipeline dati Garmin | Creata sottocartella `Dati Garmin` con gli Sheet `Attività sportive` e `Benessere` (vuoti, solo intestazioni); pipeline in ridefinizione (l'utente ha escluso Make e Strava), in attesa di approvazione |
 | 2026-08-23 02:05 | Scansione notturna automatica | 13 elementi censiti; 1 modifica: `Spirometria.numbers` aggiornato il 22/08 alle 16:35 UTC (resta non indicizzabile finché non viene convertito); nessun file nuovo o rimosso; report del 22/08 regolarmente escluso dall'indicizzazione |
-| 2026-08-23 10:09 | Scansione delle 12:00 | Documenti Drive: nessuna novità (10 file, tutti già indicizzati). Garmin: arrivati **82 allenamenti retroattivi** (ago 2025–gen 2026) — sync intervals.icu ancora in corso; totale 304 attività. Nel benessere solo ricalcolo di CTL/ATL. Nota: il buco giu-lug 2026 è storico non sincronizzato, non una pausa (conferma di Massimo) |
-| 2026-08-23 09:15 | Correzione dati + rigenerazione report | Trovati e scartati **62 valori non validi di FC a riposo** (95-117 bpm, artefatti della fonte): invalidavano il "periodo critico ottobre-dicembre 2025" riportato in precedenza. CSV rigenerati con colonna validata + colonna grezza e replicati su Drive come Sheet. Report del 23/08 rigenerato con la nuova struttura (fonti in fondo, tabella e grafici Garmin) e ricaricato; versione errata cestinata |
 | 2026-08-23 07:45 | Attivazione pipeline Garmin | Collegamento Garmin → intervals.icu verificato e funzionante; scaricato lo storico completo (222 attività, 359 giorni di benessere) in `dati/garmin/`; credenziali salvate su Drive fuori dal repository; aggiunta la scheda "Dati sportivi Garmin" |
+| 2026-08-23 09:15 | Correzione dati + rigenerazione report | Trovati e scartati **62 valori non validi di FC a riposo** (95-117 bpm, artefatti della fonte): invalidavano il "periodo critico ottobre-dicembre 2025" riportato in precedenza. CSV rigenerati con colonna validata + colonna grezza e replicati su Drive come Sheet. Report del 23/08 rigenerato con la nuova struttura (fonti in fondo, tabella e grafici Garmin) e ricaricato; versione errata cestinata |
+| 2026-08-23 10:09 | Scansione delle 12:00 | Documenti Drive: nessuna novità (10 file, tutti già indicizzati). Garmin: arrivati **82 allenamenti retroattivi** (ago 2025–gen 2026) — sync intervals.icu ancora in corso; totale 304 attività. Nel benessere solo ricalcolo di CTL/ATL. Nota: il buco giu-lug 2026 è storico non sincronizzato, non una pausa (conferma di Massimo) |
+| 2026-08-23 11:20 | Aggiornamento su richiesta dell'utente | Cadenza scansione ridotta a **settimanale** (domenica 4:00) per contenere i consumi; aggiunta l'anamnesi riferita dalla famiglia (operazione ai polmoni, storia di fumo); report rigenerato con i 304 allenamenti e ricaricato su Drive (16.219 B verificati); i due Sheet in `Dati Garmin` rigenerati con i dati completi e le versioni precedenti cestinate |

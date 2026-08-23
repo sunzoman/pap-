@@ -1,5 +1,9 @@
 # Knowledge Base — Salute Massimo Sunzini
 
+## Metodo di lavoro (regola dell'utente, 23/08/2026)
+
+Prima di qualunque lavoro non banale (generare/modificare report, cambiare pipeline o Routine, riorganizzare file), presentare all'utente un **elenco puntato molto breve** di ciò che si intende fare e **attendere il suo ok esplicito**. Mai partire da soli. Eccezione: la scansione periodica automatica e le richieste dirette e univoche dell'utente, che sono già l'approvazione. Durante il lavoro, dare piccoli feedback intermedi invece di lunghi silenzi. Contesto: l'utente (Federico) gestisce la knowledge base per la salute del padre Massimo.
+
 ## Fonte unica dei dati (REGOLA VINCOLANTE)
 
 L'**unica fonte autorizzata** per la lettura dei dati di questa knowledge base è la cartella Google Drive:
@@ -18,7 +22,7 @@ Contiene: inventario dei file della cartella (con ID Drive, data modifica, dimen
 
 ## Procedura di aggiornamento della memoria
 
-Da eseguire **ogni volta che l'utente lo chiede** e **automaticamente tre volte al giorno alle 4:00, 12:00 e 18:00 (ora italiana)** tramite la Routine pianificata "Scansione KB Salute" (nota: con l'ora solare gli orari scivolano un'ora indietro, salvo aggiornamento del cron):
+Da eseguire **ogni volta che l'utente lo chiede espressamente in chat** (questa o qualunque altra sessione che poggia su questa repo) e **automaticamente una volta a settimana, la domenica alle 4:00 (ora italiana)**, tramite la Routine pianificata "Scansione KB Salute (settimanale, domenica 4:00)" — cadenza ridotta il 23/08/2026 su richiesta dell'utente per contenere i consumi (nota: con l'ora solare l'orario scivola alle 3:00, salvo aggiornamento del cron). **Non aumentare la frequenza senza una richiesta esplicita dell'utente.**
 
 1. Elencare ricorsivamente il contenuto della cartella Drive `1MYOQz6jvyd59SkyRhJsugH65FJieO6PU` (query `parentId = '<id>'` su ogni sottocartella) con il connettore Google Drive.
 2. Confrontare l'elenco con l'inventario in `memoria/MEMORIA.md` usando come chiave l'**ID Drive** e come discriminante la **data di modifica** (`modifiedTime`).
@@ -72,6 +76,7 @@ Note operative:
 **Uso nei report:** la sezione 2 ("come sta e come rende") usa questi numeri come base oggettiva delle performance, affiancandoli alle sensazioni riferite.
 
 **Note operative:**
+- Il sync Garmin → intervals.icu può consegnare **allenamenti retroattivi anche a distanza di ore o giorni** (il 23/08/2026 sono comparsi 82 allenamenti vecchi di mesi). Prima di segnalare "pause" o "picchi" di attività, considerare che i dati potrebbero essere incompleti e verificare con l'utente.
 - Il file `_chiave_intervals_icu.txt` e i due Google Sheet in `Dati Garmin` NON vanno indicizzati come schede in MEMORIA.md né rinominati.
 - HRV e SpO2 sono misurati solo nelle notti in cui l'orologio è indossato con il monitoraggio attivo: la copertura parziale è normale, non è un errore.
 
