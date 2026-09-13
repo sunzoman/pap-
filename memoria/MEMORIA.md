@@ -3,7 +3,7 @@
 > File di memoria statico. Si aggiorna **una volta a settimana (domenica ore 4:00 italiane)** tramite Routine pianificata, oppure quando l'utente lo chiede espressamente in chat (questa o qualunque altra sessione sulla stessa repo); se la scansione non trova novità non viene fatto alcun commit. Procedura di aggiornamento: vedi `CLAUDE.md`.
 
 **Fonte unica:** cartella Google Drive `Salute Massimo Sunzini` — ID `1MYOQz6jvyd59SkyRhJsugH65FJieO6PU`
-**Ultima scansione:** 2026-09-05 23:35 UTC (dati Garmin aggiornati al 05/09/2026)
+**Ultima scansione:** 2026-09-13 02:10 UTC (dati Garmin aggiornati al 12/09/2026)
 **File censiti:** 10 (9 leggibili, di cui 2 copie identiche dello stesso referto; 1 non indicizzabile)
 
 ---
@@ -57,8 +57,8 @@ Struttura: `Salute Massimo Sunzini/` → sottocartella `Documenti e referti/` (I
 | 7 | 2026.pdf | `1xOGO-mdzsnQqmNWOfB56YZ7xkdcE-Kjj` | PDF | 1.077.460 B | 2026-08-22 | 22/07/2026 | Indicizzato |
 | 8 | fileReferto 2.pdf | `1A9UZARLfo8YSyNwO756YIx1BctXhO2N-` | PDF | 180.880 B | 2026-08-22 | 29/07/2026 | Indicizzato |
 | 9 | Spirometria.numbers | `1NvRZzHuAC25_8kD0EbB9iLJ93jJhQzaj` | Apple Numbers | 179.841 B | 2026-08-22 16:35 UTC | — | **Non indicizzabile** (formato proprietario; convertire in Sheets/xlsx). Modificato il 22/08 sera, contenuto non leggibile |
-| 10 | Dati Garmin/Attività sportive | `16lpnqetbkW2sujpMTthj1DRPofavf2mF9hRiUacdTPg` | Google Sheet | 313 righe | 2026-08-30 | — | **Output**: copia su Drive di `dati/garmin/attivita.csv`. **Ferma allo snapshot del 30/08** (il CSV nel repository ne ha 319, aggiornati al 05/09): viene riallineata alla prossima scansione. Non è una fonte: non indicizzare come scheda, non rinominare |
-| 11 | Dati Garmin/Benessere | `1Gbua4EROUYvc1GRw6fbQPA5A4DujVoFDoR2yKZXo3bA` | Google Sheet | 372 righe | 2026-08-30 | — | **Output**: copia su Drive di `dati/garmin/benessere.csv`. **Ferma allo snapshot del 30/08** (il CSV nel repository ne ha 377, aggiornati al 05/09): viene riallineata alla prossima scansione. Non è una fonte: non indicizzare come scheda, non rinominare |
+| 10 | Dati Garmin/Attività sportive | `1VMtobI7gL7GqEhnaSNwHDwWoNDQJg7N9p_dUEXhc5KQ` | Google Sheet | 327 righe | 2026-09-13 | — | **Output**: copia su Drive di `dati/garmin/attivita.csv`, allineata alla scansione del 13/09/2026 (la versione precedente è stata cestinata). Non è una fonte: non indicizzare come scheda, non rinominare |
+| 11 | Dati Garmin/Benessere | `1Zpa2Lfcxz8lKr40hxoRZSNOvdrd7R8hv8BZdESoOJE8` | Google Sheet | 382 righe | 2026-09-13 | — | **Output**: copia su Drive di `dati/garmin/benessere.csv`, allineata alla scansione del 13/09/2026 (la versione precedente è stata cestinata). Non è una fonte: non indicizzare come scheda, non rinominare |
 | 12 | Dati Garmin/_chiave_intervals_icu.txt | `1u5pg86vG7gROVyrv3Yv2ba3OaLtHpv6F` | Testo | 677 B | 2026-08-23 | — | **Credenziali API — non indicizzare, non rinominare, non copiare nel repository** |
 
 ---
@@ -182,19 +182,21 @@ Nella norma: urine, glicemia 74, HbA1c 5,7% (39 mmol/mol), elettroliti, calcio 9
 
 **Fonte:** dispositivi Garmin → Garmin Connect → intervals.icu (account `i685995`, "Max 56", collegato il 23/08/2026) → API → `dati/garmin/attivita.csv` e `dati/garmin/benessere.csv` nel repository. Procedura in `CLAUDE.md`.
 
-**Periodo coperto:** 23/08/2025 – 05/09/2026 · **319 attività** (~413 ore, ~4.247 km) · **377 giorni** con almeno una misura di benessere.
+**Periodo coperto:** 23/08/2025 – 12/09/2026 · **327 attività** (~424 ore, ~4.417 km) · **382 giorni** con almeno una misura di benessere.
 
 **Sincronizzazione retroattiva (accertata il 23/08/2026):** intervals.icu importa lo storico Garmin a blocchi. Nella scansione del 23/08 sono comparsi **82 allenamenti retroattivi** relativi ad ago 2025–gen 2026, mesi che prima risultavano mezzi vuoti. Prima di segnalare "pause" o "picchi" va sempre considerato che i dati possono essere incompleti.
 
 ### Giugno-luglio 2026: il buco NON si è riempito (verificato il 30/08/2026)
 
-Il 23/08 Massimo aveva riferito (via Federico) di non aver mai smesso di allenarsi a giugno-luglio, e l'ipotesi era che il buco (1 seduta a giugno, 2 a luglio) fosse storico non ancora sincronizzato. **Dopo due settimane quei mesi sono rimasti identici** (verificato il 30/08 e di nuovo il 05/09), mentre lo stesso sync ha regolarmente consegnato tutte le uscite di fine agosto e dei primi di settembre. L'ipotesi della coda di sincronizzazione **non regge più**.
+Il 23/08 Massimo aveva riferito (via Federico) di non aver mai smesso di allenarsi a giugno-luglio, e l'ipotesi era che il buco (1 seduta a giugno, 2 a luglio) fosse storico non ancora sincronizzato. **Dopo tre settimane quei mesi sono rimasti identici** (verificato il 30/08, il 05/09 e il 13/09), mentre lo stesso sync ha regolarmente consegnato tutte le uscite di fine agosto e di settembre. L'ipotesi della coda di sincronizzazione **non regge più**.
+
+Il calo parte in realtà **da metà maggio**: le sedute si interrompono il 13/05, riprendono isolate il 31/05, il 28/06, il 19/07 e il 27/07, e tornano quotidiane solo dal 10/08. Nello stesso periodo il parametro di forma (CTL) scende da ~31 a ~4: coerente con una riduzione reale dell'attività registrata, qualunque ne sia la causa.
 
 Dato dirimente: in giugno e luglio **l'orologio era indossato e sincronizzava regolarmente** — 30 e 31 notti di sonno registrate, FC a riposo su 29 e 19 giorni, peso su 27 e 16 giorni. Il dispositivo funzionava e mandava dati tutti i giorni; semplicemente **non risultano allenamenti avviati**. Le ipotesi residue sono che Massimo si sia mosso senza avviare la registrazione sul dispositivo, oppure che il ricordo sia impreciso. Da chiarire con lui; **non usare questo buco come reperto clinico** finché non è spiegato.
 
 Nota: la colonna `Passi` è quasi sempre vuota (58 giorni su 372, l'ultimo il 03/03/2026), quindi non può essere usata per verificare il movimento quotidiano.
 
-**Copia su Drive:** i due CSV sono replicati come Google Sheet nella sottocartella `Dati Garmin` (vedi inventario #10 e #11). Sono output, non fonti. Al 05/09/2026 gli Sheet sono fermi allo snapshot del 30/08 e verranno riallineati alla prossima scansione: il dato autorevole è sempre il CSV nel repository.
+**Copia su Drive:** i due CSV sono replicati come Google Sheet nella sottocartella `Dati Garmin` (vedi inventario #10 e #11). Sono output, non fonti; il dato autorevole è sempre il CSV nel repository. Riallineati il 13/09/2026 (327 e 382 righe); le versioni precedenti, ferme al 30/08, sono state cestinate.
 
 ### Dato NON VALIDO: frequenza cardiaca a riposo sopra 95 bpm
 
@@ -204,30 +206,31 @@ Regola operativa: nel CSV la colonna **`FC a riposo`** contiene solo i **184 val
 
 > Conseguenza sulle analisi precedenti: la scheda e il report del 23/08/2026 mattina riportavano un "periodo critico ottobre-dicembre 2025 con FC a riposo fino a 100 bpm". **Era un artefatto di questi 62 valori.** Ripulito il dato, la FC a riposo resta nella fascia normale per tutto l'anno. Il report è stato rigenerato e la versione errata cestinata.
 
-**Attività per disciplina:** camminata 208, bici gravel 41, canottaggio 23, mountain bike 22, e-bike 17, palestra 7, escursionismo 1.
+**Attività per disciplina:** camminata 209, bici gravel 41, mountain bike 29, canottaggio 23, e-bike 17, palestra 7, escursionismo 1.
 
-**Volume recente (ultime 8 settimane, al 05/09/2026):** 36 attività, ~38 ore totali, media **4,5 sedute a settimana** — il ritmo più alto di tutto l'anno (era 2,8 a fine agosto). FC media negli allenamenti in cui è stata rilevata: **110 bpm** (14 attività su 36 — l'Edge 530 usato in bici non è abbinato alla fascia, quindi le uscite in bici non hanno dati cardiaci).
+**Volume recente (ultime 8 settimane, al 13/09/2026):** 44 attività, ~49 ore totali, media **5,5 sedute a settimana** — il ritmo più alto di tutto l'anno (era 4,5 una settimana fa, 2,8 a fine agosto). FC media negli allenamenti in cui è stata rilevata: **109 bpm** (15 attività su 44 — l'Edge 530 usato in bici non è abbinato alla fascia, quindi le uscite in bici non hanno dati cardiaci).
 
 **Trend dei parametri di benessere** (media autunno 2025 → media degli ultimi tre mesi, solo dati validati):
 
 | Parametro | Set-Nov 2025 | Lug-Set 2026 | Variazione |
 |---|---|---|---|
-| FC a riposo | 58,7 bpm | 62,4 bpm | +3,7 bpm (resta in fascia normale) |
-| HRV (rMSSD) | 40,8 ms | 47,0 ms | **+6,2 ms** (miglior recupero) |
-| SpO2 notturna | 92,9% | 95,4% | **+2,5 punti** (sopra la soglia del 95%) |
+| FC a riposo | 58,7 bpm | 62,5 bpm | +3,8 bpm (resta in fascia normale) |
+| HRV (rMSSD) | 40,8 ms | 48,4 ms | **+7,6 ms** (miglior recupero) |
+| SpO2 notturna | 92,9% | 95,1% | **+2,2 punti** (appena sopra la soglia del 95%) |
 | Peso | 82,6 kg | 77,9 kg | **−4,7 kg** |
-| Massa grassa | 27,3% | 24,6% | **−2,7 punti** |
+| Massa grassa | 27,3% | 24,5% | **−2,8 punti** |
 | VO2max | 37,1 | 39,0 | **+1,9** |
 | Sonno | 7,1 h | 6,5 h | −0,6 h |
 
-Nota: le medie di luglio-settembre 2026 poggiano su poche notti misurate (7 per HRV e SpO2, 27 per la FC a riposo), quindi vanno lette come indicazione, non come valore consolidato.
+Nota: le medie di luglio-settembre 2026 poggiano su poche notti misurate (8 per HRV e SpO2, 28 per la FC a riposo), quindi vanno lette come indicazione, non come valore consolidato.
 
 **Segnali rilevanti:**
 - **Composizione corporea in netto miglioramento:** da ~85 kg (agosto 2025) a ~77 kg (agosto 2026), circa **8 kg in un anno**, con massa grassa dal 28% al 24% e VO2max da 36 a 39. È il risultato migliore dell'anno, graduale e accompagnato da attività costante.
 - **SpO2 notturna costantemente sotto il 95%** (media annuale ~94%, minimo mensile 92,0% a novembre 2025): coerente con l'ipossia cronica descritta nel CPET. **È il parametro da tenere più sotto controllo** e il vero elemento da portare allo pneumologo.
 - **FC a riposo stabile e normale** (55–70 bpm come medie mensili), con una lieve risalita nel 2026 rispetto all'autunno 2025. Nessun mese supera la soglia di attenzione di 78 bpm.
 - **Giugno-luglio 2026 quasi vuoti (1+2 sedute): questione aperta.** L'ipotesi della coda di sincronizzazione è caduta (vedi sezione dedicata sopra): l'orologio c'era e mandava dati, ma non risultano allenamenti avviati. Da chiarire con Massimo; non usare in commenti clinici.
-- **Agosto-settembre 2026, ripresa forte:** 29 sedute in agosto e 5 nei primi 5 giorni di settembre, con mountain bike quasi quotidiana (due uscite lunghe da 43-45 km il 2 e il 3 settembre). Il ritmo delle ultime 8 settimane è **4,5 sedute a settimana**, il più alto dell'anno.
+- **Agosto-settembre 2026, ripresa forte e in accelerazione:** 29 sedute in agosto e 13 nei primi 12 giorni di settembre, con mountain bike quasi quotidiana. Nella settimana 6-12 settembre: 6 uscite in mountain bike e 1 camminata, **165 km in bici in sette giorni**, comprese due uscite lunghe da 43,4 km (9/09) e 46,1 km (10/09) — le più lunghe dell'anno insieme a quelle del 2-3 settembre. Il ritmo delle ultime 8 settimane è **5,5 sedute a settimana**, il più alto dell'anno.
+- **Dal 23/08/2026 l'orologio non viene più indossato di notte:** sonno e punteggio del sonno sono **completamente assenti da quella data** (ultima notte registrata: 22/08). Restano solo misure sporadiche di FC a riposo, HRV e SpO2 (25/08, 29/08, 03/09, 10/09), verosimilmente da rilevazioni diurne o da singole notti con l'orologio al polso. Conseguenza pratica: da fine agosto **non c'è più monitoraggio dell'ossigeno notturno**, che è il parametro più importante per il quadro polmonare. Da segnalare a Massimo.
 - **Sonno:** 6,5 ore/notte in media negli ultimi mesi, in leggera diminuzione rispetto all'autunno.
 - Copertura parziale di HRV e SpO2 (4-16 giorni al mese): normale, dipende dalle notti in cui l'orologio viene indossato con il monitoraggio attivo.
 
@@ -246,6 +249,7 @@ Nota: le medie di luglio-settembre 2026 poggiano su poche notti misurate (7 per 
 
 | Data/ora (UTC) | Esito | Note |
 |---|---|---|
+| 2026-09-13 02:10 | Scansione settimanale automatica | Documenti Drive: nessuna novità (10 file, tutti già indicizzati; i referti attesi sull'operazione ai polmoni non sono ancora stati caricati). Garmin: **8 allenamenti nuovi** (6-12/09, tutti recenti, nessun arretrato retroattivo) e 5 giorni di benessere; totale 327 attività e 382 giorni. Rilevato che **dal 23/08 non ci sono più dati sul sonno** (orologio non indossato di notte). Sheet su Drive riallineati e versioni precedenti cestinate. **Bug corretto:** nelle due scansioni precedenti i JSON erano stati scaricati con nomi diversi da quelli attesi da `costruisci_csv.py` (`att.json`/`wel.json` invece di `acts_raw.json`/`well_raw.json`), quindi i CSV venivano rigenerati da dati vecchi senza alcun errore visibile |
 | 2026-08-30 → 09-05 | Scansione settimanale automatica (completata il 05/09) | La Routine è partita il 30/08 ma la sessione è rimasta ferma: i dati sono stati riscaricati il 05/09 prima del commit, quindi la scansione copre l'intero periodo. Drive: nessuna novità (13 elementi invariati; i referti dell'operazione non sono ancora stati caricati). Garmin: **15 allenamenti nuovi** (24/08-05/09, mountain bike quasi quotidiana, canottaggio e due uscite lunghe da 43-45 km) e 11 giorni di benessere; totale 319 attività. **Giugno-luglio 2026 NON si sono riempiti** né il 30/08 né il 05/09: l'ipotesi della coda di sincronizzazione è caduta — l'orologio era indossato e sincronizzava (30-31 notti di sonno registrate) ma non risultano allenamenti avviati. Questione aperta da chiarire con Massimo |
 | 2026-08-22 16:30 | Scansione iniziale completa | 10 file censiti; 8 documenti unici indicizzati integralmente; 1 duplicato (CPET); 1 file .numbers non indicizzabile |
 | 2026-08-22 17:00 | Aggiornamento su segnalazione utente | Holter pressorio marcato NON VALIDO (cattiva misurazione); file rinominato su Drive in `Holter cardiaco e pressorio [pressorio NON VALIDO - errore di misurazione].pdf`; report del 22/08/2026 rigenerato senza i dati pressori |
