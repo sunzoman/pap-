@@ -112,10 +112,13 @@ Dopo ogni caricamento riuscito del report su Drive, inviare a **massimo.sunzini@
 https://drive.google.com/open?id=1MYOQz6jvyd59SkyRhJsugH65FJieO6PU
 
 Regole vincolanti per questa mail:
-- **Nessun dato sanitario nel corpo della mail**: niente valori, niente diagnosi, niente commenti clinici. Solo l'avviso che il report e' pronto, il nome del file e il link alla cartella. La mail passa da server esterni; i referti restano solo su Drive e nel repository.
+- **Sempre in copia (Cc) federico.sunzini@widerview.it** (richiesta dell'utente, 13/09/2026), cosi' Federico riceve lo stesso avviso.
+- **Nessun valore, diagnosi o commento clinico nel corpo della mail**: la mail passa da server esterni, i referti restano solo su Drive e nel repository. Il contenuto e' l'avviso che il report e' pronto, il nome del file e il link alla cartella.
+- **E' ammesso (e richiesto dall'utente) un promemoria pratico breve**, se serve: ad esempio ricordare a Massimo di indossare l'orologio di notte quando la scansione rileva che le misure notturne mancano. Deve restare un consiglio pratico — niente numeri, niente diagnosi, niente interpretazioni cliniche.
 - Inviare **solo se l'upload su Drive e' andato a buon fine e la dimensione e' stata verificata**. Se l'upload fallisce, niente mail.
 - **Una sola mail per report**: se si rigenera lo stesso report nello stesso giorno, non inviare un secondo avviso salvo richiesta esplicita.
 - Tono semplice e diretto, in italiano, firmata come messaggio automatico gestito da Federico.
+- Prima mail inviata il 13/09/2026 (thread Gmail `1a09b8474a7afa4e`); da li' in avanti la cadenza e' settimanale, la domenica.
 
 ### Consegna del report (regola dell'utente, 22/08/2026)
 
