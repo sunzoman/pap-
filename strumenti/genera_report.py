@@ -77,8 +77,15 @@ doc = SimpleDocTemplate(OUT, pagesize=A4, leftMargin=16 * mm, rightMargin=16 * m
 story = []
 
 story.append(Paragraph("Report di consultazione &mdash; Salute Massimo Sunzini", titolo))
-story.append(Paragraph("Generato il 23/08/2026 &middot; Documenti medici e dati sportivi Garmin "
-                       "aggiornati al 22/08/2026", sotto))
+def gg_mm_aaaa(iso):
+    a, m, g = iso.split("-")
+    return f"{g}/{m}/{a}"
+
+# L'ultimo giorno coperto dai dati si legge dai CSV, non si scrive a mano:
+# nell'agosto 2026 l'intestazione era rimasta indietro rispetto ai dati.
+ULTIMO_DATO = max(att[-1]["Data"], ben[-1]["Data"])
+story.append(Paragraph(f"Generato il {gg_mm_aaaa(DATA)} &middot; Documenti medici e dati sportivi Garmin "
+                       f"aggiornati al {gg_mm_aaaa(ULTIMO_DATO)}", sotto))
 story.append(Spacer(1, 6))
 story.append(HRFlowable(width="100%", thickness=1.2, color=BLU))
 
@@ -93,31 +100,33 @@ story.append(Paragraph(
     "qualche battito irregolare sporadico senza allarmi; la misurazione della pressione delle 24 ore &egrave; "
     "<b>non valida per un errore di misurazione</b> e va rifatta. Le analisi del sangue sono nel complesso buone; "
     "da tenere d'occhio colesterolo, omocisteina e indici di allergia. Dall'orologio arrivano tre buone notizie: "
-    "<b>circa 7 chili persi in un anno</b>, massa grassa dal 28% al 24,5% e capacit&agrave; di usare ossigeno sotto "
+    "<b>circa 7 chili e mezzo persi in un anno</b>, massa grassa dal 28% al 24% e capacit&agrave; di usare ossigeno sotto "
     "sforzo in aumento; il battito a riposo &egrave; rimasto stabile e normale (fra 55 e 70 al minuto).", corpo))
 
 # ---------------------------------------------------------------- 2
 story.append(Paragraph("2. Come sta e come rende, secondo le sensazioni e i dati dell'orologio", h))
 story.append(Paragraph(
-    "Massimo si allena con costanza e si sente bene, e ora abbiamo i numeri che lo confermano: <b>304 uscite "
-    "in un anno, quasi 400 ore e circa 4.000 km</b> (soprattutto camminate, bici e canottaggio), con giornate "
-    "impegnative come quella del 22 agosto, "
-    "con quasi due ore di mountain bike al mattino e oltre un'ora di canottaggio a mezzogiorno. Durante il test "
-    "in ospedale aveva riferito solo affanno e stanchezza moderati, con un consumo di ossigeno del tutto normale: "
-    "l'orologio racconta la stessa storia, con un battito medio di circa 115 durante l'attivit&agrave; e punte "
-    "vicine al suo massimo. In pratica <b>rende molto pi&ugrave; di quanto i valori dei polmoni farebbero prevedere</b>, "
-    "perch&eacute; il corpo si &egrave; abituato a lavorare con meno ossigeno. Il rovescio della medaglia resta lo "
-    "stesso: sentendo poco i sintomi, potrebbe non accorgersi di un peggioramento. Per questo il battito a riposo "
-    "misurato ogni notte &egrave; il campanello d'allarme pi&ugrave; semplice da tenere d'occhio &mdash; e per ora resta "
-    "tranquillo. L'unica cosa da chiarire &egrave; la lunga pausa di <b>giugno e luglio 2026</b>: una sola uscita a "
-    "giugno e due a luglio, dopo otto mesi filati da 26-36 sedute al mese. &Egrave; un'interruzione netta, non un calo "
-    "graduale: vale la pena chiedere a Massimo se sia stata una scelta (caldo, viaggi, impegni) o un periodo in cui "
-    "non si sentiva bene.", corpo))
+    "Massimo si allena con costanza e si sente bene, e i numeri lo confermano: <b>327 uscite in poco pi&ugrave; di "
+    "un anno, oltre 420 ore e circa 4.400 km</b> (soprattutto camminate, bici e canottaggio). Le ultime settimane "
+    "sono le pi&ugrave; intense di tutto l'anno: nella sola settimana dal 6 al 12 settembre <b>sei uscite in mountain "
+    "bike per 165 km</b>, comprese due da oltre 43 km. Durante il test in ospedale aveva riferito solo affanno e "
+    "stanchezza moderati, con un consumo di ossigeno del tutto normale: l'orologio racconta la stessa storia, con "
+    "un battito medio intorno a 105 durante l'attivit&agrave; e punte fino a 150. In pratica <b>rende molto "
+    "pi&ugrave; di quanto i valori dei polmoni farebbero prevedere</b>, perch&eacute; il corpo si &egrave; abituato a "
+    "lavorare con meno ossigeno. Il rovescio della medaglia resta lo stesso: sentendo poco i sintomi, potrebbe non "
+    "accorgersi di un peggioramento. Proprio per questo pesa il fatto che <b>dal 23 agosto l'orologio non venga "
+    "pi&ugrave; indossato di notte</b>: sono sparite le misure di ossigeno notturno, sonno e recupero, cio&egrave; "
+    "gli unici campanelli d'allarme automatici che avevamo. Resta poi da chiarire il lungo periodo con pochi "
+    "allenamenti registrati fra <b>met&agrave; maggio e inizio agosto 2026</b>: le uscite si interrompono il 13 maggio e "
+    "tornano quotidiane solo dal 10 agosto, con poche sedute isolate in mezzo, dopo otto mesi filati da 26-36 al mese. "
+    "Vale la pena chiedere a Massimo se in quel periodo si &egrave; fermato davvero, o se semplicemente non ha avviato "
+    "la registrazione sull'orologio.", corpo))
 
 # ---------------------------------------------------------------- 3
 story.append(Paragraph("3. Consigli e promemoria", h))
 story.append(Paragraph(
-    "Le due priorit&agrave;: proteggere i polmoni e rifare la misurazione della pressione. Per i polmoni: usare ogni "
+    "Le priorit&agrave;: tornare a indossare l'orologio di notte, proteggere i polmoni e rifare la misurazione "
+    "della pressione. Per i polmoni: usare ogni "
     "giorno l'inalatore prescritto (Trelegy), fare i vaccini consigliati e completare l'esame notturno del respiro "
     "gi&agrave; suggerito dai medici &mdash; l'ossigeno notturno quasi sempre sotto il 95% lo rende ancora pi&ugrave; utile. "
     "Per la pressione: l'esame delle 24 ore va ripetuto prima di trarre conclusioni; nel frattempo misurarla a casa. "
@@ -127,9 +136,9 @@ story.append(Spacer(1, 6))
 
 story.append(Paragraph("<b>Cosa fare</b>", puntato))
 for x in [
-    "Continuare il movimento regolare come sta gi&agrave; facendo (2-3 uscite a settimana), con un saturimetro al dito: rallentare se l'ossigeno scende sotto 88-90%.",
-    "Tenere d'occhio il battito a riposo che l'orologio misura ogni notte: se sale sopra 75-80 per pi&ugrave; giorni di fila, avvisare il medico.",
-    "Indossare l'orologio anche di notte: &egrave; cos&igrave; che vengono misurati ossigeno, recupero e sonno.",
+    "Continuare il movimento regolare come sta gi&agrave; facendo (nelle ultime settimane oltre 5 uscite a settimana), con un saturimetro al dito: rallentare se l'ossigeno scende sotto 88-90%.",
+    "Tenere d'occhio il battito a riposo che l'orologio misura nelle notti in cui viene indossato: se sale sopra 75-80 per pi&ugrave; giorni di fila, avvisare il medico.",
+    "<b>Rimettere l'orologio di notte</b>: dal 23 agosto non viene pi&ugrave; indossato e si sono perse tutte le misure di ossigeno notturno, sonno e recupero. Bastano anche due o tre notti a settimana.",
     "Misurare la pressione a casa mattina e sera e annotarla, in attesa di rifare l'esame delle 24 ore.",
     "Dieta mediterranea: verdure a foglia verde e legumi, pesce, olio d'oliva, poco sale; calcio e vitamina D per le ossa.",
     "Vaccinazioni: antinfluenzale ogni anno, anti-pneumococco e le altre consigliate dallo pneumologo.",
@@ -162,7 +171,7 @@ story.append(Paragraph("<b>Promemoria controlli e visite</b>", corpo))
 story.append(Spacer(1, 3))
 rem = [[Paragraph("Esame / visita", cellahl), Paragraph("Quando", cellahl), Paragraph("Perch&eacute;", cellahl)]]
 for r in [
-    ("TAC del torace di controllo", "Era prevista a ~6 mesi da gennaio 2026: verificare se gi&agrave; fatta, altrimenti fissarla subito", "Controllo del nodulo di 9 mm al polmone sinistro"),
+    ("TAC del torace di controllo", "<b>In ritardo</b>: era prevista intorno a luglio 2026 (~6 mesi da gennaio). Verificare se &egrave; gi&agrave; stata fatta, altrimenti fissarla subito", "Controllo del nodulo di 9 mm al polmone sinistro"),
     ("Visita di Chirurgia Toracica (Osp. S. Andrea)", "Secondo il calendario del centro", "Controllo dell'altro nodulo gi&agrave; in osservazione"),
     ("Esame notturno del respiro (poligrafia con capnografia)", "Da fissare a breve", "Ossigeno notturno sotto il 95% in quasi tutti i mesi"),
     ("Nuovo Holter della pressione (24 ore)", "Appena possibile", "La misurazione di ottobre 2025 non &egrave; valida"),
@@ -275,11 +284,13 @@ story.append(tg2)
 story.append(Spacer(1, 3))
 story.append(Paragraph(
     "Come leggerli: il battito a riposo resta per tutto l'anno nella fascia normale, con una leggera risalita "
-    "da 58 a circa 63-67 nel 2026. L'ossigeno notturno &egrave; il punto debole: resta quasi sempre sotto la soglia "
-    "del 95%, con il minimo del 92% fra ottobre e novembre 2025 e un recupero nei mesi successivi. Il peso &egrave; "
-    "sceso di circa 7 chili in modo graduale e costante: &egrave; il risultato migliore dell'anno. L'attivit&agrave; "
-    "fisica &egrave; stata molto regolare da settembre ad aprile (26-36 uscite al mese), &egrave; calata a maggio, si &egrave; "
-    "fermata quasi del tutto a giugno e luglio ed &egrave; ripresa con decisione ad agosto.", nota))
+    "da 58 a circa 60-67 nel 2026. L'ossigeno notturno &egrave; il punto debole: resta quasi sempre sotto la soglia "
+    "del 95%, con il minimo del 92% fra ottobre e novembre 2025 e un recupero nei mesi successivi; attenzione per&ograve; "
+    "che gli ultimi mesi poggiano su pochissime notti misurate, perch&eacute; dal 23 agosto l'orologio non viene "
+    "pi&ugrave; indossato per dormire. Il peso &egrave; sceso di circa 7 chili e mezzo in modo graduale e costante: "
+    "&egrave; il risultato migliore dell'anno. L'attivit&agrave; fisica &egrave; stata molto regolare da settembre ad "
+    "aprile (26-36 uscite al mese), &egrave; calata da met&agrave; maggio fino a inizio agosto, ed &egrave; poi ripresa "
+    "con decisione: agosto e settembre sono i mesi pi&ugrave; intensi dell'anno.", nota))
 
 # ---------------------------------------------------------------- 6. fonti
 testa6 = [Paragraph("6. Documenti usati per questo report", h),
@@ -296,7 +307,7 @@ for r in [
     ("2026.pdf (laboratorio Varelli)", "22/07/2026", "Analisi del sangue e delle urine"),
     ("fileReferto 2.pdf", "29/07/2026", "Radiografia delle mani"),
     ("Spirometria.numbers", "&mdash;", "Foglio Apple non leggibile: da convertire per essere incluso"),
-    ("Dati Garmin &mdash; fogli &ldquo;Attivit&agrave; sportive&rdquo; e &ldquo;Benessere&rdquo; (cartella Dati Garmin)", "23/08/2025 - 22/08/2026", "304 allenamenti (circa 395 ore e 4.000 km) e 366 giorni di misure di salute, letti da intervals.icu"),
+    ("Dati Garmin &mdash; fogli &ldquo;Attivit&agrave; sportive&rdquo; e &ldquo;Benessere&rdquo; (cartella Dati Garmin)", "23/08/2025 - 12/09/2026", "327 allenamenti (circa 424 ore e 4.400 km) e 382 giorni di misure di salute, letti da intervals.icu"),
 ]:
     inv.append([Paragraph(c, cella) for c in r])
 ti = Table(inv, colWidths=[78 * mm, 26 * mm, 74 * mm], repeatRows=1)

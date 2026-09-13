@@ -242,6 +242,7 @@ Nota: le medie di luglio-settembre 2026 poggiano su poche notti misurate (8 per 
 |---|---|---|---|
 | 22.08.2026_Report Salute Massimo Sunzini.pdf (cartella radice) | `1527bVew21gPDMF2jXkktmXVrty-BATTi` | 22/08/2026 | Versione in linguaggio divulgativo, senza dati Holter pressorio (non validi); PDF rigenerato in formato compatibile col viewer mobile di Drive. Sostituisce le versioni precedenti dello stesso giorno (cestinate) |
 | 23.08.2026_Report Salute Massimo Sunzini.pdf (cartella radice) | `1HrY-DxhpuxIl4YiKmRjWp2lPoat9JSVH` | 23/08/2026 | 4 pagine, nuova struttura richiesta dall'utente: commenti → tabella Garmin mese per mese → grafici → **fonti in fondo**. Basato su tutti i **304 allenamenti** (dopo il sync retroattivo). Esclude i dati non validi (Holter pressorio e le 62 FC a riposo ≥ 95 bpm). 16.219 B, integrità verificata. Sostituisce le due versioni precedenti dello stesso giorno (cestinate) |
+| 13.09.2026_Report Salute Massimo Sunzini.pdf (cartella radice) | `1azFmLM5rWZLCpg9wAWJAgVuVS18pAH3_` | 13/09/2026 | 4 pagine, 16.696 B (dimensione verificata su Drive dopo l'upload). Dati Garmin al 12/09/2026 (327 allenamenti). Novità rispetto al 23/08: settimana record 6-12/09, segnalazione che dal 23/08 manca il monitoraggio notturno, periodo a bassa attività ricollocato da metà maggio, TAC del torace marcata come in ritardo |
 
 ---
 
