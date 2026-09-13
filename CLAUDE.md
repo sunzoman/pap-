@@ -108,7 +108,7 @@ Generazione: script reportlab (A4); non usare caratteri fuori WinAnsi (niente fr
 
 ### Avviso via e-mail a Massimo (regola dell'utente, 13/09/2026)
 
-Dopo ogni caricamento riuscito del report su Drive, inviare a **massimo.sunzini@forkey.it** una mail breve che lo avvisa che c'e' una nuova versione del report e gli da' il link della cartella:
+Dopo ogni caricamento riuscito del report su Drive, inviare a **massimo.sunzini@forkey.it** (indirizzo confermato da Federico il 13/09/2026: e' l'unico che Massimo usa) una mail breve che lo avvisa che c'e' una nuova versione del report e gli da' il link della cartella:
 https://drive.google.com/open?id=1MYOQz6jvyd59SkyRhJsugH65FJieO6PU
 
 Regole vincolanti per questa mail:
