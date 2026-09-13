@@ -119,6 +119,7 @@ Regole vincolanti per questa mail:
 - **Una sola mail per report**: se si rigenera lo stesso report nello stesso giorno, non inviare un secondo avviso salvo richiesta esplicita.
 - Tono semplice e diretto, in italiano. **Firma obbligatoria: "Miles - l'assistente di Federico"** (regola dell'utente, 13/09/2026 — la prima mail del 13/09 era firmata "Federico", da li' in avanti si firma Miles). Chiudere con la nota che e' un messaggio automatico della cartella salute gestita da Federico.
 - Prima mail inviata il 13/09/2026 (thread Gmail `1a09b8474a7afa4e`); da li' in avanti la cadenza e' settimanale, la domenica.
+- **UNA TANTUM, solo nella mail del 20/09/2026:** siccome la mail del 13/09 era firmata "Federico", aggiungere due righe che presentano Miles — l'assistente che Federico usa per tenere in ordine la cartella della salute e preparare il report — cosi' Massimo sa chi gli scrive. Dalla mail successiva in poi niente presentazione: solo la firma. **Dopo l'invio del 20/09, cancellare questo punto da CLAUDE.md e dalla Routine.**
 
 ### Consegna del report (regola dell'utente, 22/08/2026)
 
