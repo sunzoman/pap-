@@ -117,7 +117,7 @@ Regole vincolanti per questa mail:
 - **E' ammesso (e richiesto dall'utente) un promemoria pratico breve**, se serve: ad esempio ricordare a Massimo di indossare l'orologio di notte quando la scansione rileva che le misure notturne mancano. Deve restare un consiglio pratico — niente numeri, niente diagnosi, niente interpretazioni cliniche.
 - Inviare **solo se l'upload su Drive e' andato a buon fine e la dimensione e' stata verificata**. Se l'upload fallisce, niente mail.
 - **Una sola mail per report**: se si rigenera lo stesso report nello stesso giorno, non inviare un secondo avviso salvo richiesta esplicita.
-- Tono semplice e diretto, in italiano, firmata come messaggio automatico gestito da Federico.
+- Tono semplice e diretto, in italiano. **Firma obbligatoria: "Miles - l'assistente di Federico"** (regola dell'utente, 13/09/2026 — la prima mail del 13/09 era firmata "Federico", da li' in avanti si firma Miles). Chiudere con la nota che e' un messaggio automatico della cartella salute gestita da Federico.
 - Prima mail inviata il 13/09/2026 (thread Gmail `1a09b8474a7afa4e`); da li' in avanti la cadenza e' settimanale, la domenica.
 
 ### Consegna del report (regola dell'utente, 22/08/2026)
