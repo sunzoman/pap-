@@ -6,16 +6,41 @@ non e' stato indossato di notte, valori non fisiologici (95-117 bpm) ripetuti
 identici per giorni consecutivi. Non sono misure: vengono esclusi dalla colonna
 validata e conservati nella colonna del dato grezzo.
 """
-import json, csv, os
+import json, csv, os, sys, time
 
 SOGLIA_FC = 95  # bpm: sopra questa soglia il valore non e' una misura attendibile
+ETA_MAX_ORE = 6  # oltre questa eta' un JSON e' considerato un residuo di una scansione precedente
 D = os.environ.get("JSON_DIR", ".")  # cartella con acts_raw.json e well_raw.json scaricati via curl
 OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "dati", "garmin")
+
+def controlla(nome):
+    """I JSON devono esistere ed essere freschi.
+
+    Se si scaricano con un nome diverso da quello atteso, senza questo controllo
+    lo script rigenera i CSV dai file della scansione precedente senza segnalare
+    nulla: e' successo il 06/09/2026 e il 13/09/2026 (att.json/wel.json invece di
+    acts_raw.json/well_raw.json).
+    """
+    percorso = os.path.join(D, nome)
+    if not os.path.exists(percorso):
+        presenti = sorted(f for f in os.listdir(D) if f.endswith(".json")) or ["nessuno"]
+        sys.exit(f"ERRORE: manca {percorso}.\n"
+                 f"JSON presenti in {D}: {', '.join(presenti)}.\n"
+                 f"Scaricare con curl usando esattamente i nomi acts_raw.json e well_raw.json "
+                 f"(vedi strumenti/README.md).")
+    ore = (time.time() - os.path.getmtime(percorso)) / 3600
+    if ore > ETA_MAX_ORE:
+        sys.exit(f"ERRORE: {percorso} risale a {ore:.1f} ore fa, probabilmente e' un residuo "
+                 f"di una scansione precedente. Riscaricarlo da intervals.icu prima di procedere.")
+    return percorso
+
+acts_json = controlla("acts_raw.json")
+well_json = controlla("well_raw.json")
 
 def hhmm(s):
     return f"{int(s)//3600:d}:{(int(s)%3600)//60:02d}" if s else ""
 
-acts = json.load(open(f"{D}/acts_raw.json"))
+acts = json.load(open(acts_json))
 acts.sort(key=lambda a: a.get("start_date_local") or "")
 with open(f"{OUT}/attivita.csv", "w", newline="", encoding="utf-8") as f:
     w = csv.writer(f)
@@ -32,7 +57,7 @@ with open(f"{OUT}/attivita.csv", "w", newline="", encoding="utf-8") as f:
                     a.get("calories") or "", a.get("icu_training_load") or "",
                     a.get("feel") or "", a.get("device_name") or ""])
 
-well = json.load(open(f"{D}/well_raw.json"))
+well = json.load(open(well_json))
 well.sort(key=lambda g: g.get("id") or "")
 righe = 0
 with open(f"{OUT}/benessere.csv", "w", newline="", encoding="utf-8") as f:

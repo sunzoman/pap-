@@ -29,3 +29,5 @@ python3 -c "import pypdfium2 as p; d=p.PdfDocument('/tmp/report.pdf'); [d[i].ren
 ```
 
 Usare `curl`: `urllib` di Python non attraversa il proxy dell'ambiente e riceve 403.
+
+I nomi `acts_raw.json` e `well_raw.json` non sono opzionali: `costruisci_csv.py` si ferma con un errore esplicito se mancano, oppure se risalgono a piu' di 6 ore prima. Serve a evitare che i CSV vengano rigenerati in silenzio dai dati di una scansione precedente (successo il 06/09 e il 13/09/2026, quando i file erano stati scaricati come `att.json`/`wel.json`).
