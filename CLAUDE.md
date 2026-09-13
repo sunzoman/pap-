@@ -86,7 +86,7 @@ Gli script della knowledge base stanno in [`strumenti/`](strumenti/README.md): `
 
 ## Report PDF
 
-Su richiesta dell'utente si genera un report PDF di consultazione (es. `Report_Salute_Massimo_Sunzini_<data>.pdf`). Fonte esclusiva: `memoria/MEMORIA.md`, i file della cartella Drive sopra indicata e i CSV in `dati/garmin/`. **Struttura aggiornata dall'utente il 23/08/2026** (l'elenco dei documenti va in fondo, non in testa):
+Il report PDF di consultazione si genera **a ogni scansione settimanale** (domenica, subito dopo l'aggiornamento di memoria e CSV) e inoltre **ogni volta che l'utente lo chiede in chat** (regola del 13/09/2026). Fonte esclusiva: `memoria/MEMORIA.md`, i file della cartella Drive sopra indicata e i CSV in `dati/garmin/`. **Struttura aggiornata dall'utente il 23/08/2026** (l'elenco dei documenti va in fondo, non in testa):
 
 1. **Sezione 1 — Cosa dicono i dati oggettivi**: massimo ~5 righe su ciò che emerge oggettivamente dai documenti.
 2. **Sezione 2 — Come sta e come rende**: stessa lunghezza; tiene conto delle sensazioni riferite (Borg/anamnesi CPET, note personali in cartella) **e degli allenamenti e dei dati Garmin**, che vanno citati esplicitamente come base oggettiva delle performance.
@@ -105,6 +105,17 @@ Generazione: script reportlab (A4); non usare caratteri fuori WinAnsi (niente fr
 **Caricamento su Drive:** `create_file` richiede il contenuto in base64 nel parametro. Trascrivere il base64 **in un blocco unico** (`cat` del file `.b64` e riporto integrale): spezzarlo in più letture e ricucirlo introduce errori sulle giunzioni. Dopo l'upload confrontare `fileSize` restituito da Drive con la dimensione del file locale: devono coincidere esattamente.
 
 **Linguaggio (regola dell'utente, 22/08/2026):** il report va scritto in italiano semplice, comprensibile a non medici. Evitare sigle e tecnicismi non spiegati: preferire perifrasi ("i bronchi lasciano passare circa il 40% dell'aria che dovrebbero" invece di "FEV1 40% del predetto"); quando un termine tecnico è necessario, spiegarlo tra parentesi. I dati marcati NON VALIDI in MEMORIA.md non vanno mai usati come base per commenti o suggerimenti: citarli solo per dire che l'esame va ripetuto.
+
+### Avviso via e-mail a Massimo (regola dell'utente, 13/09/2026)
+
+Dopo ogni caricamento riuscito del report su Drive, inviare a **massimo.sunzini@forkey.it** una mail breve che lo avvisa che c'e' una nuova versione del report e gli da' il link della cartella:
+https://drive.google.com/open?id=1MYOQz6jvyd59SkyRhJsugH65FJieO6PU
+
+Regole vincolanti per questa mail:
+- **Nessun dato sanitario nel corpo della mail**: niente valori, niente diagnosi, niente commenti clinici. Solo l'avviso che il report e' pronto, il nome del file e il link alla cartella. La mail passa da server esterni; i referti restano solo su Drive e nel repository.
+- Inviare **solo se l'upload su Drive e' andato a buon fine e la dimensione e' stata verificata**. Se l'upload fallisce, niente mail.
+- **Una sola mail per report**: se si rigenera lo stesso report nello stesso giorno, non inviare un secondo avviso salvo richiesta esplicita.
+- Tono semplice e diretto, in italiano, firmata come messaggio automatico gestito da Federico.
 
 ### Consegna del report (regola dell'utente, 22/08/2026)
 
