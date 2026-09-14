@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "Bash(git *)",
+      "Bash(python3 *)",
+      "Bash(pip3 install *)",
+      "Bash(base64 *)",
+      "Bash(ls *)",
+      "Bash(wc *)",
+      "Bash(cmp *)",
+      "Bash(split *)",
+      "mcp__Google_Drive__search_files",
+      "mcp__Google_Drive__get_file_metadata",
+      "mcp__Google_Drive__list_recent_files",
+      "mcp__Google_Drive__read_file_content",
+      "mcp__Google_Drive__download_file_content",
+      "mcp__Google_Drive__create_file",
+      "mcp__Google_Drive__update_file",
+      "mcp__github__get_file_contents",
+      "mcp__github__list_branches",
+      "mcp__github__list_commits",
+      "mcp__github__push_files",
+      "mcp__github__create_or_update_file",
+      "mcp__github__pull_request_read"
+    ]
+  }
+}
