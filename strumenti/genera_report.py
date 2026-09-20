@@ -106,16 +106,16 @@ story.append(Paragraph(
 # ---------------------------------------------------------------- 2
 story.append(Paragraph("2. Come sta e come rende, secondo le sensazioni e i dati dell'orologio", h))
 story.append(Paragraph(
-    "Massimo si allena con costanza e si sente bene, e i numeri lo confermano: <b>327 uscite in poco pi&ugrave; di "
-    "un anno, oltre 420 ore e circa 4.400 km</b> (soprattutto camminate, bici e canottaggio). Le ultime settimane "
-    "sono le pi&ugrave; intense di tutto l'anno: nella sola settimana dal 6 al 12 settembre <b>sei uscite in mountain "
-    "bike per 165 km</b>, comprese due da oltre 43 km. Durante il test in ospedale aveva riferito solo affanno e "
+    "Massimo si allena con costanza e si sente bene, e i numeri lo confermano: <b>332 uscite in poco pi&ugrave; di "
+    "un anno, oltre 430 ore e circa 4.570 km</b> (soprattutto camminate, bici e canottaggio). Le ultime settimane "
+    "sono le pi&ugrave; intense di tutto l'anno: 165 km in bici nella settimana dal 6 al 12 settembre e <b>altri 153 km "
+    "in quella dal 14 al 18</b>, con un'uscita da quasi 50 km il 16, la pi&ugrave; lunga dell'anno. Durante il test in ospedale aveva riferito solo affanno e "
     "stanchezza moderati, con un consumo di ossigeno del tutto normale: l'orologio racconta la stessa storia, con "
     "un battito medio intorno a 105 durante l'attivit&agrave; e punte fino a 150. In pratica <b>rende molto "
     "pi&ugrave; di quanto i valori dei polmoni farebbero prevedere</b>, perch&eacute; il corpo si &egrave; abituato a "
     "lavorare con meno ossigeno. Il rovescio della medaglia resta lo stesso: sentendo poco i sintomi, potrebbe non "
     "accorgersi di un peggioramento. Proprio per questo pesa il fatto che <b>dal 23 agosto l'orologio non venga "
-    "pi&ugrave; indossato di notte</b>: sono sparite le misure di ossigeno notturno, sonno e recupero, cio&egrave; "
+    "pi&ugrave; indossato di notte &mdash; ormai da un mese</b>: sono sparite le misure di ossigeno notturno, sonno e recupero, cio&egrave; "
     "gli unici campanelli d'allarme automatici che avevamo. Resta poi da chiarire il lungo periodo con pochi "
     "allenamenti registrati fra <b>met&agrave; maggio e inizio agosto 2026</b>: le uscite si interrompono il 13 maggio e "
     "tornano quotidiane solo dal 10 agosto, con poche sedute isolate in mezzo, dopo otto mesi filati da 26-36 al mese. "
@@ -136,7 +136,7 @@ story.append(Spacer(1, 6))
 
 story.append(Paragraph("<b>Cosa fare</b>", puntato))
 for x in [
-    "Continuare il movimento regolare come sta gi&agrave; facendo (nelle ultime settimane oltre 5 uscite a settimana), con un saturimetro al dito: rallentare se l'ossigeno scende sotto 88-90%.",
+    "Continuare il movimento regolare (nelle ultime otto settimane circa 6 uscite a settimana, in crescita da sei settimane di fila): tenere questo ritmo senza aumentarlo ancora, con un saturimetro al dito, e rallentare se l'ossigeno scende sotto 88-90%.",
     "Tenere d'occhio il battito a riposo che l'orologio misura nelle notti in cui viene indossato: se sale sopra 75-80 per pi&ugrave; giorni di fila, avvisare il medico.",
     "<b>Rimettere l'orologio di notte</b>: dal 23 agosto non viene pi&ugrave; indossato e si sono perse tutte le misure di ossigeno notturno, sonno e recupero. Bastano anche due o tre notti a settimana.",
     "Misurare la pressione a casa mattina e sera e annotarla, in attesa di rifare l'esame delle 24 ore.",
@@ -290,7 +290,8 @@ story.append(Paragraph(
     "pi&ugrave; indossato per dormire. Il peso &egrave; sceso di circa 7 chili e mezzo in modo graduale e costante: "
     "&egrave; il risultato migliore dell'anno. L'attivit&agrave; fisica &egrave; stata molto regolare da settembre ad "
     "aprile (26-36 uscite al mese), &egrave; calata da met&agrave; maggio fino a inizio agosto, ed &egrave; poi ripresa "
-    "con decisione: agosto e settembre sono i mesi pi&ugrave; intensi dell'anno.", nota))
+    "con decisione: agosto e settembre sono i mesi pi&ugrave; intensi dell'anno, con il carico in crescita da sei "
+    "settimane di fila.", nota))
 
 # ---------------------------------------------------------------- 6. fonti
 testa6 = [Paragraph("6. Documenti usati per questo report", h),
@@ -307,7 +308,7 @@ for r in [
     ("2026.pdf (laboratorio Varelli)", "22/07/2026", "Analisi del sangue e delle urine"),
     ("fileReferto 2.pdf", "29/07/2026", "Radiografia delle mani"),
     ("Spirometria.numbers", "&mdash;", "Foglio Apple non leggibile: da convertire per essere incluso"),
-    ("Dati Garmin &mdash; fogli &ldquo;Attivit&agrave; sportive&rdquo; e &ldquo;Benessere&rdquo; (cartella Dati Garmin)", "23/08/2025 - 12/09/2026", "327 allenamenti (circa 424 ore e 4.400 km) e 382 giorni di misure di salute, letti da intervals.icu"),
+    ("Dati Garmin &mdash; fogli &ldquo;Attivit&agrave; sportive&rdquo; e &ldquo;Benessere&rdquo; (cartella Dati Garmin)", "23/08/2025 - 18/09/2026", "332 allenamenti (circa 434 ore e 4.571 km) e 386 giorni di misure di salute, letti da intervals.icu"),
 ]:
     inv.append([Paragraph(c, cella) for c in r])
 ti = Table(inv, colWidths=[78 * mm, 26 * mm, 74 * mm], repeatRows=1)
