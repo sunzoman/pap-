@@ -108,8 +108,9 @@ story.append(Paragraph("2. Come sta e come rende, secondo le sensazioni e i dati
 story.append(Paragraph(
     "Massimo si allena con costanza e si sente bene, e i numeri lo confermano: <b>332 uscite in poco pi&ugrave; di "
     "un anno, oltre 430 ore e circa 4.570 km</b> (soprattutto camminate, bici e canottaggio). Le ultime settimane "
-    "sono le pi&ugrave; intense di tutto l'anno: 165 km in bici nella settimana dal 6 al 12 settembre e <b>altri 153 km "
-    "in quella dal 14 al 18</b>, con un'uscita da quasi 50 km il 16, la pi&ugrave; lunga dell'anno. Durante il test in ospedale aveva riferito solo affanno e "
+    "sono le pi&ugrave; intense di tutto l'anno: 165 km in bici nella settimana dal 6 al 12 settembre, altri 153 km "
+    "dal 14 al 18 e <b>altri 155 km dal 20 al 26</b>, con un'uscita da 50 km il 24, la pi&ugrave; lunga mai fatta in "
+    "mountain bike. Durante il test in ospedale aveva riferito solo affanno e "
     "stanchezza moderati, con un consumo di ossigeno del tutto normale: l'orologio racconta la stessa storia, con "
     "un battito medio intorno a 105 durante l'attivit&agrave; e punte fino a 150. In pratica <b>rende molto "
     "pi&ugrave; di quanto i valori dei polmoni farebbero prevedere</b>, perch&eacute; il corpo si &egrave; abituato a "
