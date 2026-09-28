@@ -86,7 +86,17 @@ Gli script della knowledge base stanno in [`strumenti/`](strumenti/README.md): `
 
 ## Report PDF
 
-Il report PDF di consultazione si genera **a ogni scansione settimanale** (domenica, subito dopo l'aggiornamento di memoria e CSV) e inoltre **ogni volta che l'utente lo chiede in chat** (regola del 13/09/2026). Fonte esclusiva: `memoria/MEMORIA.md`, i file della cartella Drive sopra indicata e i CSV in `dati/garmin/`. **Struttura aggiornata dall'utente il 23/08/2026** (l'elenco dei documenti va in fondo, non in testa):
+### Formato: documento Google in automatico, PDF su richiesta (regola dell'utente, 28/09/2026)
+
+Il report settimanale si pubblica come **documento Google** (`strumenti/genera_report_doc.py` -> Markdown -> `create_file` con `contentMimeType: text/markdown`). Motivo: il PDF va caricato su Drive trascrivendo a mano ~22.000 caratteri di base64 e a quella lunghezza la trascrizione sbaglia (20/09/2026: due tentativi, due file diversi dall'originale, mail non inviata). Il testo si carica come testo: un errore diventa un refuso visibile, non un file corrotto. I 4 grafici vettoriali diventano barre testuali.
+
+Il **PDF completo con i grafici** (`strumenti/genera_report.py`) resta per le richieste esplicite dell'utente in chat, dove l'upload si puo' seguire e ritentare.
+
+**Nomi dei file (regola dell'utente, 28/09/2026):** l'ultimo report ha il suffisso ` 🆕`, i precedenti vengono rinominati con il prefisso `⌛️ `. Rinominare e' sicuro: tocca solo il titolo, non il contenuto.
+
+**Nota operativa:** i caricamenti grandi su Drive possono fallire con "Resource has been exhausted (quota)". Non e' un errore di contenuto: riprovare dopo qualche minuto. Le rinomine e i cestinamenti passano comunque.
+
+Il report si genera **a ogni scansione settimanale** (domenica, subito dopo l'aggiornamento di memoria e CSV) e inoltre **ogni volta che l'utente lo chiede in chat**. Fonte esclusiva: `memoria/MEMORIA.md`, i file della cartella Drive sopra indicata e i CSV in `dati/garmin/`. **Struttura aggiornata dall'utente il 23/08/2026** (l'elenco dei documenti va in fondo, non in testa):
 
 1. **Sezione 1 — Cosa dicono i dati oggettivi**: massimo ~5 righe su ciò che emerge oggettivamente dai documenti.
 2. **Sezione 2 — Come sta e come rende**: stessa lunghezza; tiene conto delle sensazioni riferite (Borg/anamnesi CPET, note personali in cartella) **e degli allenamenti e dei dati Garmin**, che vanno citati esplicitamente come base oggettiva delle performance.
@@ -108,18 +118,19 @@ Generazione: script reportlab (A4); non usare caratteri fuori WinAnsi (niente fr
 
 ### Avviso via e-mail a Massimo (regola dell'utente, 13/09/2026)
 
-Dopo ogni caricamento riuscito del report su Drive, inviare a **massimo.sunzini@forkey.it** (indirizzo confermato da Federico il 13/09/2026: e' l'unico che Massimo usa) una mail breve che lo avvisa che c'e' una nuova versione del report e gli da' il link della cartella:
+Dopo ogni pubblicazione riuscita del report su Drive, inviare a **massimo.sunzini@forkey.it** (indirizzo confermato da Federico il 13/09/2026: e' l'unico che Massimo usa) una mail breve che lo avvisa che c'e' una nuova versione del report e gli da' il link della cartella:
 https://drive.google.com/open?id=1MYOQz6jvyd59SkyRhJsugH65FJieO6PU
 
 Regole vincolanti per questa mail:
 - **Sempre in copia (Cc) federico.sunzini@widerview.it** (richiesta dell'utente, 13/09/2026), cosi' Federico riceve lo stesso avviso.
 - **Nessun valore, diagnosi o commento clinico nel corpo della mail**: la mail passa da server esterni, i referti restano solo su Drive e nel repository. Il contenuto e' l'avviso che il report e' pronto, il nome del file e il link alla cartella.
 - **E' ammesso (e richiesto dall'utente) un promemoria pratico breve**, se serve: ad esempio ricordare a Massimo di indossare l'orologio di notte quando la scansione rileva che le misure notturne mancano. Deve restare un consiglio pratico — niente numeri, niente diagnosi, niente interpretazioni cliniche.
-- Inviare **solo se l'upload su Drive e' andato a buon fine e la dimensione e' stata verificata**. Se l'upload fallisce, niente mail.
+- Inviare **solo se la pubblicazione su Drive e' andata a buon fine** (per il documento Google: `fileSize` non vuoto e coerente; per il PDF: dimensione identica al file locale). Se fallisce, niente mail.
+- **Se qualcosa non va, dirlo nella mail** (richiesta dell'utente, 28/09/2026): se la scansione ha trovato un problema pratico — per esempio dati mancanti perche' l'orologio non viene indossato — va segnalato a Massimo nel corpo, in una riga, come consiglio pratico e senza valori clinici.
 - **Una sola mail per report**: se si rigenera lo stesso report nello stesso giorno, non inviare un secondo avviso salvo richiesta esplicita.
 - Tono semplice e diretto, in italiano. **Firma obbligatoria: "Miles - l'assistente di Federico"** (regola dell'utente, 13/09/2026 — la prima mail del 13/09 era firmata "Federico", da li' in avanti si firma Miles). Chiudere con la nota che e' un messaggio automatico della cartella salute gestita da Federico.
 - Prima mail inviata il 13/09/2026 (thread Gmail `1a09b8474a7afa4e`); da li' in avanti la cadenza e' settimanale, la domenica.
-- **UNA TANTUM, solo nella mail del 20/09/2026:** siccome la mail del 13/09 era firmata "Federico", aggiungere due righe che presentano Miles — l'assistente che Federico usa per tenere in ordine la cartella della salute e preparare il report — cosi' Massimo sa chi gli scrive. Dalla mail successiva in poi niente presentazione: solo la firma. **Dopo l'invio del 20/09, cancellare questo punto da CLAUDE.md e dalla Routine.**
+- ~~UNA TANTUM, solo nella mail del 20/09/2026~~ (non piu' applicabile: la mail del 20/09 non e' partita, l'anteprima e' stata approvata il 28/09; la presentazione di Miles va fatta nella prima mail utile): siccome la mail del 13/09 era firmata "Federico", aggiungere due righe che presentano Miles — l'assistente che Federico usa per tenere in ordine la cartella della salute e preparare il report — cosi' Massimo sa chi gli scrive. Dalla mail successiva in poi niente presentazione: solo la firma. **Dopo l'invio del 20/09, cancellare questo punto da CLAUDE.md e dalla Routine.**
 
 ### Consegna del report (regola dell'utente, 22/08/2026)
 

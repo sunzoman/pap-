@@ -9,6 +9,15 @@ validata e conservati nella colonna del dato grezzo.
 import json, csv, os, sys, time
 
 SOGLIA_FC = 95  # bpm: sopra questa soglia il valore non e' una misura attendibile
+
+# Misure singole escluse a mano perche' non plausibili come dato notturno (regola di
+# plausibilita' del 23/08/2026). Il dato grezzo resta nel JSON di origine e l'esclusione
+# e' documentata in MEMORIA.md.
+#   2026-09-19: FC a riposo 83 e SpO2 99% mentre i giorni vicini stanno a 62-65 e 93-95,
+#   in una settimana in cui l'orologio non veniva indossato di notte: quasi certamente
+#   una rilevazione diurna. Falsava le medie di settembre (FC 66 invece di 61,
+#   SpO2 95,2 invece di 94,3, che cambiava il segno del mese rispetto alla soglia).
+ESCLUSI = {("2026-09-19", "restingHR"), ("2026-09-19", "spO2")}
 ETA_MAX_ORE = 6  # oltre questa eta' un JSON e' considerato un residuo di una scansione precedente
 D = os.environ.get("JSON_DIR", ".")  # cartella con acts_raw.json e well_raw.json scaricati via curl
 OUT = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "dati", "garmin")
@@ -71,13 +80,16 @@ with open(f"{OUT}/benessere.csv", "w", newline="", encoding="utf-8") as f:
         if not any(v is not None for v in misure):
             continue
         righe += 1
+        giorno = g.get("id") or ""
         fc = g.get("restingHR")
-        w.writerow([g.get("id") or "",
-                    fc if (fc is not None and fc < SOGLIA_FC) else "",
+        fc_valida = fc is not None and fc < SOGLIA_FC and (giorno, "restingHR") not in ESCLUSI
+        spo2 = g.get("spO2") if (giorno, "spO2") not in ESCLUSI else None
+        w.writerow([giorno,
+                    fc if fc_valida else "",
                     fc if fc is not None else "",
                     g.get("hrv") or "",
                     round(g["sleepSecs"] / 3600, 1) if g.get("sleepSecs") else "",
-                    g.get("sleepScore") or "", g.get("spO2") or "", g.get("weight") or "",
+                    g.get("sleepScore") or "", spo2 or "", g.get("weight") or "",
                     g.get("bodyFat") or "", g.get("vo2max") or "", g.get("steps") or "",
                     round(g["ctl"], 1) if g.get("ctl") is not None else "",
                     round(g["atl"], 1) if g.get("atl") is not None else ""])

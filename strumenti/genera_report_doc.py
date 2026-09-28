@@ -102,7 +102,7 @@ w(f"Massimo si allena con costanza e si sente bene, e i numeri lo confermano: **
   "recupero, cioè gli unici campanelli d'allarme automatici che avevamo. Resta poi da chiarire il lungo "
   "periodo con pochi allenamenti registrati fra **metà maggio e inizio agosto 2026**: le uscite si "
   "interrompono il 13 maggio e tornano quotidiane solo dal 10 agosto, dopo otto mesi filati da 26-36 al mese. "
-  "Vale la pena chiedergli se in quel periodo si è fermato davvero, o se semplicemente non ha avviato la "
+  "Vale la pena capire se in quel periodo si è fermato davvero, o se semplicemente non ha avviato la "
   "registrazione sull'orologio.")
 w("")
 
