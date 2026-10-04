@@ -130,6 +130,9 @@ Regole vincolanti per questa mail:
 - **Una sola mail per report**: se si rigenera lo stesso report nello stesso giorno, non inviare un secondo avviso salvo richiesta esplicita.
 - Tono semplice e diretto, in italiano. **Firma obbligatoria: "Miles - l'assistente di Federico"** (regola dell'utente, 13/09/2026 — la prima mail del 13/09 era firmata "Federico", da li' in avanti si firma Miles). Chiudere con la nota che e' un messaggio automatico della cartella salute gestita da Federico.
 - Prima mail inviata il 13/09/2026 (thread Gmail `1a09b8474a7afa4e`); da li' in avanti la cadenza e' settimanale, la domenica.
+- **Dichiarazione AI obbligatoria** (regola aziendale sulla trasparenza, dal 04/10/2026): la mail parte in automatico senza revisione, quindi la chiusura e' "Messaggio automatico della cartella salute gestita da Federico, scritto da un assistente AI."
+- **Sonno Garmin** (richiesta di Federico del 04/10/2026): finche' il sonno non arriva da intervals.icu (nessuna notte con `sleepSecs` negli ultimi 7 giorni), la mail contiene i passi semplici per controllare la condivisione Garmin -> intervals.icu: app Garmin Connect (ultima sincronizzazione e sonno visibile) -> Altro -> Impostazioni -> App collegate -> intervals.icu (il sonno e' tra i dati condivisi?) -> se manca, su intervals.icu Settings -> Garmin scollegare e ricollegare lasciando tutte le caselle spuntate. Per intero la prima volta (11/10/2026), poi una riga di richiamo. Se da piu' di 3 giorni non arriva nessun dato, ricordare di aprire Garmin Connect per sincronizzare.
+- **Documenti mancanti** (richiesta di Federico del 04/10/2026): finche' mancano, ricordare in una o due righe di caricare in "Documenti e referti" la documentazione dell'operazione ai polmoni, il referto della TAC del torace di controllo ed eventuali referti di visite recenti. Citare solo quelli ancora assenti.
 
 ### Consegna del report (regola dell'utente, 22/08/2026)
 
