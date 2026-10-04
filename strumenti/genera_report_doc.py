@@ -73,8 +73,9 @@ w("## 1. Cosa dicono i dati oggettivi")
 w("")
 w("Il tema principale sono i polmoni: c'è una bronchite cronica ostruttiva importante — i bronchi lasciano "
   "passare circa il 40% dell'aria che dovrebbero — e i polmoni trattengono troppa aria; sotto sforzo "
-  "l'ossigeno nel sangue scende fino all'87%, e anche di notte resta quasi sempre sotto il 95%: l'orologio "
-  "lo conferma mese per mese, con il valore più basso (92%) fra ottobre e novembre 2025. Due piccoli noduli "
+  "l'ossigeno nel sangue scende fino all'87%, e di notte l'orologio lo ha misurato sotto il 95% nella maggior "
+  "parte dei mesi, con il valore più basso (92%) fra ottobre e novembre 2025; da luglio 2026 è intorno al 95%, "
+  "ma su poche notti misurate. Due piccoli noduli "
   "polmonari restano sotto controllo con le TAC. Il cuore batte a ritmo regolare, con qualche battito "
   "irregolare sporadico senza allarmi; la misurazione della pressione delle 24 ore è **non valida per un "
   "errore di misurazione** e va rifatta. Le analisi del sangue sono nel complesso buone; da tenere d'occhio "
@@ -91,15 +92,16 @@ prima_notte_persa = datetime.date.fromisoformat(notti_sonno[-1]) + datetime.time
 w(f"Massimo si allena con costanza e si sente bene, e i numeri lo confermano: **{len(att)} uscite in poco più "
   f"di un anno, oltre {round(sec_tot/3600/10)*10} ore e circa {km_str} km"
   "** (soprattutto camminate, bici e canottaggio). Le ultime settimane sono le più intense di tutto l'anno: "
-  "165 km in bici nella settimana dal 6 al 12 settembre, altri 153 km dal 14 al 18 e **altri 155 km dal 20 al 26**, "
-  "con un'uscita da 50 km il 24, la più lunga mai fatta in mountain bike. Durante il test in ospedale aveva riferito solo "
+  "**fra 150 e 165 km in bici ogni settimana da inizio settembre** (l'ultima, dal 27 settembre al 3 ottobre, "
+  "151 km), con un'uscita da 50 km il 24 settembre, la più lunga mai fatta in mountain bike. Durante il test in ospedale aveva riferito solo "
   "affanno e stanchezza moderati, con un consumo di ossigeno del tutto normale: l'orologio racconta la stessa "
   "storia, con un battito medio intorno a 105 durante l'attività e punte fino a 150. In pratica **rende molto "
   "più di quanto i valori dei polmoni farebbero prevedere**, perché il corpo si è abituato a lavorare con meno "
   "ossigeno. Il rovescio della medaglia resta lo stesso: sentendo poco i sintomi, potrebbe non accorgersi di "
-  f"un peggioramento. Proprio per questo pesa il fatto che **dal {prima_notte_persa.day} agosto "
-  "l'orologio non venga più indossato di notte**: sono sparite le misure di ossigeno notturno, sonno e "
-  "recupero, cioè gli unici campanelli d'allarme automatici che avevamo. Resta poi da chiarire il lungo "
+  "un peggioramento. Per questo contano le misure notturne di ossigeno e recupero, che continuano ad arrivare "
+  "(questa settimana cinque notti di fila). Mancano invece, **dal "
+  f"{prima_notte_persa.day} agosto, le ore di sonno: non dipende da Massimo**, è un problema di "
+  "collegamento fra Garmin e il programma che raccoglie i dati, da sistemare. Resta poi da chiarire il lungo "
   "periodo con pochi allenamenti registrati fra **metà maggio e inizio agosto 2026**: le uscite si "
   "interrompono il 13 maggio e tornano quotidiane solo dal 10 agosto, dopo otto mesi filati da 26-36 al mese. "
   "Vale la pena capire se in quel periodo si è fermato davvero, o se semplicemente non ha avviato la "
@@ -109,7 +111,7 @@ w("")
 # ------------------------------------------------------------------ 3
 w("## 3. Consigli e promemoria")
 w("")
-w("Le priorità: tornare a indossare l'orologio di notte, proteggere i polmoni e rifare la misurazione della "
+w("Le priorità: continuare a indossare l'orologio di notte, proteggere i polmoni e rifare la misurazione della "
   "pressione. Per i polmoni: usare ogni giorno l'inalatore prescritto (Trelegy), fare i vaccini consigliati e "
   "completare l'esame notturno del respiro già suggerito dai medici. Per la pressione: l'esame delle 24 ore va "
   "ripetuto prima di trarre conclusioni; nel frattempo misurarla a casa. Lo sport va continuato con questa "
@@ -119,9 +121,9 @@ w("")
 w("**Cosa fare**")
 w("")
 for x in [
-    f"Continuare il movimento regolare (nelle ultime otto settimane circa {len(recenti)/8:.0f} uscite a settimana, in crescita da sei settimane di fila): tenere questo ritmo senza aumentarlo ancora, con un saturimetro al dito, e rallentare se l'ossigeno scende sotto 88-90%.",
+    f"Continuare il movimento regolare (nelle ultime otto settimane circa {len(recenti)/8:.0f} uscite a settimana, il ritmo più alto di tutto l'anno): tenere questo ritmo senza aumentarlo ancora, con un saturimetro al dito, e rallentare se l'ossigeno scende sotto 88-90%.",
     "Tenere d'occhio il battito a riposo che l'orologio misura nelle notti in cui viene indossato: se sale sopra 75-80 per più giorni di fila, avvisare il medico.",
-    "**Rimettere l'orologio di notte**: da fine agosto non viene più indossato e si sono perse tutte le misure di ossigeno notturno, sonno e recupero. Bastano anche due o tre notti a settimana.",
+    "**Continuare a indossare l'orologio di notte**: è l'unico modo per seguire l'ossigeno notturno. Le ore di sonno non arrivano da fine agosto per un problema di collegamento, non per colpa di Massimo: va sistemato dalle impostazioni.",
     "Misurare la pressione a casa mattina e sera e annotarla, in attesa di rifare l'esame delle 24 ore.",
     "Dieta mediterranea: verdure a foglia verde e legumi, pesce, olio d'oliva, poco sale; calcio e vitamina D per le ossa.",
     "Vaccinazioni: antinfluenzale ogni anno, anti-pneumococco e le altre consigliate dallo pneumologo.",
@@ -142,7 +144,7 @@ w("**Da discutere con i medici**")
 w("")
 for x in [
     "Cardiologo: rifare l'esame della pressione delle 24 ore (quello di ottobre 2025 non è valido) e far rivedere la registrazione del battito.",
-    "Pneumologo: mostrare l'andamento dell'ossigeno notturno, sceso al 92% fra ottobre e novembre 2025 e rimasto sotto il 95% quasi tutti i mesi.",
+    "Pneumologo: mostrare l'andamento dell'ossigeno notturno, sceso al 92% fra ottobre e novembre 2025 e rimasto sotto il 95% nella maggior parte dei mesi.",
     "Medico di base: vitamine del gruppo B (B9, B12, B6) per l'omocisteina alta, con nuovo prelievo dopo circa 3 mesi.",
     "Pneumologo o allergologo: capire perché gli indici di allergia (IgE) sono alti.",
     "Esame della densità delle ossa (MOC) e vitamina D, per l'indebolimento visto nella radiografia delle mani.",
@@ -156,7 +158,7 @@ w("|---|---|---|")
 for r in [
     ("TAC del torace di controllo", "**In ritardo**: era prevista intorno a luglio 2026. Verificare se è già stata fatta, altrimenti fissarla subito", "Controllo del nodulo di 9 mm al polmone sinistro"),
     ("Visita di Chirurgia Toracica (Osp. S. Andrea)", "Secondo il calendario del centro", "Controllo dell'altro nodulo già in osservazione"),
-    ("Esame notturno del respiro (poligrafia con capnografia)", "Da fissare a breve", "Ossigeno notturno sotto il 95% in quasi tutti i mesi"),
+    ("Esame notturno del respiro (poligrafia con capnografia)", "Da fissare a breve", "Ossigeno notturno sotto il 95% nella maggior parte dei mesi"),
     ("Nuovo Holter della pressione (24 ore)", "Appena possibile", "La misurazione di ottobre 2025 non è valida"),
     ("Visita cardiologica", "Dopo il nuovo Holter della pressione", "Pressione e battiti irregolari su dati affidabili"),
     ("Nuovo esame dell'omocisteina", "Ottobre-novembre 2026", "Era alta (25,1) a luglio 2026"),
@@ -171,7 +173,8 @@ w("")
 w("## 4. I dati misurati dall'orologio Garmin, mese per mese")
 w("")
 w("Ogni riga è la media del mese. Il trattino significa che in quel mese la misura non è stata registrata "
-  "(accade quando l'orologio non viene indossato di notte). Dal battito a riposo sono stati esclusi 62 valori "
+  "(l'orologio non era indossato, oppure il dato non è arrivato: da fine agosto, per esempio, le ore di sonno "
+  "non vengono sincronizzate). Dal battito a riposo sono stati esclusi 62 valori "
   "fra 95 e 117 che non sono misure reali.")
 w("")
 w("| Mese | Battito a riposo | Recupero (HRV) | Ossigeno notte | Sonno | Peso | Massa grassa | VO2max | Sedute | Ore attività | Battito in attività |")
@@ -234,9 +237,9 @@ for et, _, _, p, _ in mensile:
 w("```")
 w("")
 w("Come leggerli: il battito a riposo resta per tutto l'anno nella fascia normale, con una leggera risalita "
-  "nel 2026. L'ossigeno notturno è il punto debole: resta quasi sempre sotto la soglia del 95%, con il minimo "
-  "fra ottobre e novembre 2025 e un recupero nei mesi successivi; attenzione però che gli ultimi mesi poggiano "
-  "su pochissime notti misurate, perché da fine agosto l'orologio non viene più indossato per dormire. Il peso "
+  "nel 2026. L'ossigeno notturno è il punto debole: resta sotto la soglia del 95% nella maggior parte dei mesi, "
+  "con il minimo fra ottobre e novembre 2025 e un recupero nei mesi successivi; da luglio è intorno al 95%, ma "
+  "poggia su poche notti misurate (da 2 a 7 al mese), quindi va confermato. Il peso "
   "è sceso in modo graduale e costante: è il risultato migliore dell'anno. L'attività fisica è stata molto "
   "regolare da settembre ad aprile, è calata da metà maggio a inizio agosto, ed è poi ripresa con decisione.")
 w("")
@@ -267,9 +270,10 @@ w("---")
 w("")
 w("Report generato automaticamente dai documenti della cartella Google Drive \"Salute Massimo Sunzini\" e dai "
   "dati dei dispositivi Garmin. Non è un documento medico e non sostituisce il parere dei professionisti "
-  "curanti. Sono esclusi due gruppi di dati non attendibili: l'Holter pressorio di ottobre 2025 (errore di "
-  "misurazione segnalato) e 62 valori di battito a riposo fra 95 e 117 restituiti dall'orologio nelle notti "
-  "in cui non è stato indossato.")
+  "curanti. Sono esclusi tre gruppi di dati non attendibili: l'Holter pressorio di ottobre 2025 (errore di "
+  "misurazione segnalato), 62 valori di battito a riposo fra 95 e 117 restituiti dall'orologio nelle notti "
+  "in cui non è stato indossato, e le misure del 19 settembre 2026 (battito a riposo 83 e ossigeno 99%), "
+  "fuori scala rispetto ai giorni vicini e quasi certamente prese di giorno.")
 w("")
 
 with open(OUT, "w", encoding="utf-8") as f:
