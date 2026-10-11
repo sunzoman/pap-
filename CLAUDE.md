@@ -54,7 +54,7 @@ Note operative:
 
 **Vincolo dell'utente: nessuno strumento aziendale in questa knowledge base** — niente Make (account Wider View) e niente Strava. Il flusso è: dispositivi Garmin → Garmin Connect → **intervals.icu** (account personale di Massimo, collegato a Garmin) → API letta direttamente durante le scansioni → file CSV nel repository.
 
-**Credenziali:** custodite SOLO nel file Drive `_chiave_intervals_icu.txt` (ID `1u5pg86vG7gROVyrv3Yv2ba3OaLtHpv6F`, dentro la cartella `Dati Garmin`). **Mai** scriverle nel repository, nei commit o nelle variabili d'ambiente. Athlete ID: `i685995`.
+**Credenziali:** custodite nel file Drive `_chiave_intervals_icu.txt` (ID `1u5pg86vG7gROVyrv3Yv2ba3OaLtHpv6F`, dentro la cartella `Dati Garmin`) e, solo sulla VPS, in `~/.config/salute/env` (permessi 600) come `INTERVALS_API_KEY`. **Mai** scriverle nel repository o nei commit; nell'ambiente cloud di claude.ai non metterle nelle variabili d'ambiente. Athlete ID: `i685995`.
 
 **Prerequisito di rete:** l'ambiente cloud deve avere `intervals.icu` tra i domini consentiti (impostato il 23/08/2026 in Accesso alla rete → Personalizzato). Le chiamate vanno fatte con `curl` (urllib di Python non passa dal proxy e riceve 403).
 
@@ -79,6 +79,16 @@ Note operative:
 - Il sync Garmin → intervals.icu può consegnare **allenamenti retroattivi anche a distanza di ore o giorni** (il 23/08/2026 sono comparsi 82 allenamenti vecchi di mesi). Prima di segnalare "pause" o "picchi" di attività, considerare che i dati potrebbero essere incompleti e verificare con l'utente.
 - Il file `_chiave_intervals_icu.txt` e i due Google Sheet in `Dati Garmin` NON vanno indicizzati come schede in MEMORIA.md né rinominati.
 - HRV e SpO2 sono misurati solo nelle notti in cui l'orologio è indossato con il monitoraggio attivo: la copertura parziale è normale, non è un errore.
+
+## Esecuzione sulla VPS (decisione di Federico dell'11/10/2026)
+
+Motivo: nelle sessioni automatiche di claude.ai l'organizzazione Wider View ha disabilitato "Consenti sempre" per i connettori, quindi ogni domenica servivano approvazioni manuali. Federico ha deciso di spostare la scansione sulla VPS aziendale «miles», nel suo spazio personale (`/home/federico`, utente `federico`): **eccezione esplicita** alla regola "nessuno strumento aziendale", presa consapevolmente, compreso il rischio che `aios` (Miles, con sudo) possa tecnicamente leggere i file.
+
+- **Avvio:** cron di `federico` la domenica alle 07:30 → `vps/esegui_settimanale.sh` → `claude -p` con `vps/prompt_settimanale.md`, permessi da `vps/settings-vps.json` in modalità `dontAsk` (quello che non è consentito viene rifiutato, mai `--dangerously-skip-permissions`). Accesso a Claude con il posto Team di Federico (`claude setup-token`).
+- **Strumenti al posto dei connettori:** `strumenti/google_api.py` (Drive: ls, info, scarica, carica con conversione in Doc o Sheet, rinomina, cestina) e `strumenti/gmail_send.py`. Scope Google: `drive.readonly`, `drive.file`, `gmail.send`: lo script modifica solo i file che ha creato lui; rinomine di file altrui (referti nuovi, vecchi report del connettore) si annotano come "da fare a mano".
+- **Segreti:** solo in `~/.config/salute/` (cartella 700, file 600): `env` (token Claude, token GitHub limitato a sunzoman/pap-, chiave intervals.icu, eventuale bot Telegram personale), `google_client.json`, `google_token.json`. Mai leggerli, stamparli o copiarli.
+- **Riepilogo:** a fine scansione arriva a Federico per mail (niente valori clinici); in caso di errore lo script lo avvisa per mail e, se configurato, su Telegram.
+- **Installazione e prova:** `vps/INSTALLAZIONE.md`. Prova in modalità `SALUTE_PROVA=1` domenica 18/10/2026; se riesce, disattivare la Routine di claude.ai (`trig_01YbbNmqShGo28ENFyBwYvGa`) per non mandare due mail.
 
 ## Strumenti
 
