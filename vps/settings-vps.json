@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "Edit(memoria/**)",
+      "Edit(dati/**)",
+      "Edit(strumenti/genera_report_doc.py)",
+      "Edit(strumenti/costruisci_csv.py)",
+      "Edit(CLAUDE.md)",
+      "Edit(tmp/**)",
+      "Bash(git *)",
+      "Bash(python3 *)",
+      "Bash(JSON_DIR=tmp/garmin python3 *)",
+      "Bash(curl *)",
+      "Bash(mkdir *)",
+      "Bash(ls *)",
+      "Bash(wc *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(grep *)",
+      "Bash(diff *)",
+      "Bash(date *)",
+      "Bash(cat tmp/*)",
+      "Bash(cat dati/*)",
+      "Bash(cat memoria/*)"
+    ],
+    "deny": [
+      "Read(~/.config/salute/**)",
+      "Read(~/.ssh/**)",
+      "Read(~/.claude/.credentials.json)",
+      "Read(//home/federico/.env)",
+      "Bash(sudo *)",
+      "Bash(ssh *)",
+      "Bash(env)",
+      "Bash(printenv *)",
+      "Bash(git push --force *)",
+      "Bash(git push -f *)"
+    ]
+  }
+}
