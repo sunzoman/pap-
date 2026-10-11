@@ -74,8 +74,8 @@ w("")
 w("Il tema principale sono i polmoni: c'è una bronchite cronica ostruttiva importante — i bronchi lasciano "
   "passare circa il 40% dell'aria che dovrebbero — e i polmoni trattengono troppa aria; sotto sforzo "
   "l'ossigeno nel sangue scende fino all'87%, e di notte l'orologio lo ha misurato sotto il 95% nella maggior "
-  "parte dei mesi, con il valore più basso (92%) fra ottobre e novembre 2025; da luglio 2026 è intorno al 95%, "
-  "ma su poche notti misurate. Due piccoli noduli "
+  "parte dei mesi, con il valore più basso (92%) fra ottobre e novembre 2025; da luglio 2026 è fra il 95 e il 96%, "
+  "dato da confermare nelle prossime settimane. Due piccoli noduli "
   "polmonari restano sotto controllo con le TAC. Il cuore batte a ritmo regolare, con qualche battito "
   "irregolare sporadico senza allarmi; la misurazione della pressione delle 24 ore è **non valida per un "
   "errore di misurazione** e va rifatta. Le analisi del sangue sono nel complesso buone; da tenere d'occhio "
@@ -91,15 +91,16 @@ km_str = f"{km_tot:,.0f}".replace(",", ".")
 prima_notte_persa = datetime.date.fromisoformat(notti_sonno[-1]) + datetime.timedelta(days=1)
 w(f"Massimo si allena con costanza e si sente bene, e i numeri lo confermano: **{len(att)} uscite in poco più "
   f"di un anno, oltre {round(sec_tot/3600/10)*10} ore e circa {km_str} km"
-  "** (soprattutto camminate, bici e canottaggio). Le ultime settimane sono le più intense di tutto l'anno: "
-  "**fra 150 e 165 km in bici ogni settimana da inizio settembre** (l'ultima, dal 27 settembre al 3 ottobre, "
-  "151 km), con un'uscita da 50 km il 24 settembre, la più lunga mai fatta in mountain bike. Durante il test in ospedale aveva riferito solo "
+  "** (soprattutto camminate, bici e canottaggio). Settembre è stato il mese più intenso dell'anno: "
+  "**fra 150 e 165 km in bici ogni settimana**, con un'uscita da 50 km il 24 settembre, la più lunga mai "
+  "fatta in mountain bike. Nella prima settimana di ottobre le uscite restano tante (8), ma con più "
+  "camminate e meno bici (81 km). Durante il test in ospedale aveva riferito solo "
   "affanno e stanchezza moderati, con un consumo di ossigeno del tutto normale: l'orologio racconta la stessa "
   "storia, con un battito medio intorno a 105 durante l'attività e punte fino a 150. In pratica **rende molto "
   "più di quanto i valori dei polmoni farebbero prevedere**, perché il corpo si è abituato a lavorare con meno "
   "ossigeno. Il rovescio della medaglia resta lo stesso: sentendo poco i sintomi, potrebbe non accorgersi di "
   "un peggioramento. Per questo contano le misure notturne di ossigeno e recupero, che continuano ad arrivare "
-  "(questa settimana cinque notti di fila). Mancano invece, **dal "
+  "quasi tutte le notti (11 delle ultime 12). Mancano invece, **dal "
   f"{prima_notte_persa.day} agosto, le ore di sonno: non dipende da Massimo**, è un problema di "
   "collegamento fra Garmin e il programma che raccoglie i dati, da sistemare. Resta poi da chiarire il lungo "
   "periodo con pochi allenamenti registrati fra **metà maggio e inizio agosto 2026**: le uscite si "
@@ -121,7 +122,7 @@ w("")
 w("**Cosa fare**")
 w("")
 for x in [
-    f"Continuare il movimento regolare (nelle ultime otto settimane circa {len(recenti)/8:.0f} uscite a settimana, il ritmo più alto di tutto l'anno): tenere questo ritmo senza aumentarlo ancora, con un saturimetro al dito, e rallentare se l'ossigeno scende sotto 88-90%.",
+    f"Continuare il movimento regolare (nelle ultime otto settimane circa {len(recenti)/8:.0f} uscite a settimana, un ritmo molto alto): tenere questo ritmo senza aumentarlo ancora, con un saturimetro al dito, e rallentare se l'ossigeno scende sotto 88-90%.",
     "Tenere d'occhio il battito a riposo che l'orologio misura nelle notti in cui viene indossato: se sale sopra 75-80 per più giorni di fila, avvisare il medico.",
     "**Continuare a indossare l'orologio di notte**: è l'unico modo per seguire l'ossigeno notturno. Le ore di sonno non arrivano da fine agosto per un problema di collegamento, non per colpa di Massimo: va sistemato dalle impostazioni.",
     "Misurare la pressione a casa mattina e sera e annotarla, in attesa di rifare l'esame delle 24 ore.",
@@ -238,8 +239,9 @@ w("```")
 w("")
 w("Come leggerli: il battito a riposo resta per tutto l'anno nella fascia normale, con una leggera risalita "
   "nel 2026. L'ossigeno notturno è il punto debole: resta sotto la soglia del 95% nella maggior parte dei mesi, "
-  "con il minimo fra ottobre e novembre 2025 e un recupero nei mesi successivi; da luglio è intorno al 95%, ma "
-  "poggia su poche notti misurate (da 2 a 7 al mese), quindi va confermato. Il peso "
+  "con il minimo fra ottobre e novembre 2025 e un recupero nei mesi successivi; da luglio è fra il 95 e il 96%: "
+  "fino a settembre le notti misurate erano poche (da 2 a 7 al mese), da ottobre sono quasi quotidiane, "
+  "quindi le prossime settimane diranno se il dato si conferma. Il peso "
   "è sceso in modo graduale e costante: è il risultato migliore dell'anno. L'attività fisica è stata molto "
   "regolare da settembre ad aprile, è calata da metà maggio a inizio agosto, ed è poi ripresa con decisione.")
 w("")
